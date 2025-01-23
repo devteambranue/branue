@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+  .padd {
+    padding-top: 80px;
+  }
+
+  .responsiveVideo {
+    width: 100% !important
+  }
+}

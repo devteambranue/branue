@@ -1,0 +1,89 @@
+.bgColor {
+  background-color: rgb(90 233 212 / 40%);
+  border-radius: 10px;
+  border: 1px outset rgb(80, 80, 80);
+}
+
+.marieImage,
+.samanthaImage {
+  width: 100%;
+  height: auto;
+  float: right;
+  margin: 0 20px 20px 0;
+  max-width: 576px;
+  height: auto;
+}
+
+.gemmaImage,
+.catherineImage {
+  width: 100%;
+  height: auto;
+  float: right;
+  margin: 0 20px 20px 0;
+  max-width: 576px;
+  height: auto;
+}
+
+.gemmaImage {
+  float: left !important;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+.imgCss {
+  width: 270px !important;
+  height: 270px !important;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid white;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-label {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .bnnerClass {
+    height: auto !important;
+    background-position: center;
+    padding: 22% 0;
+  }
+
+  #button {
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .bnnerClass {
+    padding: 30% 0;
+  }
+}
+
+/* @media (min-width: 1024px) {
+  .bannerClass {
+    padding: 0 !important;
+    background-size: contain !important
+  }
+}
+
+@media (min-width: 1280px) {
+  .bannerClass {
+    background-size: contain !important
+  }
+} */

@@ -1,0 +1,17 @@
+@media (max-width: 767px) {
+  .CommissionTermsbannerImageClass {
+    height: auto !important;
+    background-position: center;
+    padding: 22% 0;
+  }
+
+  #button {
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .CommissionTermsbannerImageClass {
+    padding: 40% 0;
+  }
+}

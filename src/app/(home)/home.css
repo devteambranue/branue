@@ -1,0 +1,227 @@
+/* #textBox1 {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 10;
+  color: black;
+  background-color: white;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 10%
+  );
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%);
+  opacity: 0.7;
+  width: 50%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+#textBox2 {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 10;
+  color: black;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 10%
+  );
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%);
+  opacity: 0.7;
+  width: 50%;
+  height: 30%;
+  margin-top: 18%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+#textBox3 {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 10;
+  color: black;
+  background-color: white;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 10%
+  );
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%);
+  opacity: 0.7;
+  width: 50%;
+  height: 40%;
+  margin-top: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+#button {
+  background-color: #42f5e9;
+  z-index: 20;
+  border: none;
+  border-radius: 9999px;
+  padding: 1rem 2rem;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  margin-top: 8rem;
+  transition: background-color 0.2s;
+}
+
+#textBox:hover {
+  background-color: #42f5e9;
+}
+
+#textBox:hover ~ #button {
+  background-color: white;
+}
+
+#button:hover {
+  background-color: white;
+} */
+/* .video-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+} */
+
+/* .video {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+} */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  /* This gives a 4:3 aspect ratio; adjust as needed */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Keeps the image cover */
+}
+
+
+.postionRelative {
+  position: relative;
+  top: 65%;
+}
+
+.fontSizeInherit {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+@media (max-width: 368px) {
+  .customFontSize {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .postionRelative {
+    top: 55%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .postionRelative {
+    top: 50%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+  .postionRelative {
+    top: 45%;
+  }
+}
+
+@media (max-width: 639px) {
+  .postionRelative {
+    top: 0%;
+    margin: 0px;
+  }
+}
+
+.contentToMove {
+  position: relative;
+  z-index: 1;
+  background-color: #b6adad;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+@media screen and (max-width: 767px) {
+  .video-container {
+    /* min-height: 180px; */
+    min-height: 90px;
+  }
+}
+
+@keyframes gradient-border {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+.animate-gradient-border {
+  --border-angle: 0turn;
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #fff,
+    #FFF 5%,
+    #FFF 60%,
+    #FFF 95%
+  );
+  
+  --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #21e6c8, #1a584f 99%, transparent);
+
+  border: solid 1px transparent;
+  border-radius: 2em;
+  background: 
+    var(--main-bg) padding-box,
+    var(--gradient-border) border-box, 
+    white; /* Ensure the background of the box is white */
+  
+  background-position: center center;
+  animation: gradient-border 3s linear infinite;
+}
+
+.animate-gradient-border:hover {
+  animation-play-state: paused;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+ 
