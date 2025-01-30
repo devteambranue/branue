@@ -10,11 +10,11 @@ export default function Footer() {
   const imageSize = 50;
   const handleClick = () => {
     // console.log("result", result);
-    setResult(null); 
+    setResult(null);
   };
 
   return (
-    <footer className="flex flex-col">
+    <footer className="flex flex-col footerArea">
       {/* Partners Section */}
       <div className="bg-gray-100 py-12 ">
         <div className="container">
@@ -133,13 +133,28 @@ export default function Footer() {
               {/* <Link href="/commission-terms" className="font-sans mb-2">
                 Commission Terms 2020
               </Link> */}
-              <Link href="https://fusion-finance.com/pdf/Terms-of-Business-For-Fusion-Finance.pdf" className="font-sans mb-2" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://fusion-finance.com/pdf/Terms-of-Business-For-Fusion-Finance.pdf"
+                className="font-sans mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Terms of Business
               </Link>
-                <Link href="https://fusion-finance.com/pdf/Fusion-Finance-Data-Protection.pdf" className="font-sans mb-2" target="_blank" rel="noopener noreferrer">
-                  Privacy Policy
-                </Link>
-              <Link href="https://fusion-finance.com/pdf/commission-term.pdf" className="font-sans mb-2" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://fusion-finance.com/pdf/Fusion-Finance-Data-Protection.pdf"
+                className="font-sans mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="https://fusion-finance.com/pdf/commission-term.pdf"
+                className="font-sans mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Commission Terms 2020
               </Link>
             </div>
