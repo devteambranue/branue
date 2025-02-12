@@ -17,7 +17,7 @@ export default async function sendEmail(req, res) {
 
   const mailData = {
     from: "allison@branue.com",
-    to: "sudarashanlinux01@gmail.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
+    to: "allison@branue.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
     subject: "Email From Fusion Finance",
     html: `
       <div style="font-family: 'Arial', sans-serif; background-color: #f4f4f9; padding: 30px;">
