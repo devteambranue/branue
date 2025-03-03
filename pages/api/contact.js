@@ -8,8 +8,8 @@ export default async function sendEmail(req, res) {
     // port: 587,
     secure: true,
     auth: {
-      user: "allison@branue.com",
-      pass: "cfwplqbzznrmruxc",
+      user: "sudarashanlinux01@gmail.com",
+      pass: "obvzbscaeifgozqi",
       // user: "marie@fusion-finance.com",
       // pass: "O$op3sqo5XUr-uM",    
     },
@@ -17,7 +17,7 @@ export default async function sendEmail(req, res) {
 
   const mailData = {
     from: "allison@branue.com",
-    to: "info@fusion-finance.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
+    to: "sudarashanlinux01@gmail.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
     subject: "Email From Fusion Finance",
     html: `
       <div style="font-family: 'Arial', sans-serif; background-color: #f4f4f9; padding: 30px;">
@@ -69,7 +69,7 @@ export default async function sendEmail(req, res) {
   } catch (error) {
     console.error('Error sending email:', error);
     res.statusCode = 500;
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Type', 'application/json' );
     res.send(JSON.stringify({ message: 'Email not send!' }))
   }
 }
