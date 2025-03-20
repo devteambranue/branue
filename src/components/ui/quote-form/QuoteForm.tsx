@@ -5,6 +5,7 @@ import { ResultsContext } from "@/components/context/cache";
 import { FormData } from "@/components/definitions/FormData";
 import Image from "next/image";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import { toast } from "react-toastify";
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -15,7 +16,7 @@ const QuoteForm = () => {
       smoker: "Smoking-Status",
     },
     name: "",
-    lastName:"",
+    lastName: "",
     email: "",
     phone: "",
     dob: "",
@@ -29,7 +30,6 @@ const QuoteForm = () => {
     sicAmount: null,
     term: null,
   });
-  console.log(formData)
   const { result, setResult } = useContext(ResultsContext);
   const [showTooltip, setShowTooltip] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -53,7 +53,7 @@ const QuoteForm = () => {
     handleValidation();
   };
 
-   
+
 
   const handleValidation = async () => {
     const {
@@ -277,10 +277,31 @@ const QuoteForm = () => {
         lifeOnly: seriousIllness === "N" ? "Y" : formData.lifeOnly
       };
       setLoading(true)
+
       const quotes = await fetchQuote(updatedFormData);
       console.log("API response:", quotes);
       setLoading(false)
       setResult(quotes);
+
+      fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, /",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ "quotes": quotes, "type": "quotes" }),
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            toast.success("Quotes sent successfully!");
+          } else {
+            toast.error("Error sending quotes. Please try again.");
+          }
+        })
+        .catch(() => {
+          toast.error("Error sending quotes. Please try again.");
+        });
+
     } catch (error) {
       console.error("Error fetching quote:", error);
       setLoading(false)
@@ -288,7 +309,7 @@ const QuoteForm = () => {
     }
   };
 
-  const handleNavigate=()=>{
+  const handleNavigate = () => {
     setResult(null)
   }
 
@@ -307,203 +328,300 @@ const QuoteForm = () => {
       />
     )
   ) : (<>
-    {loading ? <LoadingSpinner/> :
-    <div
-      className="max-w-7xl mx-auto p-6 bg-white rounded-lg shadow-md mt-12 mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8"
-      style={{ boxShadow: "0px 0px 6px #1a584f69" }}
-    >
-      {/* Right Side */}
-      <div className="relative h-full">
-        <img
-          src="/Fusion_pics/Fusion Finance Web-Ready-36.jpg" // Replace with your actual image URL
-          alt="Mortgage Protection"
-          className="object-cover w-full h-full rounded-lg"
-        />
-      </div>
-      {/* Left Side: Form */}
-      <div>
-        <form action="#" method="POST">
-          {/* User Details Section */}
-          <h3 className="text-2xl font-semibold  text-gray-800 mb-4 font-sans underline">
-            Policy & Personal Information
-          </h3>
-           
- 
-      <div className="mb-4">
-            {/* Number of typeOfCover */}
-            <div>
-              {/* Label */}
-              <label className="block text-sm font-medium text-gray-700 font-sans">
-                Type Of Cover
-                <span
-                  className="cursor-pointer  bg-green-900 ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full text-white"
-                  title="Click for more information"
-                  onClick={() => setShowTooltip(!showTooltip)}
-                >
-                  &#63;
-                </span>
-              </label>
+    {loading ? <LoadingSpinner /> :
+      <div
+        className="max-w-7xl mx-auto p-6 bg-white rounded-lg shadow-md mt-12 mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8"
+        style={{ boxShadow: "0px 0px 6px #1a584f69" }}
+      >
+        {/* Right Side */}
+        <div className="relative h-full">
+          <img
+            src="/Fusion_pics/Fusion Finance Web-Ready-36.jpg" // Replace with your actual image URL
+            alt="Mortgage Protection"
+            className="object-cover w-full h-full rounded-lg"
+          />
+        </div>
+        {/* Left Side: Form */}
+        <div>
+          <form action="#" method="POST">
+            {/* User Details Section */}
+            <h3 className="text-2xl font-semibold  text-gray-800 mb-4 font-sans underline">
+              Policy & Personal Information
+            </h3>
 
-              {/* Tooltip */}
-              {showTooltip && (
-                <div
-                  className="absolute z-10 mt-2 w-64 sm:w-72 md:w-72 lg:w-72 text-white p-4 rounded shadow-lg"
-                  style={{ backgroundColor: "#075c50" }}
-                >
-                  <div className="flex justify-between items-center mb-2">
-                    <strong className="text-base uppercase font-sans">
-                      Type of Cover
-                    </strong>
-                    <button
-                      className="text-white text-3xl hover:text-gray-300 focus:outline-none text font-sans"
-                      onClick={() => setShowTooltip(false)} // Replace with your state function
-                    >
-                      &times;
-                    </button>
-                  </div>
-                  <div
-                    className="bg-white mb-1   p-2 rounded font-sans"
-                    style={{ color: "#075c50" }}
+
+            <div className="mb-4">
+              {/* Number of typeOfCover */}
+              <div>
+                {/* Label */}
+                <label className="block text-sm font-medium text-gray-700 font-sans">
+                  Type Of Cover
+                  <span
+                    className="cursor-pointer  bg-green-900 ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full text-white"
+                    title="Click for more information"
+                    onClick={() => setShowTooltip(!showTooltip)}
                   >
-                    <p className="text-sm mb-1">
-                      A{" "}
-                      <strong className=" text-lg font-sans">Joint Life</strong>{" "}
-                      insurance policy covers two people; however, benefits will
-                      only be paid on the first death.
-                    </p>
-                    <p className="text-sm">
-                      A <strong className="text-lg font-sans">Dual Life</strong>{" "}
-                      insurance policy covers two people independently on one
-                      policy, and benefits will be paid on the death of both
-                      lives insured.
-                    </p>
-                  </div>
-                </div>
-              )}
+                    &#63;
+                  </span>
+                </label>
 
-              {/* Checkboxes in Column */}
-              <div className="mt-2 flex flex-row text-center gap-6  space-y-2">
-                <div className="flex items-center mt-2 gap-2">
-                  <div className="flex h-6 items-center">
+                {/* Tooltip */}
+                {showTooltip && (
+                  <div
+                    className="absolute z-10 mt-2 w-64 sm:w-72 md:w-72 lg:w-72 text-white p-4 rounded shadow-lg"
+                    style={{ backgroundColor: "#075c50" }}
+                  >
+                    <div className="flex justify-between items-center mb-2">
+                      <strong className="text-base uppercase font-sans">
+                        Type of Cover
+                      </strong>
+                      <button
+                        className="text-white text-3xl hover:text-gray-300 focus:outline-none text font-sans"
+                        onClick={() => setShowTooltip(false)} // Replace with your state function
+                      >
+                        &times;
+                      </button>
+                    </div>
+                    <div
+                      className="bg-white mb-1   p-2 rounded font-sans"
+                      style={{ color: "#075c50" }}
+                    >
+                      <p className="text-sm mb-1">
+                        A{" "}
+                        <strong className=" text-lg font-sans">Joint Life</strong>{" "}
+                        insurance policy covers two people; however, benefits will
+                        only be paid on the first death.
+                      </p>
+                      <p className="text-sm">
+                        A <strong className="text-lg font-sans">Dual Life</strong>{" "}
+                        insurance policy covers two people independently on one
+                        policy, and benefits will be paid on the death of both
+                        lives insured.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Checkboxes in Column */}
+                <div className="mt-2 flex flex-row text-center gap-6  space-y-2">
+                  <div className="flex items-center mt-2 gap-2">
+                    <div className="flex h-6 items-center">
+                      <input
+                        type="checkbox"
+                        value="Single"
+                        id="single"
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            typeOfCover: e.target.value,
+                          })
+                        }
+                        checked={formData.typeOfCover === "Single"}
+                        required
+                        className="form-checkbox text-green-900"
+                      />
+                    </div>
+                    <div className="text-base leading-6">
+                      <label
+                        htmlFor="single"
+                        className="font-medium text-gray-900 font-sans"
+                      >
+                        Single
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <div className="flex h-6 items-center">
+                      <input
+                        type="checkbox"
+                        value="Joint"
+                        id="joint"
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            typeOfCover: e.target.value,
+                          })
+                        }
+                        checked={formData.typeOfCover === "Joint"}
+                        required
+                        className="form-checkbox text-green-900"
+                      />
+                    </div>
+                    <div className="text-base leading-6">
+                      <label
+                        htmlFor="joint"
+                        className="font-medium text-gray-900 font-sans"
+                      >
+                        Joint
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
                     <input
                       type="checkbox"
-                      value="Single"
-                      id="single"
+                      value="Dual"
+                      id="dual"
                       onChange={(e) =>
                         setFormData({
                           ...formData,
                           typeOfCover: e.target.value,
                         })
                       }
-                      checked={formData.typeOfCover === "Single"}
+                      checked={formData.typeOfCover === "Dual"}
                       required
                       className="form-checkbox text-green-900"
                     />
-                  </div>
-                  <div className="text-base leading-6">
-                    <label
-                      htmlFor="single"
-                      className="font-medium text-gray-900 font-sans"
-                    >
-                      Single
-                    </label>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <div className="flex h-6 items-center">
-                    <input
-                      type="checkbox"
-                      value="Joint"
-                      id="joint"
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          typeOfCover: e.target.value,
-                        })
-                      }
-                      checked={formData.typeOfCover === "Joint"}
-                      required
-                      className="form-checkbox text-green-900"
-                    />
-                  </div>
-                  <div className="text-base leading-6">
-                    <label
-                      htmlFor="joint"
-                      className="font-medium text-gray-900 font-sans"
-                    >
-                      Joint
-                    </label>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    value="Dual"
-                    id="dual"
-                    onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        typeOfCover: e.target.value,
-                      })
-                    }
-                    checked={formData.typeOfCover === "Dual"}
-                    required
-                    className="form-checkbox text-green-900"
-                  />
-                  <div className="text-base leading-6">
-                    <label
-                      htmlFor="dual"
-                      className="font-medium text-gray-900 font-sans"
-                    >
-                      Dual
-                    </label>
+                    <div className="text-base leading-6">
+                      <label
+                        htmlFor="dual"
+                        className="font-medium text-gray-900 font-sans"
+                      >
+                        Dual
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-             {/* Life1 Section */}
-            <h1 className="mt-2 text-xl font-medium text-black border-pink-100 font-sans mb-2 underline">
-                 Life1 -
-            </h1>
-            <div className="flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
-             {/* Date of Birth */}
-             <div className="flex-1 min-w-[185px]">
-              <label
-                htmlFor="dob"
-                className="block text-sm font-medium text-gray-700 font-sans"
-              >
-                Date of Birth
-              </label>
-              <input
-                type="date"
-                id="dob"
-                name="dob"
-                ref={dobRef} // Attach ref
-                value={formData.dob}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    dob: e.target.value,
-                  });
-                }}
-                required
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Please enter a valid date of birth."
-                  )
-                }
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans placeholder-gray-300"
-                placeholder="MM/DD/YYYY" // This ensures that the placeholder is displayed.
-              />
-            </div>
+              {/* Life1 Section */}
+              <h1 className="mt-2 text-xl font-medium text-black border-pink-100 font-sans mb-2 underline">
+                Life1 -
+              </h1>
+              <div className="flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
+                {/* Date of Birth */}
+                <div className="flex-1 min-w-[185px]">
+                  <label
+                    htmlFor="dob"
+                    className="block text-sm font-medium text-gray-700 font-sans"
+                  >
+                    Date of Birth
+                  </label>
+                  <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    ref={dobRef} // Attach ref
+                    value={formData.dob}
+                    onChange={(e) => {
+                      setFormData({
+                        ...formData,
+                        dob: e.target.value,
+                      });
+                    }}
+                    required
+                    onInvalid={(e) =>
+                      (e.target as HTMLInputElement).setCustomValidity(
+                        "Please enter a valid date of birth."
+                      )
+                    }
+                    onInput={(e) =>
+                      (e.target as HTMLInputElement).setCustomValidity("")
+                    }
+                    className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans placeholder-gray-300"
+                    placeholder="MM/DD/YYYY" // This ensures that the placeholder is displayed.
+                  />
+                </div>
 
-              {/* Gender */}
-              <div className="flex-1 min-w-[185px]">
+                {/* Gender */}
+                <div className="flex-1 min-w-[185px]">
+                  <label
+                    htmlFor="gender1"
+                    className="block text-sm font-medium text-gray-700 font-sans"
+                  >
+                    Gender
+                  </label>
+                  <select
+                    id="gender1"
+                    name="gender1"
+                    className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                    value={formData.sex}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        sex: e.target.value,
+                      })
+                    }
+                  >
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+
+
+                {/* Smoking Status */}
+                <div className="flex-1 min-w-[185px]">
+                  <label
+                    htmlFor="smoking-status"
+                    className="block text-sm font-medium text-gray-700 font-sans"
+                  >
+                    What is your smoking status?
+                  </label>
+                  <select
+                    id="smoking-status"
+                    name="smoking-status"
+                    value={formData.smoker}
+                    className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        smoker: e.target.value,
+                      })
+                    }
+                  >
+                    <option value="Smoking-Status">Select Smoking Status</option>
+                    <option value="Non-Smoker">Non-Smoker</option>
+                    <option value="Smoker">Smoker</option>
+                  </select>
+                </div>
+              </div>
+              {/* Life2 Section */}
+              <div
+                className={`mt-4 ${formData.typeOfCover === "Single" ? "opacity-50 pointer-events-none" : ""
+                  }`}
+              >
+                <div className="flex justify-center flex-col gap-2">
+                  <h1 className="text-xl font-medium text-black border-pink-100 font-sans mb-2 underline">
+                    Life2 -
+                  </h1>
+                  <div className="flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
+
+                    {/* Date of Birth */}
+                    <div className="flex-1 min-w-[185px]">
+                      <label
+                        htmlFor="dob1"
+                        className="block text-sm font-medium text-gray-700 font-sans"
+                      >
+                        Date of Birth
+                      </label>
+                      <input
+                        type="date"
+                        id="dob1"
+                        name="dob"
+                        ref={dobRef1}
+                        value={formData.person1.dob}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            person1: { ...formData.person1, dob: e.target.value },
+                          })
+                        }
+                        required
+                        onInvalid={(e) =>
+                          (e.target as HTMLInputElement).setCustomValidity(
+                            "Please enter a valid date of birth."
+                          )
+                        }
+                        onInput={(e) =>
+                          (e.target as HTMLInputElement).setCustomValidity("")
+                        }
+                        className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                      />
+                    </div>
+
+                    {/* Gender Selection */}
+                    <div className="flex-1 min-w-[185px]">
                       <label
                         htmlFor="gender1"
                         className="block text-sm font-medium text-gray-700 font-sans"
@@ -514,11 +632,14 @@ const QuoteForm = () => {
                         id="gender1"
                         name="gender1"
                         className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
-                        value={formData.sex}
+                        value={formData.person1.gender}
                         onChange={(e) =>
                           setFormData({
                             ...formData,
-                            sex: e.target.value,
+                            person1: {
+                              ...formData.person1,
+                              gender: e.target.value,
+                            },
                           })
                         }
                       >
@@ -526,351 +647,387 @@ const QuoteForm = () => {
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                       </select>
-              </div>
+                    </div>
 
-
-              {/* Smoking Status */}
-              <div className="flex-1 min-w-[185px]">
-              <label
-                htmlFor="smoking-status"
-                className="block text-sm font-medium text-gray-700 font-sans"
-              >
-                What is your smoking status?
-              </label>
-              <select
-                id="smoking-status"
-                name="smoking-status"
-                value={formData.smoker}
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    smoker: e.target.value,
-                  })
-                }
-              >
-                <option value="Smoking-Status">Select Smoking Status</option>
-                <option value="Non-Smoker">Non-Smoker</option>
-                <option value="Smoker">Smoker</option>
-              </select>
-              </div>
-            </div>
-            {/* Life2 Section */}
-            <div
-            className={`mt-4 ${
-              formData.typeOfCover === "Single" ? "opacity-50 pointer-events-none" : ""
-            }`}
-          >
-              <div className="flex justify-center flex-col gap-2">
-                <h1 className="text-xl font-medium text-black border-pink-100 font-sans mb-2 underline">
-                 Life2 -
-                </h1>
-                <div className="flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
-
-                     {/* Date of Birth */}
-                  <div className="flex-1 min-w-[185px]">
-                    <label
-                      htmlFor="dob1"
-                      className="block text-sm font-medium text-gray-700 font-sans"
-                    >
-                      Date of Birth
-                    </label>
-                    <input
-                      type="date"
-                      id="dob1"
-                      name="dob"
-                      ref={dobRef1}
-                      value={formData.person1.dob}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          person1: { ...formData.person1, dob: e.target.value },
-                        })
-                      }
-                      required
-                      onInvalid={(e) =>
-                        (e.target as HTMLInputElement).setCustomValidity(
-                          "Please enter a valid date of birth."
-                        )
-                      }
-                      onInput={(e) =>
-                        (e.target as HTMLInputElement).setCustomValidity("")
-                      }
-                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
-                    />
-                  </div>
-
-                  {/* Gender Selection */}
-                  <div className="flex-1 min-w-[185px]">
-                    <label
-                      htmlFor="gender1"
-                      className="block text-sm font-medium text-gray-700 font-sans"
-                    >
-                      Gender
-                    </label>
-                    <select
-                      id="gender1"
-                      name="gender1"
-                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
-                      value={formData.person1.gender}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          person1: {
-                            ...formData.person1,
-                            gender: e.target.value,
-                          },
-                        })
-                      }
-                    >
-                      <option value="">Select Gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                    </select>
-                  </div>
-
-                  {/* Smoking Status */}
-                  <div className="flex-1 min-w-[185px]">
-                    <label
-                      htmlFor="smoking-status1"
-                      className="block text-sm font-medium text-gray-700 font-sans"
-                    >
-                      Smoking Status
-                    </label>
-                    <select
-                      id="smoking-status1"
-                      name="smoking-status"
-                      className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
-                      value={formData.person1.smoker}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          person1: {
-                            ...formData.person1,
-                            smoker: e.target.value,
-                          },
-                        })
-                      }
-                    >
-                      <option value="">Select Smoking Status</option>
-                      <option value="Non-Smoker">Non-Smoker</option>
-                      <option value="Smoker">Smoker</option>
-                    </select>
+                    {/* Smoking Status */}
+                    <div className="flex-1 min-w-[185px]">
+                      <label
+                        htmlFor="smoking-status1"
+                        className="block text-sm font-medium text-gray-700 font-sans"
+                      >
+                        Smoking Status
+                      </label>
+                      <select
+                        id="smoking-status1"
+                        name="smoking-status"
+                        className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans w-full"
+                        value={formData.person1.smoker}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            person1: {
+                              ...formData.person1,
+                              smoker: e.target.value,
+                            },
+                          })
+                        }
+                      >
+                        <option value="">Select Smoking Status</option>
+                        <option value="Non-Smoker">Non-Smoker</option>
+                        <option value="Smoker">Smoker</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-           
-          <div className="mt-4 flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
-            {/* Life Cover Amount */}
-            <div className="flex-1 min-w-[185px]">
-              <label
-                htmlFor="life-cover-amount"
-                className="block text-sm font-medium text-gray-800 font-sans"
-              >
-                Life Cover Amount
-              </label>
-              <input
-                id="life-cover-amount"
-                name="lifeCoverAmount"
-                ref={lifeCoverAmountRef} // Attach ref
-                type="text"
-                value={formData.lifeCoverAmount ?? ""}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "" || !isNaN(parseInt(value))) {
-                    setFormData({
-                      ...formData,
-                      lifeCoverAmount: value === "" ? null : parseInt(value),
-                    });
-                  } else {
-                    alert("Please enter a valid life cover amount.");
-                    e.target.value = "";
-                  }
-                }}
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Please enter a valid number"
-                  )
-                }
-                required
-                placeholder="Enter Life Cover Amount"
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-              />
-            </div>
 
-            {/* Term */}
-            <div className="flex-1 min-w-[185px]">
-              <label
-                htmlFor="policy-term"
-                className="block text-sm font-medium text-gray-800 font-sans"
-              >
-                Term
-              </label>
-              <select
-                id="policy-term"
-                name="policy-term"
-                value={formData.term || 0}
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    term: parseInt(e.target.value),
-                  })
-                }
-               
-              >
-                <option value={0}>Select Term</option>
-                {Array.from({ length: 36 }, (_, i) => i + 5).map((year) => (
-                  <option key={year} value={year}>
-                    {year} years
-                  </option>
-                ))}
-              </select>
-            </div>
+              <div className="mt-4 flex flex-wrap gap-4 md:flex-nowrap md:space-x-2">
+                {/* Life Cover Amount */}
+                <div className="flex-1 min-w-[185px]">
+                  <label
+                    htmlFor="life-cover-amount"
+                    className="block text-sm font-medium text-gray-800 font-sans"
+                  >
+                    Life Cover Amount
+                  </label>
+                  <input
+                    id="life-cover-amount"
+                    name="lifeCoverAmount"
+                    ref={lifeCoverAmountRef} // Attach ref
+                    type="text"
+                    value={formData.lifeCoverAmount ?? ""}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      if (value === "" || !isNaN(parseInt(value))) {
+                        setFormData({
+                          ...formData,
+                          lifeCoverAmount: value === "" ? null : parseInt(value),
+                        });
+                      } else {
+                        alert("Please enter a valid life cover amount.");
+                        e.target.value = "";
+                      }
+                    }}
+                    onInput={(e) =>
+                      (e.target as HTMLInputElement).setCustomValidity("")
+                    }
+                    onInvalid={(e) =>
+                      (e.target as HTMLInputElement).setCustomValidity(
+                        "Please enter a valid number"
+                      )
+                    }
+                    required
+                    placeholder="Enter Life Cover Amount"
+                    className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+                  />
+                </div>
 
-            {/* Mortgage  Cover Amount */}
-            <div className="flex-1 min-w-[185px]">
-              <label
-                htmlFor="Mortgage-cover-amount"
-                className="block text-sm font-medium text-gray-800 font-sans "
-              >
-                Mortgage Cover Amount
-              </label>
-              <input
-                id="Mortgage-cover-amount"
-                name="MortgageCoverAmount"
-                ref={mortgageCoverAmountRef} // Attach ref
-                type="text"
-                value={formData.mortgageCoverAmount ?? ""}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "" || !isNaN(parseInt(value))) {
-                    setFormData({
-                      ...formData,
-                      mortgageCoverAmount:
-                        value === "" ? null : parseInt(value),
-                    });
-                  } else {
-                    alert("Please enter a valid Mortgage cover amount.");
-                    e.target.value = "";
-                  }
-                }}
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Please enter a valid number"
-                  )
-                }
-                required
-                placeholder="Enter Mortgage Cover Amount"
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-              />
-            </div>        
-          </div>
-          {/* Serious Illness Cover */}
-          <div className="col-span-2 mt-4">
-            <label
-              htmlFor="serious-illness"
-              className="block text-sm font-medium text-gray-700 font-sans"
-            >
-              Serious Illness Cover
-            </label>
-            <div className="flex items-center space-x-4 mt-2">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="serious-illness"
-                  id="serious-illness"
-                  className="form-checkbox text-green-900"
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      seriousIllness: e.target.checked ? "Y" : "N",
-                      lifeOnly: "N",
-                    })
-                  }
-                  checked={formData.seriousIllness === "Y"}
-                />
-                <span className="ml-2 font-sans">Serious Illness</span>
-              </label>
-            </div>
-          </div>
+                {/* Term */}
+                <div className="flex-1 min-w-[185px]">
+                  <label
+                    htmlFor="policy-term"
+                    className="block text-sm font-medium text-gray-800 font-sans"
+                  >
+                    Term
+                  </label>
+                  <select
+                    id="policy-term"
+                    name="policy-term"
+                    value={formData.term || 0}
+                    className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        term: parseInt(e.target.value),
+                      })
+                    }
 
-          {/* Serious Illness Cover Type */}
-          {formData.seriousIllness === "Y" && (
-            <>
-              <div className="col-span-2 mt-6">
-                <label className="block text-sm font-medium text-gray-700 font-sans">
-                  Serious Illness Cover Type
+                  >
+                    <option value={0}>Select Term</option>
+                    {Array.from({ length: 36 }, (_, i) => i + 5).map((year) => (
+                      <option key={year} value={year}>
+                        {year} years
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Mortgage  Cover Amount */}
+                <div className="flex-1 min-w-[185px]">
+                  <label
+                    htmlFor="Mortgage-cover-amount"
+                    className="block text-sm font-medium text-gray-800 font-sans "
+                  >
+                    Mortgage Cover Amount
+                  </label>
+                  <input
+                    id="Mortgage-cover-amount"
+                    name="MortgageCoverAmount"
+                    ref={mortgageCoverAmountRef} // Attach ref
+                    type="text"
+                    value={formData.mortgageCoverAmount ?? ""}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      if (value === "" || !isNaN(parseInt(value))) {
+                        setFormData({
+                          ...formData,
+                          mortgageCoverAmount:
+                            value === "" ? null : parseInt(value),
+                        });
+                      } else {
+                        alert("Please enter a valid Mortgage cover amount.");
+                        e.target.value = "";
+                      }
+                    }}
+                    onInput={(e) =>
+                      (e.target as HTMLInputElement).setCustomValidity("")
+                    }
+                    onInvalid={(e) =>
+                      (e.target as HTMLInputElement).setCustomValidity(
+                        "Please enter a valid number"
+                      )
+                    }
+                    required
+                    placeholder="Enter Mortgage Cover Amount"
+                    className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+                  />
+                </div>
+              </div>
+              {/* Serious Illness Cover */}
+              <div className="col-span-2 mt-4">
+                <label
+                  htmlFor="serious-illness"
+                  className="block text-sm font-medium text-gray-700 font-sans"
+                >
+                  Serious Illness Cover
                 </label>
                 <div className="flex items-center space-x-4 mt-2">
                   <label className="flex items-center">
                     <input
                       type="checkbox"
+                      name="serious-illness"
+                      id="serious-illness"
                       className="form-checkbox text-green-900"
-                      name="sicType"
-                      value="Y"
                       onChange={(e) =>
                         setFormData({
                           ...formData,
-                          sicAccelerated: e.target.value === "Y" ? "Y" : "N",
+                          seriousIllness: e.target.checked ? "Y" : "N",
+                          lifeOnly: "N",
                         })
                       }
-                      checked={formData.sicAccelerated === "Y"}
-                      required
+                      checked={formData.seriousIllness === "Y"}
                     />
-                    <span className="ml-2 font-sans">Accelerated</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      className="form-checkbox text-green-900"
-                      name="sicType"
-                      value="N"
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          sicAccelerated: e.target.value === "N" ? "N" : "Y",
-                        })
-                      }
-                      checked={formData.sicAccelerated === "N"}
-                    />
-                    <span className="ml-2 font-sans">Standalone</span>
+                    <span className="ml-2 font-sans">Serious Illness</span>
                   </label>
                 </div>
               </div>
 
-              {/* Serious Illness Cover Amount */}
-              <div className="col-span-2 mt-4">
+              {/* Serious Illness Cover Type */}
+              {formData.seriousIllness === "Y" && (
+                <>
+                  <div className="col-span-2 mt-6">
+                    <label className="block text-sm font-medium text-gray-700 font-sans">
+                      Serious Illness Cover Type
+                    </label>
+                    <div className="flex items-center space-x-4 mt-2">
+                      <label className="flex items-center">
+                        <input
+                          type="checkbox"
+                          className="form-checkbox text-green-900"
+                          name="sicType"
+                          value="Y"
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              sicAccelerated: e.target.value === "Y" ? "Y" : "N",
+                            })
+                          }
+                          checked={formData.sicAccelerated === "Y"}
+                          required
+                        />
+                        <span className="ml-2 font-sans">Accelerated</span>
+                      </label>
+                      <label className="flex items-center">
+                        <input
+                          type="checkbox"
+                          className="form-checkbox text-green-900"
+                          name="sicType"
+                          value="N"
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              sicAccelerated: e.target.value === "N" ? "N" : "Y",
+                            })
+                          }
+                          checked={formData.sicAccelerated === "N"}
+                        />
+                        <span className="ml-2 font-sans">Standalone</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Serious Illness Cover Amount */}
+                  <div className="col-span-2 mt-4">
+                    <label
+                      htmlFor="illness-cover-amount"
+                      className="block text-sm font-medium text-gray-700 font-sans"
+                    >
+                      Serious Illness Cover Amount
+                    </label>
+                    <input
+                      id="illness-cover-amount"
+                      name="sicAmount"
+                      type="text"
+                      value={formData.sicAmount ?? ""}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        if (value === "" || !isNaN(parseInt(value))) {
+                          setFormData({
+                            ...formData,
+                            sicAmount: value === "" ? null : parseInt(value),
+                          });
+                        } else {
+                          alert(
+                            "Please enter a valid Serious Illness Cover amount."
+                          );
+                          e.target.value = "";
+                        }
+                      }}
+                      onInput={(e) =>
+                        (e.target as HTMLInputElement).setCustomValidity("")
+                      }
+                      onInvalid={(e) =>
+                        (e.target as HTMLInputElement).setCustomValidity(
+                          "Please enter a valid number"
+                        )
+                      }
+                      required
+                      placeholder="Enter Serious Illness Cover Amount"
+                      className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+                    />
+                  </div>
+                </>
+              )}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Full Name */}
+              <div>
                 <label
-                  htmlFor="illness-cover-amount"
+                  htmlFor="full-name"
                   className="block text-sm font-medium text-gray-700 font-sans"
                 >
-                  Serious Illness Cover Amount
+                  First Name
                 </label>
                 <input
-                  id="illness-cover-amount"
-                  name="sicAmount"
                   type="text"
-                  value={formData.sicAmount ?? ""}
+                  name="name"
+                  ref={nameRef} // Attach ref
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  required
+                  placeholder="Enter First Name"
+                  onInvalid={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity(
+                      "Enter first name here."
+                    )
+                  }
+                  onInput={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity("")
+                  }
+                  autoComplete="name"
+                  className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+                />
+              </div>
+
+              {/* lastName   */}
+              <div>
+                <label
+                  htmlFor="lastName"
+                  className="block text-sm font-medium text-gray-700 font-sans"
+                >
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  name="lastName"
+                  ref={nameRef} // Attach ref
+                  value={formData.lastName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, lastName: e.target.value })
+                  }
+                  required
+                  placeholder="Enter Last Name"
+                  onInvalid={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity(
+                      "Enter lastName here."
+                    )
+                  }
+                  onInput={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity("")
+                  }
+                  autoComplete="lastName"
+                  className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+                />
+              </div>
+
+              {/* Email Address */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 font-sans"
+                >
+                  Email Address
+                </label>
+                <input
+                  name="email"
+                  type="email"
+                  ref={emailRef} // Attach ref
+                  value={formData.email}
+                  onChange={(e) => {
+                    setFormData({ ...formData, email: e.target.value });
+                  }}
+                  required
+                  placeholder="Enter Email"
+                  onInvalid={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity(
+                      "Enter email here."
+                    )
+                  }
+                  onInput={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity("")
+                  }
+                  autoComplete="email"
+                  className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
+                />
+              </div>
+
+              {/* Phone Number */}
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 font-sans"
+                >
+                  Phone No.
+                </label>
+                <input
+                  name="phone"
+                  ref={phoneRef} // Attach ref
+                  autoComplete="tel-national"
+                  type="text"
+                  placeholder="Enter Phone No."
+                  value={formData.phone ?? ""}
                   onChange={(e) => {
                     const value = e.target.value;
-                    if (value === "" || !isNaN(parseInt(value))) {
+                    if (/^\d*$/.test(value)) {
                       setFormData({
                         ...formData,
-                        sicAmount: value === "" ? null : parseInt(value),
+                        phone: value,
                       });
                     } else {
-                      alert(
-                        "Please enter a valid Serious Illness Cover amount."
-                      );
-                      e.target.value = "";
+                      alert("Please enter a valid phone number.");
+                      (e.target as HTMLInputElement).value = "";
                     }
                   }}
                   onInput={(e) =>
@@ -878,169 +1035,32 @@ const QuoteForm = () => {
                   }
                   onInvalid={(e) =>
                     (e.target as HTMLInputElement).setCustomValidity(
-                      "Please enter a valid number"
+                      "Please enter a valid phone number"
                     )
                   }
                   required
-                  placeholder="Enter Serious Illness Cover Amount"
                   className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
                 />
               </div>
-            </>
-          )}
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Full Name */}
-            <div>
-              <label
-                htmlFor="full-name"
-                className="block text-sm font-medium text-gray-700 font-sans"
-              >
-                First Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                ref={nameRef} // Attach ref
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-                required
-                placeholder="Enter First Name"
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Enter first name here."
-                  )
-                }
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                autoComplete="name"
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-              />
+
             </div>
 
-             {/* lastName   */}
-            <div>
-              <label
-                htmlFor="lastName"
-                className="block text-sm font-medium text-gray-700 font-sans"
+            {/* Submit Button */}
+            <div className="mt-6">
+              <button
+                type="submit"
+                className="w-full py-3 text-white rounded-md font-semibold font-sans focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300"
+                style={{ backgroundColor: "#075c50" }}
+                onClick={handleSubmit}
               >
-                Last Name
-              </label>
-              <input
-                type="text"
-                name="lastName"
-                ref={nameRef} // Attach ref
-                value={formData.lastName}
-                onChange={(e) =>
-                  setFormData({ ...formData, lastName: e.target.value })
-                }
-                required
-                placeholder="Enter Last Name"
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Enter lastName here."
-                  )
-                }
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                autoComplete="lastName"
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-              />
+                Get Quote
+              </button>
             </div>
-
-            {/* Email Address */}
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 font-sans"
-              >
-                Email Address
-              </label>
-              <input
-                name="email"
-                type="email"
-                ref={emailRef} // Attach ref
-                value={formData.email}
-                onChange={(e) => {
-                  setFormData({ ...formData, email: e.target.value });
-                }}
-                required
-                placeholder="Enter Email"
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Enter email here."
-                  )
-                }
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                autoComplete="email"
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-              />
-            </div>
-
-            {/* Phone Number */}
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-gray-700 font-sans"
-              >
-                Phone No.
-              </label>
-              <input
-                name="phone"
-                ref={phoneRef} // Attach ref
-                autoComplete="tel-national"
-                type="text"
-                placeholder="Enter Phone No."
-                value={formData.phone ?? ""}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (/^\d*$/.test(value)) {
-                    setFormData({
-                      ...formData,
-                      phone: value,
-                    });
-                  } else {
-                    alert("Please enter a valid phone number.");
-                    (e.target as HTMLInputElement).value = "";
-                  }
-                }}
-                onInput={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity("")
-                }
-                onInvalid={(e) =>
-                  (e.target as HTMLInputElement).setCustomValidity(
-                    "Please enter a valid phone number"
-                  )
-                }
-                required
-                className="mt-2 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300 font-sans"
-              />
-            </div>
-    
+          </form>
+        </div>
       </div>
-       
-          {/* Submit Button */}
-          <div className="mt-6">
-            <button
-              type="submit"
-              className="w-full py-3 text-white rounded-md font-semibold font-sans focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300"
-              style={{ backgroundColor: "#075c50" }}
-              onClick={handleSubmit}
-            >
-              Get Quote
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
     }
-    </>
+  </>
   );
 };
 

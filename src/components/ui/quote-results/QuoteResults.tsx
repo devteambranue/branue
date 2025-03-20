@@ -10,7 +10,7 @@ import {
 import { faChild } from "@fortawesome/free-solid-svg-icons";
 import { faEuroSign, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
- 
+
 
 const QuoteResults = (props: {
   results: any; // Define specific types if possible
@@ -34,27 +34,27 @@ const QuoteResults = (props: {
 
   const bestCompany = type[0]?.Company
     ? sortCompaniesAsc(
-        type[0]?.Company.filter(
-          (company: Company) => company.Name !== "Friends First"
-        )
-      )[0]
+      type[0]?.Company.filter(
+        (company: Company) => company.Name !== "Friends First"
+      )
+    )[0]
     : sortCompaniesAsc(
-        type?.Company.filter(
-          (company: Company) => company.Name !== "Friends First"
-        )
-      )[0];
+      type?.Company.filter(
+        (company: Company) => company.Name !== "Friends First"
+      )
+    )[0];
 
   const allCompanyCompany = type[0]?.Company
     ? sortCompaniesAsc(
-        type[0]?.Company.filter(
-          (company: Company) => company.Name !== "Friends First"
-        )
+      type[0]?.Company.filter(
+        (company: Company) => company.Name !== "Friends First"
       )
+    )
     : sortCompaniesAsc(
-        type?.Company.filter(
-          (company: Company) => company.Name !== "Friends First"
-        )
-      );
+      type?.Company.filter(
+        (company: Company) => company.Name !== "Friends First"
+      )
+    );
 
   useEffect(() => {
     // Add email logic if needed
@@ -110,7 +110,9 @@ const QuoteResults = (props: {
             </p>
             <span className="text-black text-sm font-sans">(per month)</span>
             <button className="mt-4 bg-green-900 font-sans text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition">
-              PROCEED WITH QUOTE
+              <a href="/contact">
+                Find our more
+              </a>
             </button>
           </div>
         </div>
@@ -206,78 +208,78 @@ const QuoteResults = (props: {
       </div>
 
       {/* Graph Section */}
-        <div className="flex mt-8 w-full flex-col bg-white shadow-lg p-6 rounded-lg">
-          <h2 className="text-2xl font-sans mb-6"> {type[0]?.Desc ? type[0]?.Desc : type?.Desc}</h2>
-          <div className="flex flex-wrap items-center justify-between w-full bg-green-900 font-sans text-sm sm:text-base md:text-lg lg:text-lg py-3 px-2 sm:px-4 text-white mb-4">
-            <div className="w-1/4 text-left">
-              <span>Company</span>
-            </div>
-            <div className="flex-1 text-center">
-              <span>Graph (Convertible Price)</span>
-            </div>
-            <div className="w-1/6 text-right">
-              <span>Convertible Price</span>
-            </div>
-            <div className="w-1/6 text-right">
-              <span>Level Price</span>
-            </div>
+      <div className="flex mt-8 w-full flex-col bg-white shadow-lg p-6 rounded-lg">
+        <h2 className="text-2xl font-sans mb-6"> {type[0]?.Desc ? type[0]?.Desc : type?.Desc}</h2>
+        <div className="flex flex-wrap items-center justify-between w-full bg-green-900 font-sans text-sm sm:text-base md:text-lg lg:text-lg py-3 px-2 sm:px-4 text-white mb-4">
+          <div className="w-1/4 text-left">
+            <span>Company</span>
           </div>
-          <div className="flex flex-col space-y-4">
-            {allCompanyCompany.map((company: Company, companyIndex: number) => {
-              const convertiblePrice = parseFloat(company.SConvertible) || 0;
-              const levelPrice = parseFloat(company.SLevel) || 0;
-              const maxPrice = 200; // Adjusted for consistent scaling
-
-              // Array of colors for the bars
-              const colors = [
-                "#4CAF50",
-                "#2196F3",
-                "#1a584f",
-                "#5ae9d4",
-                "#FF5722",
-                "#9C27B0",
-                "#FFC107",
-                "#00BCD4",
-              ];
-              const barColor = colors[companyIndex % colors.length]; // Rotate colors based on index
-
-              return (
-                <div
-                  key={companyIndex}
-                  className="flex items-center justify-between gap-4 pl-3 pr-3"
-                >
-                  <div className="w-1/4 text-left">
-                    <span className="text-gray-800 font-sans text-sm sm:text-base">
-                      {company.Name}
-                    </span>
-                  </div>
-                  <div className="flex-1">
-                    <div
-                      className="h-5"
-                      style={{
-                        width: `${(convertiblePrice / maxPrice) * 100}%`,
-                        backgroundColor: barColor,
-                      }}
-                    ></div>
-                  </div>
-                  <div className="w-1/6 text-right">
-                    <span className="text-gray-900 font-sans text-sm sm:text-base">
-                      €
-                      {company.SConvertible !== "-"
-                        ? company.SConvertible
-                        : "N/A"}
-                    </span>
-                  </div>
-                  <div className="w-1/6 text-right">
-                    <span className="text-gray-900 font-sans text-sm sm:text-base">
-                      €{company.SLevel !== "-" ? company.SLevel : "N/A"}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="flex-1 text-center">
+            <span>Graph (Convertible Price)</span>
+          </div>
+          <div className="w-1/6 text-right">
+            <span>Convertible Price</span>
+          </div>
+          <div className="w-1/6 text-right">
+            <span>Level Price</span>
           </div>
         </div>
+        <div className="flex flex-col space-y-4">
+          {allCompanyCompany.map((company: Company, companyIndex: number) => {
+            const convertiblePrice = parseFloat(company.SConvertible) || 0;
+            const levelPrice = parseFloat(company.SLevel) || 0;
+            const maxPrice = 200; // Adjusted for consistent scaling
+
+            // Array of colors for the bars
+            const colors = [
+              "#4CAF50",
+              "#2196F3",
+              "#1a584f",
+              "#5ae9d4",
+              "#FF5722",
+              "#9C27B0",
+              "#FFC107",
+              "#00BCD4",
+            ];
+            const barColor = colors[companyIndex % colors.length]; // Rotate colors based on index
+
+            return (
+              <div
+                key={companyIndex}
+                className="flex items-center justify-between gap-4 pl-3 pr-3"
+              >
+                <div className="w-1/4 text-left">
+                  <span className="text-gray-800 font-sans text-sm sm:text-base">
+                    {company.Name}
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <div
+                    className="h-5"
+                    style={{
+                      width: `${(convertiblePrice / maxPrice) * 100}%`,
+                      backgroundColor: barColor,
+                    }}
+                  ></div>
+                </div>
+                <div className="w-1/6 text-right">
+                  <span className="text-gray-900 font-sans text-sm sm:text-base">
+                    €
+                    {company.SConvertible !== "-"
+                      ? company.SConvertible
+                      : "N/A"}
+                  </span>
+                </div>
+                <div className="w-1/6 text-right">
+                  <span className="text-gray-900 font-sans text-sm sm:text-base">
+                    €{company.SLevel !== "-" ? company.SLevel : "N/A"}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };
