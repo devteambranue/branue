@@ -19,7 +19,7 @@ export default async function sendEmail(req, res) {
   if (req.body.type === "quotes") {
     mailData = {
       from: "allison@branue.com",
-      to: "gemma.maguire09@gmail.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
+      to: "gemma@fusion-finance.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
       subject: "Email From Fusion Finance",
       html: `
       <div style="width: 80%; margin: 20px auto; font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
