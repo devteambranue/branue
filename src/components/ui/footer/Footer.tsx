@@ -165,7 +165,7 @@ export default function Footer() {
       {/* Footer Bottom Section */}
       <div className="bg-gray-300 py-8 text-center">
         <div className="font-sans text-sm text-gray-600">
-          2024 © Fusion Finance. All Rights Reserved.
+          2025 © Fusion Finance. All Rights Reserved.
         </div>
         <div className="flex justify-center items-center mt-4">
           <a

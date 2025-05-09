@@ -18,8 +18,8 @@ export default async function sendEmail(req, res) {
   let mailData;
   if (req.body.type === "quotes") {
     mailData = {
-      from: "allison@branue.com",
-      to: "gemma.maguire09@gmail.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
+      from: "info@fusion-finance.com", //allison@branue.com
+      to: "info@fusion-finance.com", // gemma.maguire09@gmail.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
       subject: "Email From Fusion Finance",
       html: `
       <div style="width: 80%; margin: 20px auto; font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
@@ -79,8 +79,8 @@ export default async function sendEmail(req, res) {
       `}
   } else {
     mailData = {
-      from: "allison@branue.com",
-      to: "gemma.maguire09@gmail.com", // info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
+      from: "info@fusion-finance.com", //allison@branue.com
+      to: "info@fusion-finance.com", // gemma.maguire09@gmail.com info@fusion-finance.com gemma@fusion-finance.com sudarashanlinux01@gmail.com
       subject: "Email From Fusion Finance",
       html: `
       <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
