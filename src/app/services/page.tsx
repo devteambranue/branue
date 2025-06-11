@@ -205,7 +205,7 @@ export default function Services() {
                 </span>
               </Link>
             </div>
-            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
+            <div className="p-4 flex flex-col items-center justify-center text-center text-black text-xl">
               <h1 className="customFontSize">MORTGAGE PROTECTION</h1>
               <h1 className="customFontSize">LIFE INSURANCE</h1>
               <h1 className="customFontSize">FAMILY PROTECTION</h1>

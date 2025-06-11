@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="bg-gray-100 py-12 ">
         <div className="container">
           <div className="flex flex-col items-center">
-            <h1 className="text-3xl font-sans mb-4">Our Valued Partners</h1>
+            <h1 className="text-3xl font-sans mb-4 text-[#fe7db0]">Our Valued Partners</h1>
             <hr className="w-1/5 border-t-2 border-gray-500 mb-8" />
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
               <div className="w-full md:w-auto flex justify-center my-4 md:my-0">
@@ -82,7 +82,7 @@ export default function Footer() {
       </div>
 
       {/* Contact and Services Section */}
-      <div className="bg-gray-200 py-12">
+      <div className="bg-gray-200 py-12 bg-[#fe7db0]">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div className="text-center mb-10">
             <h1 className="underline text-2xl font-sans mb-2 text-gray-600">

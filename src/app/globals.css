@@ -66,18 +66,51 @@
   }
 
   @font-face {
+    font-family: "Brandon Grotesque Bold";
+    src: url("/fonts/Brandon_bld.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    /* Add more font formats if needed */
+    /* Specify the path to the font files relative to the root directory */
+  }
+
+  @font-face {
     font-family: "Brandon Grotesque";
-    src: url("../../public/fonts/Brandon_bld.otf") format("opentype");
+    src: url("/fonts/Brandon_reg.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
     /* Add more font formats if needed */
     /* Specify the path to the font files relative to the root directory */
   }
 
   @font-face {
     font-family: "Shadows Into Light";
-    src: url("../../public/fonts/ShadowsIntoLight-Regular.ttf") format("truetype");
+    src: url("/fonts/ShadowsIntoLight-Regular.ttf") format("truetype");
     /* Add more font formats if needed */
     /* Specify the path to the font files relative to the root directory */
   }
+
+  @font-face {
+  font-family: 'Optima woff';
+  src: url("/fonts/Optima.woff") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+  @font-face {
+  font-family: 'Optima ttf';
+  src: url("/fonts/OPTIMA.TTF") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+  @font-face {
+  font-family: 'Optima Bold';
+  src: url("/fonts/OPTIMA_B.TTF") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  }  
+
 }
 
 @layer base {
@@ -87,5 +120,26 @@
 
   body {
     @apply bg-background text-foreground min-h-full;
+    font-family: "Optima ttf";
+  }
+
+  .brandon-grotesque-bld{
+    font-family: "Brandon Grotesque Bold", sans-serif;
+  }
+
+  .brandon-grotesque{
+    font-family: "Brandon Grotesque", sans-serif;
+  }
+
+  .optima-woff{
+    font-family: "Optima woff";
+  }
+
+  .optima-ttf{
+    font-family: "Optima ttf";
+  }  
+
+  .optima-bold{
+    font-family: "Optima Bold";
   }
 }

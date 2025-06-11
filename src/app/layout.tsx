@@ -31,7 +31,7 @@ export default function RootLayout({
         <meta name="description" content={metadata.description || ""} />
         <title>{String(metadata.title)}</title>
       </Head>
-      <body className={inter.className}>
+      <body className="optima-ttf">
         <ResultsProvider>
           <NavBar />
           {children}

@@ -7,7 +7,8 @@ import blogImage2 from "../../../public/Fusion_pics/Cancer.png";
 import blogImage3 from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-45.jpg";
 import blogImage4 from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-47.jpg";
 import blogImage5 from "../../../public/Fusion_pics/Ironman703.png";
-import "./news.css"
+import "./news.css";
+import "../../app/globals.css";
 
 export default function News() {
   const [showReadMore, setShowReadMore] = useState(false);
@@ -51,7 +52,7 @@ export default function News() {
 
   return (
     <>
-      <main className="font-sans flex min-h-screen flex-col items-center">
+      <main className="flex min-h-screen flex-col items-center">
 
         <div className="w-full text-center items-center justify-center">
           <div

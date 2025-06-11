@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ResultsContext } from "@/components/context/cache";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import "../../../../src/app/globals.css";
 
 export default function NavBar() {
   const { result, setResult } = useContext(ResultsContext);
@@ -31,14 +32,14 @@ export default function NavBar() {
       <div className="bg-gray-100 grid grid-cols-1 lg:grid-cols-3 p-4 lg:gap-3 px-4">
         <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:items-center">
           <div className="text-center lg:text-left">
-            <div className="text-lg font-bold font-sans">086 101 3481</div>
-            <div className="font-semibold font-sans">
+            <div className="text-lg font-bold brandon-grotesque-bld">086 101 3481</div>
+            <div className="font-semibold ">
               Marie Davey - Shanbally, Clogheen, Co. Tipperary E21WN30
             </div>
           </div>
           <div className="text-center lg:text-left">
-            <div className="text-lg font-bold font-sans">085 827 5697</div>
-            <div className="font-semibold font-sans">
+            <div className="text-lg font-bold brandon-grotesque-bld">085 827 5697</div>
+            <div className="font-semibold">
               Gemma Maguire - Rustic Villa, Pearse Rd, Co. Sligo F91DEC3
             </div>
           </div>
@@ -125,7 +126,7 @@ export default function NavBar() {
 
       <div className="border-8 border-[#5ae9d4] bg-[#5ae9d4]"></div>
 
-      <div className="bg-gray-100 min-h-24 flex flex-wrap items-center justify-between p-2">
+      <div className="bg-gray-100 brandon-grotesque-bld min-h-24 flex flex-wrap items-center justify-between p-2">
         <div className="flex items-center lg:hidden">
           <button
             className="inline-flex items-center p-2 rounded-lg text-black"
@@ -165,14 +166,14 @@ export default function NavBar() {
           </button>
         </div>
 
-        <div className="hidden lg:flex lg:items-center lg:justify-start lg:space-x-4 lg:mr-auto">
+        <div className="hidden lg:flex lg:items-center lg:justify-start lg:space-x-4 lg:mr-auto brandon-grotesque-bld">
           <Link
             href="/quote"
             onClick={() => {
               handleClick();
               handleLinkClick();
             }}
-            className="bg-[#1a584f] border-2 rounded-full py-2 px-4 text-white text-sm font-sans lg:py-4 lg:px-14 lg:text-2xl"
+            className="bg-[#1a584f] border-2 rounded-full py-2 px-4 text-white text-sm lg:py-4 lg:px-14 lg:text-2xl"
           >
             Quote
           </Link>
@@ -186,7 +187,7 @@ export default function NavBar() {
             <Link
               href="/"
               className={`${isActive("/") ? "text-[#1a584f]" : "text-black"
-                } font-sans m-4 text-2xl`}
+                } m-4 text-2xl`}
               onClick={handleLinkClick}
             >
               Home
@@ -194,7 +195,7 @@ export default function NavBar() {
             <Link
               href="/services"
               className={`${isActive("/services") ? "text-[#1a584f]" : "text-black"
-                } font-sans m-4 text-2xl`}
+                } m-4 text-2xl`}
               onClick={handleLinkClick}
             >
               Services
@@ -202,7 +203,7 @@ export default function NavBar() {
             <Link
               href="/about"
               className={`${isActive("/about") ? "text-[#1a584f]" : "text-black"
-                } font-sans m-4 text-2xl`}
+                } m-4 text-2xl`}
               onClick={handleLinkClick}
             >
               About
@@ -210,7 +211,7 @@ export default function NavBar() {
             <Link
               href="/news"
               className={`${isActive("/news") ? "text-[#1a584f]" : "text-black"
-                } font-sans m-4 text-2xl`}
+                } m-4 text-2xl`}
               onClick={handleLinkClick}
             >
               News
@@ -218,7 +219,7 @@ export default function NavBar() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 lg:space-x-4 lg:ml-auto">
+        <div className="flex brandon-grotesque-bld items-center space-x-4 lg:space-x-4 lg:ml-auto">
           <div className="lg:hidden flex items-center justify-end">
             <Link
               href="/quote"
@@ -226,21 +227,21 @@ export default function NavBar() {
                 handleClick();
                 handleLinkClick();
               }}
-              className="bg-[#1a584f] border-2 rounded-full py-2 px-4 text-white text-sm font-sans"
+              className="bg-[#1a584f] border-2 rounded-full py-2 px-4 text-white text-sm brandon-grotesque-bld"
             >
               Quote
             </Link>
           </div>
           <Link
             href="/login"
-            className="font-sans text-black bg-[#fff] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl"
+            className="text-black bg-[#fff] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl brandon-grotesque-bld"
             onClick={handleLinkClick}
           >
             Login
           </Link>
           <Link
             href="/contact"
-            className="font-sans text-black bg-[#5ae9d4] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl"
+            className="brandon-grotesque-bld text-black bg-[#5ae9d4] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl"
             onClick={handleLinkClick}
           >
             Contact
