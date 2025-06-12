@@ -103,7 +103,7 @@ export default function News() {
           </button>
 
           <div className="p-4 bg-[#d3d3d3]">
-            <h2 style={{ textDecoration: "underline" }} className="mt-2 text-3xl font-bold text-gray-900">
+            <h2 style={{ textDecoration: "underline" }} className="snell-roundhand mt-2 text-3xl font-bold text-gray-900">
               Ironman 70.3 Italy Emilia-Romagna Finisher!
             </h2>
             <div className="blogDescription cormorant-infant text-xl">

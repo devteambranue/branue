@@ -15,8 +15,13 @@ import "./home.css";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <main className="paddng">
-        <div className="video-container" >
+      <main>
+        <div className="video-container relative h-auto w-full flex items-center justify-center z-0">
+          <Image  src="/Fusion-Finance-Web-Ready-36(5).png" 
+                  width={600} 
+                  height={300} 
+                  alt="header-banner-backdrop" 
+                  className="w-full relative"/>
           <Carousel />
         </div >
       </main >

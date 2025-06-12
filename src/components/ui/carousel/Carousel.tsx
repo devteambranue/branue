@@ -40,7 +40,7 @@ export default function Carousel() {
   }, [active]);
 
   return (
-    <div className="w-full text-center flex overflow-hidden">
+    <div className="text-center flex overflow-hidden absolute z-10 shadow-xl rounded-xl w-lg max-w-xl">
       <div className="transition-all duration-150 delay-300 ease-in-out flex lg:h-full w-full">
         <div className="relative flex flex-col lg:h-full w-full">
           {items.map((item, index) => (
@@ -72,7 +72,7 @@ export default function Carousel() {
                   <video
                     style={{
                       height: "100%",
-                      width: "50%",
+                      width: "100%",
                       display: "inline-block",
                     }}
                     src={item.videoUrl} // Display video for the last item

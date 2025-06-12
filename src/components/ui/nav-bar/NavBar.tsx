@@ -1,11 +1,13 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { ResultsContext } from "@/components/context/cache";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import "../../../../src/app/globals.css";
+import Divider from "../Divider/Divider";
+
 
 export default function NavBar() {
   const { result, setResult } = useContext(ResultsContext);
@@ -13,6 +15,7 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const isActive = (href: string) => pathname === href;
   const imageSize = 40;
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   const handleClick = () => {
     // console.log("result", result);
@@ -27,18 +30,39 @@ export default function NavBar() {
     setIsOpen(false);
   };
 
+
+  useEffect(() => {
+  const mediaQuery: MediaQueryList = window.matchMedia("(max-width: 1023px)");
+
+  const handleResize = (e: MediaQueryListEvent): void => {
+    setIsLargeScreen(e.matches);
+  }
+
+  setIsLargeScreen(mediaQuery.matches);
+
+  mediaQuery.addEventListener('change', handleResize);
+
+  return() => {
+    mediaQuery.removeEventListener('change', handleResize)
+  }
+
+  }, [isLargeScreen, setIsLargeScreen]);
+
   return (
     <nav className="w-full">
       <div className="bg-gray-100 grid grid-cols-1 lg:grid-cols-3 p-4 lg:gap-3 px-4">
         <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:items-center">
           <div className="text-center lg:text-left">
-            <div className="text-lg font-bold brandon-grotesque-bld">086 101 3481</div>
+            <div className="text-lg brandon-grotesque-bld">086 101 3481</div>
             <div className="font-semibold ">
               Marie Davey - Shanbally, Clogheen, Co. Tipperary E21WN30
             </div>
           </div>
+          <div className="flex">
+            <Divider orientation={!isLargeScreen ? "vertical" : "horizontal"}/>
+          </div>
           <div className="text-center lg:text-left">
-            <div className="text-lg font-bold brandon-grotesque-bld">085 827 5697</div>
+            <div className="text-lg brandon-grotesque-bld">085 827 5697</div>
             <div className="font-semibold">
               Gemma Maguire - Rustic Villa, Pearse Rd, Co. Sligo F91DEC3
             </div>
