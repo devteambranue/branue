@@ -265,7 +265,7 @@ export default function Services() {
             <div className="relative">
               <div className="image-container">
                 <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-47.jpg"
+                  src="/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg"
                   alt="Card Image 2"
                   width={600}
                   height={600}

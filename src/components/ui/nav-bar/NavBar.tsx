@@ -35,10 +35,10 @@ export default function NavBar() {
   const mediaQuery: MediaQueryList = window.matchMedia("(max-width: 1023px)");
 
   const handleResize = (e: MediaQueryListEvent): void => {
-    setIsLargeScreen(e.matches);
+    setIsLargeScreen(!e.matches);
   }
 
-  setIsLargeScreen(mediaQuery.matches);
+  setIsLargeScreen(!mediaQuery.matches);
 
   mediaQuery.addEventListener('change', handleResize);
 
@@ -59,7 +59,7 @@ export default function NavBar() {
             </div>
           </div>
           <div className="flex">
-            <Divider orientation={!isLargeScreen ? "vertical" : "horizontal"}/>
+            <Divider width={!isLargeScreen ? 70 : 1} height={!isLargeScreen ? 1 : 70} color="#5ae9c4"/>
           </div>
           <div className="text-center lg:text-left">
             <div className="text-lg brandon-grotesque-bld">085 827 5697</div>

@@ -4,11 +4,7 @@
   max-width: 100%;
   overflow: hidden;
   margin: auto;
-  padding: 1rem;
-}
-.testimonialSection {
-  width: 100%;
-  max-width: 100%; /* Fixed width */
+  padding: 0.5rem;
 }
 .testimonial-container {
   display: flex;
@@ -20,7 +16,7 @@
 
 .testimonial {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   transition: opacity 0.5s ease-in-out;
   width: 100%;
 }

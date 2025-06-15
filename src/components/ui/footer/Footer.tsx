@@ -82,7 +82,7 @@ export default function Footer() {
       </div>
 
       {/* Contact and Services Section */}
-      <div className="bg-gray-200 py-12 bg-[#4B4145]">
+      <div className="py-12 bg-[#4B4145]">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div className="text-center mb-10">
             <h1 className="underline text-2xl font-sans mb-2 text-gray-600">

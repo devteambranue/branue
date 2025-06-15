@@ -68,20 +68,20 @@ const TestimonialSlider: React.FC = () => {
   };
 
   return (
-    <div className="testimonial-slider pb-10">
-      <div className="testimonial-container">
+    <div className="testimonial-slider p-10 flex flex-col items-start justify-center">
+      <div className="testimonial-container -mt-8 -mb-6">
         <div
-          className={`testimonial ${transitioning ? "fade-out" : "fade-in"}`}
+          className={`testimonial ${transitioning ? "fade-out" : "fade-in"} flex flex-col text-balance items-start`}
         >
-          <p className="cormorant-infant text-xl italic text-black">
+          <p className="cormorant-infant text-xl italic text-black text-left w-3/4 max-w-3/4 text-balance">
             {testimonials[currentIndex].quote}
           </p>
-          <h4 className="mt-2 font-semibold text-[#1a584f]">
+          <h4 className="mt-2 font-semibold text-[#1a584f] text-left">
             {testimonials[currentIndex].author}
           </h4>
         </div>
       </div>
-      <div className="dots">
+      <div className="dots pl-1 -mt-5">
         {testimonials.map((testimonial, index) => (
           <button
             key={index}

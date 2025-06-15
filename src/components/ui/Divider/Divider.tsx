@@ -1,15 +1,16 @@
+"use client";
 
 interface DividerProps{
-    orientation: string;
+    width: number;
+    height: number;
+    color: string;
 }
-export default function Divider({orientation}: DividerProps) {
+export default function Divider({width, height, color}: DividerProps) {
 
     return(
-        <>
-            {orientation.toLocaleLowerCase() === "vertical" 
-            ? <div className={`w-0.5 h-20 bg-[#5ae9c4] mr-10`}/> 
-            : <div className={`w-20 h-0.5 bg-[#5ae9c4] mr-10`}/>}
-        </>
-            
+            <div className={`bg-[${color}] mr-10`} style={{
+                width: `${width}px`,
+                height: `${height}px`
+            }}/>
     );
 }
