@@ -40,7 +40,7 @@ export default function Carousel() {
   }, [active]);
 
   return (
-    <div className="text-center flex overflow-hidden absolute z-10 shadow-xl rounded-xl w-lg max-w-lg">
+    <div className="text-center flex overflow-hidden absolute z-10 shadow-xl rounded-xl w-2xl max-w-2xl">
       <div className="transition-all duration-150 delay-300 ease-in-out flex lg:h-full w-full">
         <div className="relative flex flex-col lg:h-full w-full">
           {items.map((item, index) => (

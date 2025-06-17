@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ResultsContext } from "@/components/context/cache";
 import { useContext } from "react";
 import Image from "next/image";
+import Divider from "../Divider/Divider";
 
 export default function Footer() {
   const { result, setResult } = useContext(ResultsContext);
@@ -20,7 +21,9 @@ export default function Footer() {
         <div className="container">
           <div className="flex flex-col items-center">
             <h1 className="text-3xl font-sans mb-4 text-[#fe7db0]">Our Valued Partners</h1>
-            <hr className="w-1/5 border-t-2 border-gray-500 mb-8" />
+            <div className="mb-8">
+              <Divider width={150} height={0.5} color="#5ae9d4"/>
+            </div>
             <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
               <div className="w-full md:w-auto flex justify-center my-4 md:my-0">
                 <Image
@@ -85,11 +88,11 @@ export default function Footer() {
       <div className="py-12 bg-[#4B4145]">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div className="text-center mb-10">
-            <h1 className="underline text-2xl font-sans mb-2 text-gray-600">
+            <h1 className=" text-2xl optima-ttf mb-2 text-black">
               Regulatory Information
             </h1>
             <div className="flex flex-col items-center">
-              <p className="font-sans text-lg">
+              <p className="optima-ttf text-lg">
                 Marie Davey and Gemma Maguire t/a Fusion Finance are regulated
                 by the Central Bank of Ireland.
               </p>
@@ -98,19 +101,19 @@ export default function Footer() {
 
           {/* Contact Section */}
           <div className="text-center">
-            <h1 className="underline text-2xl font-sans mb-4 text-gray-600">
+            <h1 className=" text-2xl optima-ttf mb-4 text-black">
               Contact Us
             </h1>
             <div className="flex flex-col items-center">
-              <p className="font-sans uppercase">Call Us:</p>
-              <p className="font-sans mt-2">
+              <p className="optima-ttf uppercase">Call Us:</p>
+              <p className="optima-ttf mt-2">
                 Marie - <a href="tel:086 101 3481">086 101 3481</a>
               </p>
-              <p className="font-sans">
+              <p className="optima-ttf">
                 Gemma - <a href="tel:085 827 5697">085 827 5697</a>
               </p>
-              <p className="font-sans uppercase mt-4">Email Us:</p>
-              <p className="font-sans mt-2">
+              <p className="optima-ttf uppercase mt-4">Email Us:</p>
+              <p className="optima-ttf mt-2">
                 <a href="mailto:info@fusion-finance.com">
                   info@fusion-finance.com
                 </a>
@@ -120,7 +123,7 @@ export default function Footer() {
 
           {/* Useful Info Section */}
           <div className="text-center">
-            <h1 className="underline text-2xl font-sans mb-4 text-gray-600">
+            <h1 className="text-2xl optima-ttf mb-4 text-black">
               Useful Info
             </h1>
             <div className="flex flex-col items-center">
@@ -135,7 +138,7 @@ export default function Footer() {
               </Link> */}
               <Link
                 href="https://fusion-finance.com/pdf/Terms-of-Business-For-Fusion-Finance.pdf"
-                className="font-sans mb-2"
+                className="optima-ttf mb-2"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -143,7 +146,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="https://fusion-finance.com/pdf/Fusion-Finance-Data-Protection.pdf"
-                className="font-sans mb-2"
+                className="optima-ttf mb-2"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -151,7 +154,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="https://fusion-finance.com/pdf/commission-term.pdf"
-                className="font-sans mb-2"
+                className="optima-ttf mb-2"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -163,8 +166,8 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom Section */}
-      <div className="bg-gray-300 py-8 text-center">
-        <div className="font-sans text-sm text-gray-600">
+      <div className="bg-black py-8 text-center">
+        <div className="optima-ttf text-sm text-gray-600">
           2025 © Fusion Finance. All Rights Reserved.
         </div>
         <div className="flex justify-center items-center mt-4">

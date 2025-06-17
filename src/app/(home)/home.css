@@ -106,12 +106,11 @@
   z-index: -1;
 } */
 
-.image-container {
+/*  .image-container {
   position: relative;
   width: 100%;
   padding-top: 75%;
-  /* This gives a 4:3 aspect ratio; adjust as needed */
-}
+} */
 
 .image-container img {
   position: absolute;

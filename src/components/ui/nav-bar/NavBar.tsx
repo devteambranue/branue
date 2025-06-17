@@ -58,8 +58,8 @@ export default function NavBar() {
               Marie Davey - Shanbally, Clogheen, Co. Tipperary E21WN30
             </div>
           </div>
-          <div className="flex">
-            <Divider width={!isLargeScreen ? 70 : 1} height={!isLargeScreen ? 1 : 70} color="#5ae9c4"/>
+          <div className={`flex ${isLargeScreen && "mr-10"}`}>
+            <Divider width={!isLargeScreen ? 70 : 1} height={!isLargeScreen ? 1 : 70} color="#5ae9d4"/>
           </div>
           <div className="text-center lg:text-left">
             <div className="text-lg brandon-grotesque-bld">085 827 5697</div>
@@ -146,9 +146,24 @@ export default function NavBar() {
             />
           </a>
         </div>
+
+        <div className="hidden lg:flex absolute right-6 top-[130px] lg:items-center lg:justify-start lg:space-x-4 lg:mr-auto brandon-grotesque-bld">
+          <Link
+            href="/quote"
+            onClick={() => {
+              handleClick();
+              handleLinkClick();
+            }}
+            className="bg-[#fe7db0] border-none rounded-full py-2 px-2 text-black text-sm lg:py-3 lg:px-10 lg:text-2xl"
+          >
+            Quotation
+          </Link>
+        </div>
       </div>
 
-      <div className="border-8 border-[#5ae9d4] bg-[#5ae9d4]"></div>
+      <div className="border-8 border-[#5ae9d4] bg-[#5ae9d4]">
+        {/** replace with divider */}
+      </div>
 
       <div className="bg-gray-100 brandon-grotesque-bld min-h-24 flex flex-wrap items-center justify-between p-2">
         <div className="flex items-center lg:hidden">
@@ -190,24 +205,13 @@ export default function NavBar() {
           </button>
         </div>
 
-        <div className="hidden lg:flex lg:items-center lg:justify-start lg:space-x-4 lg:mr-auto brandon-grotesque-bld">
-          <Link
-            href="/quote"
-            onClick={() => {
-              handleClick();
-              handleLinkClick();
-            }}
-            className="bg-[#1a584f] border-2 rounded-full py-2 px-4 text-white text-sm lg:py-4 lg:px-14 lg:text-2xl"
-          >
-            Quote
-          </Link>
-        </div>
-
         <div
           className={`${isOpen ? "block" : "hidden"
             } w-full lg:flex lg:w-auto lg:items-center lg:justify-center`}
         >
-          <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center">
+          <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center lg:ml-[500px]">
+            {/** margin left needs to be made responsive */}
+
             <Link
               href="/"
               className={`${isActive("/") ? "text-[#1a584f]" : "text-black"
@@ -241,36 +245,26 @@ export default function NavBar() {
               News
             </Link>
           </div>
-        </div>
-
-        <div className="flex brandon-grotesque-bld items-center space-x-4 lg:space-x-4 lg:ml-auto">
-          <div className="lg:hidden flex items-center justify-end">
+          <div className="flex absolute brandon-grotesque-bld items-center space-x-4 lg:space-x-4 right-6">
             <Link
-              href="/quote"
-              onClick={() => {
-                handleClick();
-                handleLinkClick();
-              }}
-              className="bg-[#1a584f] border-2 rounded-full py-2 px-4 text-white text-sm brandon-grotesque-bld"
+              href="/login"
+              className="text-black bg-[#fff] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl brandon-grotesque-bld"
+              onClick={handleLinkClick}
             >
-              Quote
+              Login
+            </Link>
+            <Link
+              href="/contact"
+              className="brandon-grotesque-bld text-black bg-[#5ae9d4] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl"
+              onClick={handleLinkClick}
+            >
+              Contact
             </Link>
           </div>
-          <Link
-            href="/login"
-            className="text-black bg-[#fff] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl brandon-grotesque-bld"
-            onClick={handleLinkClick}
-          >
-            Login
-          </Link>
-          <Link
-            href="/contact"
-            className="brandon-grotesque-bld text-black bg-[#5ae9d4] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl"
-            onClick={handleLinkClick}
-          >
-            Contact
-          </Link>
+
         </div>
+
+        
       </div>
     </nav>
   );

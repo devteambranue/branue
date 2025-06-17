@@ -1,12 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import "./services.css";
 import bannerImageService from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-31.jpg";
+import Divider from "@/components/ui/Divider/Divider";
 
 export default function Services() {
   return (
     <>
-      <main className="font-sans flex min-h-screen min-w-screen flex-col items-center mt-6">
+      <main className="optima-ttf">
         {/* <div className="w-full text-center items-center justify-center">
           <div
             id="banner-area"
@@ -187,8 +190,19 @@ export default function Services() {
           </div>
         </div> */}
 
-        <div className="flex flex-col md:flex-row justify-center min-w-[100%]">
-          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
+        <div className="flex min-h-screen min-w-screen flex-col items-center p-60 pt-0">
+          <div className="w-full container flex flex-col justify-center py-10 pb-0 text-center md:text-left px-5">
+          <h1 className="lg:text-4xl text-[#fe7db0] text-2xl text-center optima-ttf">
+            Our Services
+          </h1>
+          <div className="flex justify-center mb-10">
+            <Divider width={150} height={0.5} color="#5ae9d4"/>
+          </div>
+          <p className="optima-ttf text-black text-center ">Ongoing support from our specialised Trade and <br/>Customer Experience teams.</p>
+        </div>
+
+        <div className="flex flex-row justify-center optima-ttf min-w-[100%]">
+          <div className="flex-1 bg-white rounded-lg overflow-hidden m-5">
             <div className="relative">
               <div className="image-container">
                 <Image
@@ -199,46 +213,56 @@ export default function Services() {
                   className="w-full object-cover"
                 />
               </div>
-              <Link href="/services/financial-security" className="absolute inset-0 flex items-end justify-center">
-                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
-                  See More {">"} {">"}
-                </span>
-              </Link>
             </div>
-            <div className="p-4 flex flex-col items-center justify-center text-center text-black text-xl">
+            <div className="p-4 flex flex-col items-center justify-center  text-center text-black text-xl">
               <h1 className="customFontSize">MORTGAGE PROTECTION</h1>
               <h1 className="customFontSize">LIFE INSURANCE</h1>
               <h1 className="customFontSize">FAMILY PROTECTION</h1>
             </div>
+            <div className="p-10 flex flex-col items-center justify-center  text-center text-black">
+              <p>
+                Explore the advantages of Mortgage Protection. Watch our concise video to learn more.
+              </p>
+            </div>
+              <Link href="/services/financial-security" className="inset-0 flex items-end justify-center">
+                <span className="bg-[#5ae9d4] hover:font-medium text-black py-2 px-4 rounded-full">
+                  See More {">"} {">"}
+                </span>
+              </Link>
           </div>
 
-          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
+          <div className="flex-1 bg-white rounded-lg overflow-hidden m-5">
             <div className="relative">
               <div className="image-container">
                 <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
+                  src="/Fusion_pics/Fusion Finance Web-Ready-31(2).jpg"
                   alt="Card Image 2"
                   width={600}
                   height={600}
                   className="w-full object-cover"
                 />
               </div>
-              <Link href="/services/income-protection" className="absolute inset-0 flex items-end justify-center">
-                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
-                  See More {">"} {">"}
-                </span>
-              </Link>
             </div>
-            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
+            <div className="p-4 flex flex-col items-center justify-center optima-ttf text-center text-black text-xl">
                 <h1 className="customFontSize">INCOME PROTECTION </h1>
                 <h1 className="customFontSize">SERIOUS ILLNESS</h1>
                 <h1 className="customFontSize">COVER</h1>
             </div>
+            <div className="p-10 flex flex-col items-center justify-center  text-center text-black">
+              <p>
+                 Learn about the Benefits of Income Protection. Watch our informative video to find out more.
+              </p>
+            </div>
+              <Link href="/services/income-protection" className="inset-0 flex items-end justify-center">
+                <span className="bg-[#5ae9d4] hover:font-medium text-black py-2 px-4 rounded-full">
+                  See More {">"} {">"}
+                </span>
+              </Link>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center min-w-[100%]">
-          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
+        <div className="flex flex-row justify-center min-w-[100%]">
+          <div className="flex-1 bg-white rounded-lg overflow-hidden m-5">
             <div className="relative">
               <div className="image-container">
                 <Image
@@ -248,41 +272,80 @@ export default function Services() {
                   className="object-cover"
                 />
               </div>
-              <Link href="/services/Lump-Sum-Pension" className="absolute inset-0 flex items-end justify-center">
-                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
-                  See More {">"} {">"}
-                </span>
-              </Link>
             </div>
-            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
+            <div className="p-4 flex flex-col items-center justify-center optima-ttf text-center text-black text-xl">
                 <h1 className="customFontSize">LUMP SUM INVESTMENT</h1>
                 <h1 className="customFontSize">AND CHILDREN&apos;S EDUCATION</h1>
                 <h1 className="customFontSize">PLANNING</h1>
             </div>
+            <div className="p-10 flex flex-col items-center justify-center  text-center text-black">
+              <p>
+                 Discover the Benefits of Lump Sum Investment. Watch our informative video to learn more.
+              </p>
+            </div>
+              <Link href="/services/Lump-Sum-Pension" className="inset-0 flex items-end justify-center">
+                <span className="bg-[#5ae9d4] hover:font-medium text-black py-2 px-4 rounded-full">
+                  See More {">"} {">"}
+                </span>
+              </Link>
           </div>
 
-          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
+          <div className="flex-1 bg-white rounded-lg overflow-hidden m-5">
             <div className="relative">
               <div className="image-container">
                 <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg"
+                  src="/Fusion_pics/Fusion-Finance-Web-Ready-47.jpg"
                   alt="Card Image 2"
                   width={600}
                   height={600}
                   className="w-full object-cover"
                 />
               </div>
-              <Link href="/services/retirement-pension" className="absolute inset-0 flex items-end justify-center">
-                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
-                  See More {">"} {">"}
-                </span>
-              </Link>
             </div>
-            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
+            <div className="p-4 flex flex-col items-center justify-center optima-ttf text-center text-black text-xl">
             <h1 className="customFontSize">RETIREMENT PLANNING AND</h1>
             <h1 className="customFontSize">PENSIONS</h1>
               {/* <h1 className="customFontSize">LAST MINUTE PENSIONS</h1> */}
             </div>
+            <div className="p-10 flex flex-col items-center justify-center  text-center text-black">
+              <p>
+                  Explore the Benefits of Retirement Planning & Pensions. Watch our informative video to gain insights.
+              </p>
+            </div>
+              <Link href="/services/retirement-pension" className="inset-0 flex items-end justify-center">
+                <span className="bg-[#5ae9d4] hover:font-medium text-black py-2 px-4 rounded-full">
+                  See More {">"} {">"}
+                </span>
+              </Link>
+          </div>
+        </div>
+        </div>
+
+        
+
+        <div className="flex flex-col justify-center items-center relative mt-20 w-full">
+          <Image
+              src="/Fusion_pics/Fusion Finance HiRes-51(2).jpg"
+              alt="Fusion51"
+              width={1896}
+              height={1244}
+              className="object-contain w-full h-auto relative"/>
+          <h1 className="text-white absolute optima-ttf left-40 top-60 text-7xl text-center">
+            Life Cover or <br/>Serious Illness
+          </h1>
+          <h4 className="text-white absolute optima-ttf left-40 top-180 text-5xl text-center mt-40">
+            Calculate your policy <br/>estimate now
+          </h4>
+          <div className="hidden lg:flex lg:items-center absolute bottom-40 mb-30 left-60 -ml-4 lg:mr-auto brandon-grotesque">
+          <Link
+            href="/quote"
+            onClick={() => {
+              return; // Add handleClick here
+            }}
+            className="bg-white border-2 rounded-full py-1 px-2 text-black text-4xl lg:py-2 lg:px-12 lg:text-5xl"
+          >
+            Get Quote
+          </Link>
           </div>
         </div>
 

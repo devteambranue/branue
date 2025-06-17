@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import bannerImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-37.jpg";
 import contactImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-35.jpg";
 import "./contact.css"
+import Divider from "@/components/ui/Divider/Divider";
 
 export default function Contact() {
   const [fullName, setFullName] = useState("");
@@ -87,9 +88,9 @@ export default function Contact() {
         </div> */}
 
         <section className="font-sans py-12 bg-[#1a584f]">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap">
-              <div className="w-full lg:w-1/2 flex items-center justify-center">
+          <div className="container flex flex-row mx-auto px-4">
+            <div className="flex flex-row justify-around">
+              <div className="w-full lg:w-full flex items-center justify-center p-6">
                 <img
                   src={contactImage.src}
                   alt="Contact Us"
@@ -97,7 +98,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="w-full lg:w-1/2 mt-8 lg:mt-0 flex items-center">
+              <div className="w-full lg:w-full mt-8 lg:mt-0 flex justify-center items-center py-6">
                 <div className="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
                   <h2 className="underline text-2xl font-bold mb-4 text-center text-[#1a584f]">
                     Get In Touch
@@ -204,13 +205,29 @@ export default function Contact() {
                     <div className="mt-4">
                       <button
                         type="submit"
-                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-medium text-white bg-[#1a584f] hover:bg-[#1a584f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a584f]"
+                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-medium text-black bg-[#5ae9d4] hover:bg-[#1a584f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a584f]"
                       >
                         Submit
                       </button>
                     </div>
                   </form>
                 </div>
+              </div>
+              <div className="w-full lg:w-full mt-8 lg:mt-0 flex flex-col justify-center items-start p-6">
+                <h1 className="optima-ttf text-4xl text-[#fe7db0]">Email Us Or <br/>Call Us</h1>
+                <div className="my-6">
+                  <Divider width={200} height={0.5} color="#5ae9d4"/>  
+                </div>
+                <h3 className="text-white text-xl optima-ttf my-6">Mon - Fri <br/>9:30 - 17:30pm BST</h3>
+                <div className="flex flex-row text-white optima-ttf">
+                  <h2 className="text-2xl">086 101 3481:</h2>
+                  <p className="ml-10">Lorem ipsum dolor</p>
+                </div>
+                <div className="flex flex-row text-white optima-ttf mb-10">
+                  <h2 className="text-2xl">085 827 5697:</h2>
+                  <p className="ml-10">Lorem ipsum dolor</p>
+                </div>
+                <p className="text-white">If you have any questions, <br/> please feel free to contact us <br/>at any time</p>
               </div>
             </div>
           </div>

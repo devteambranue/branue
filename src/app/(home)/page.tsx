@@ -93,7 +93,7 @@ export default function Home() {
             Why work with us?
   </h1>
   <div className="container flex justify-center mb-10">
-    <Divider width={150} height={0.5} color="#fe7db0"/>
+    <Divider width={150} height={0.5} color="#5ae9d4"/>
   </div>
     <p className="text-black-700 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-sans">
       With over <span className="text-[#1a584f] font-bold font-sans">50+ years of combined experience</span>, we don’t just <br/>provide services—we build relationships. 
@@ -185,116 +185,109 @@ export default function Home() {
             </div>
           </div>
 
-          <div>
-            <div className="w-3/4 container my-10 flex flex-col justify-center py-10 pb-0 text-center md:text-left px-5">
+          <div className="p-20">
+            <div className="w-full container my-10 flex flex-col justify-center py-10 pb-0 text-center md:text-left px-5">
               <h1 className="lg:text-4xl text-[#fe7db0] text-2xl text-center optima-ttf">
                 Our Services
               </h1>
-              <div className="container flex justify-center mb-10">
-                <Divider width={150} height={0.5} color="#5ae9c4"/>
+              <div className="flex justify-center mb-10">
+                <Divider width={150} height={0.5} color="#5ae9d4"/>
               </div>
-              <p className="optima-ttf text-black text-center">Ongoing support from our specialised Trade and <br/>Customer Experience teams.</p>
+              <p className="optima-ttf text-black text-center ">Ongoing support from our specialised Trade and <br/>Customer Experience teams.</p>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-center">
-              <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
-                <div className="relative">
-                  <div className="image-container">
-                    <Image
-                      src="/Fusion_pics/Fusion-Finance-Web-Ready-32.jpg"
-                      alt="Card Image 1"
-                      width={600}
-                      height={600}
-                      className="w-full object-cover"
-                    />
+            <div className="flex flex-row justify-center items-stretch w-full">
+              <div className="flex flex-row flex-1 justify-between items-stretch">
+                <div className="flex flex-col flex-1 bg-[#1a584f] shadow-lg overflow-hidden">
+                  <div className="p-4 flex flex-col items-center justify-center text-white text-lg text-center flex-shrink-0">
+                    <h1 className="customFontSize">MORTGAGE PROTECTION <br/>LIFE INSURANCE <br/>FAMILY PROTECTION </h1>
                   </div>
-                  <Link href="/services/financial-security" className="absolute inset-0 flex items-end justify-center">
-                    <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded ">
-                      See More {">"} {">"}
-                    </span>
-                  </Link>
+                  <div className="relative flex-grow flex flex-col justify-end">
+                      <Image
+                        src="/Fusion_pics/Fusion-Finance-Web-Ready-45(2).jpg"
+                        alt="Card Image 1"
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover"
+                      />
+                    <Link href="/services/financial-security" className="absolute inset-10 flex items-end justify-center">
+                      <span className="bg-[#5ae9d4] hover:font-medium text-black py-2 px-4 rounded-full">
+                        See More {">"} {">"}
+                      </span>
+                    </Link>
+                  </div>
                 </div>
-                <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-                  <h1 className="customFontSize">MORTGAGE PROTECTION</h1>
-                  <h1 className="customFontSize">LIFE INSURANCE</h1>
-                  <h1 className="customFontSize">FAMILY PROTECTION</h1>
+
+                <div className="flex flex-col flex-1 bg-[#1a584f] shadow-lg overflow-hidden">
+                  <div className="p-4 flex flex-col items-center justify-center text-white text-lg text-center flex-shrink-0">
+                    <h1 className="customFontSize">INCOME PROTECTION <br/>SERIOUS ILLNESS <br/>COVER</h1>
+                  </div>
+                  <div className="relative flex-grow flex flex-col justify-end">
+                      <Image
+                        src="/Fusion_pics/Fusion-Finance-Web-Ready-47(2).jpg"
+                        alt="Card Image 2"
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover"
+                      />
+                    <Link href="/services/income-protection" className="absolute inset-10 flex items-end justify-center">
+                      <span className="bg-[#5ae9d4] hover:font-medium text-black py-2 px-4 rounded-full">
+                        See More {">"} {">"}
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="flex flex-col flex-1 bg-[#1a584f] shadow-lg overflow-hidden">
+                  <div className="p-4 flex flex-col items-center justify-center text-white text-lg text-center flex-shrink-0">
+                    <h1 className="customFontSize">LUMP SUM INVESTMENT <br/>AND CHILDREN&apos;S <br/>EDUCATION PLANNING</h1>
+                  </div>
+                  <div className="relative flex-grow flex flex-col justify-end">
+                      <Image
+                        src="/Fusion_pics/Fusion-Finance-Web-Ready-32(2).jpg"
+                        alt="Card Image 1"
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover"
+                      />
+                    <Link href="/services/Lump-Sum-Pension" className="absolute inset-10 flex items-end justify-center">
+                      <span className="bg-[#5ae9d4] hover:font-medium text-black py-2 px-4 rounded-full">
+                        See More {">"} {">"}
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
-                <div className="relative">
-                  <div className="image-container">
-                    <Image
-                      src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
-                      alt="Card Image 2"
-                      width={600}
-                      height={600}
-                      className="w-full object-cover"
-                    />
-                  </div>
-                  <Link href="/services/income-protection" className="absolute inset-0 flex items-end justify-center">
-                    <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded ">
-                      See More {">"} {">"}
-                    </span>
-                  </Link>
-                </div>
-                <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-                  <h1 className="customFontSize">INCOME PROTECTION </h1>
-                  <h1 className="customFontSize">SERIOUS ILLNESS</h1>
-                  <h1 className="customFontSize">COVER</h1>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-center">
-              <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
-                <div className="relative">
-                  <div className="image-container">
-                    <Image
-                      src="/Fusion_pics/Fusion-Finance-Web-Ready-45.jpg"
-                      alt="Card Image 1"
-                      layout="fill" // Use 'fill' layout to cover the entire container
-                      className="object-cover"
-                    />
-                  </div>
-                  <Link href="/services/Lump-Sum-Pension" className="absolute inset-0 flex items-end justify-center">
-                    <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded ">
-                      See More {">"} {">"}
-                    </span>
-                  </Link>
-                </div>
-                <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-                  <h1 className="customFontSize">LUMP SUM INVESTMENT</h1>
-                  <h1 className="customFontSize">AND CHILDREN&apos;S EDUCATION</h1>
-                  <h1 className="customFontSize">PLANNING</h1>
-                </div>
-              </div>
-
-              <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
-                <div className="relative">
-                  <div className="image-container">
-                    <Image
-                      src="/Fusion_pics/Fusion-Finance-Web-Ready-47.jpg"
-                      alt="Card Image 2"
-                      width={600}
-                      height={600}
-                      className="w-full object-cover"
-                    />
-                  </div>
-                  <Link href="/services/retirement-pension" className="absolute inset-0 flex items-end justify-center">
-                    <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded ">
-                      See More {">"} {">"}
-                    </span>
-                  </Link>
-                </div>
-                <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-                  <h1 className="customFontSize">RETIREMENT PLANNING AND</h1>
-                  <h1 className="customFontSize">PENSIONS</h1>
+              <div className="flex-1 bg-[#5ae9d4] shadow-lg overflow-hidden ml-0 h-full">
+                <div className="flex flex-row items-center justify-start optima-ttf text-black text-2xl m-8 mb-0">
+                  <h1 className="customFontSize mr-4">RETIREMENT PLANNING <br/>AND PENSIONS</h1>
                   {/* <h1 className="customFontSize">LAST MINUTE PENSIONS</h1> */}
+                  <Link href="/services/retirement-pension" className="inset-10 flex items-end justify-center ml-4">
+                    <span className="bg-white hover:font-medium text-black py-2 px-4 rounded-full ">
+                      See More {">"} {">"}
+                    </span>
+                  </Link>
+                </div>
+                <div className="relative">
+                    <Image
+                      src="/Fusion_pics/Fusion-Finance-Web-Ready-38(3).jpg"
+                      alt="Card Image 2"
+                      width={600}
+                      height={600}
+                      className="w-full h-fit object-cover"
+                    />
                 </div>
               </div>
             </div>
           </div>
+
+
+          <div className="">
+            {/**
+             * Add The Missing Header Meant To Be Before The Separator Here!!!!!!!!
+             */}
+          <div/>
 
           <div className="bg-[#b2adad] pb-5 pt-5">
             <div className="text-center flex flex-col lg:flex-row justify-center align-center">
@@ -310,7 +303,7 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <div className="text-white text-2xl font-bold font-sans mt-2">
+                    <div className="text-white text-2xl font-bold optima-ttf mt-2">
                       Financial Services
                     </div>
                     <div className="text-white cormorant-infant text-3xl font-bold">
@@ -330,7 +323,7 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <div className="text-white text-2xl font-bold font-sans mt-2">
+                    <div className="text-white text-2xl font-bold optima-ttf mt-2">
                       With A Wealth Of 
                     </div>
                     <div className="text-white text-3xl font-bold cormorant-infant">
@@ -350,7 +343,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <div className="text-white text-2xl font-bold font-sans mt-2">
+                    <div className="text-white text-2xl font-bold optima-ttf mt-2">
                       Here To Be Your
                     </div>
                     <div className="text-white text-3xl font-bold cormorant-infant">
@@ -398,18 +391,18 @@ export default function Home() {
             <h4 className="text-white absolute optima-ttf left-40 top-180 text-5xl text-center mt-40">
               Calculate your policy <br/>estimate now
             </h4>
-            <div className="hidden lg:flex lg:items-center absolute bottom-40  mb-30 left-60 lg:mr-auto brandon-grotesque-bld">
+            <div className="hidden lg:flex lg:items-center absolute bottom-40 mb-30 left-60 -ml-4 lg:mr-auto brandon-grotesque">
             <Link
               href="/quote"
               onClick={() => {
-                handleClick();
-                handleLinkClick();
+                return; // Add handleClick here
               }}
-              className="bg-white border-2 rounded-full py-2 px-4 text-black text-sm lg:py-4 lg:px-14 lg:text-2xl"
+              className="bg-white border-2 rounded-full py-1 px-2 text-black text-4xl lg:py-2 lg:px-12 lg:text-5xl"
             >
               Get Quote
             </Link>
-        </div>
+            </div>
+          </div>
           </div>       
         </div>
 

@@ -8,7 +8,7 @@ interface DividerProps{
 export default function Divider({width, height, color}: DividerProps) {
 
     return(
-            <div className={`bg-[${color}] mr-10`} style={{
+            <div className={`bg-[${color}]`} style={{
                 width: `${width}px`,
                 height: `${height}px`
             }}/>
