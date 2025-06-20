@@ -710,9 +710,9 @@ export default function About() {
             <div className="mb-3 ">
               <Divider width={140} height={0.5} color="#5ae9d4" />
             </div>
-            <p className="optima-ttf text-black text-center mt-1 mb-5 ">
+             {/*<p className="optima-ttf text-black text-center mt-1 mb-5 ">
               Our spuare time is fueld for our work
-            </p>
+            </p>*/}
           </div>
           <div className="container py-10">
             <div className="flex justify-between flex-col md:flex-row">
