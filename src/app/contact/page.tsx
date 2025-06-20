@@ -8,6 +8,7 @@ import contactImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-3
 import "./contact.css";
 import Divider from "@/components/ui/Divider/Divider";
 import bannerContact from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-31.jpg";
+import Image from "next/image";
 
 export default function Contact() {
   const [fullName, setFullName] = useState("");
@@ -89,7 +90,7 @@ export default function Contact() {
           <div className="flex flex-row mx-auto">
             <div className="flex flex-col lg:flex-row justify-around row">
               <div className="w-full lg:w-full flex items-center justify-center lg:pr-6 px-4 lg:px-0">
-                <img
+                <Image
                   src={contactImage.src}
                   alt="Contact Us"
                   className="rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 h-[300px] lg:h-[400px] object-cover max-h-[500px]"

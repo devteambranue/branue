@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import "./carousel.css";
+import Image from "next/image";
 
 interface Item {
   videoUrl: string;
@@ -59,7 +60,7 @@ export default function Carousel() {
                   style={{ height: "auto", objectPosition: "center" }}
                   className="w-full h-full overflow-hidden"
                 >
-                  <img
+                  <Image
                     src={item.videoUrl} // Display image for the first two items
                     style={{
                       height: "auto",

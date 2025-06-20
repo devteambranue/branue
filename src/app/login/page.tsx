@@ -3,6 +3,7 @@ import bannerImage from "../../../public/Fusion_pics/Fusion-Finance-about-banner
 import loginImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg";
 import bannerLogin from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-31.jpg";
 import "./login.css";
+import Image from "next/image";
 
 export default function Login() {
   return (
@@ -31,7 +32,7 @@ export default function Login() {
         <div className="bg-[#1a584f]">
           <div className="container loginPage flex flex-col lg:flex-row h-auto py-8">
             <div className="loginImage Container w-full lg:w-1/2 flex justify-center items-center">
-              <img
+              <Image
                 src={loginImage.src}
                 alt="Login"
                 className="max-w-full rounded-lg"

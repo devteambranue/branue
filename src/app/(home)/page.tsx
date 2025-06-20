@@ -20,7 +20,7 @@ export default function Home() {
     <div className="min-h-screen">
       <main className="relative pt-[125px] pb-[96px]">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src={bannerBgImage.src}
             alt="Background"
             className="w-full h-full object-cover"
@@ -137,7 +137,7 @@ export default function Home() {
           <div className="container py-10 pb-6 text-center md:text-left px-5">
             <div className="flex flex-wrap md:flex-nowrap">
               <div className="flex justify-center align-center mx-10 mb-10 ">
-                <img
+                <Image
                   src={scheduleConsultationImage.src}
                   alt="Login"
                   className="max-w-full rounded-lg"
@@ -307,7 +307,7 @@ export default function Home() {
         </div>
 
         <div className="relative h-[250px] overflow-hidden">
-          <img
+          <Image
             src="/Fusion_pics/Fusion-Finance-Web-Ready-36-1-Home-crop.jpg"
             alt="Fusion Finance"
             className="object-cover w-full h-full"

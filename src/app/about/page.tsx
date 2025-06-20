@@ -88,7 +88,7 @@ export default function About() {
               </h2>
               <Divider width={150} height={0.5} color="#5ae9d4" />
               <p className="optima-ttf text-white text-center mt-3 mb-5 ">
-                With over 50+ years of combined experiences, we don't just{" "}
+                With over 50+ years of combined experiences, we don't just
                 <br />
                 provide services --we build relationahips.
               </p>
