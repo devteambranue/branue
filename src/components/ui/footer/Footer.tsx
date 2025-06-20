@@ -4,24 +4,32 @@ import Link from "next/link";
 import { ResultsContext } from "@/components/context/cache";
 import { useContext } from "react";
 import Image from "next/image";
+import Divider from "../Divider/Divider";
 
 export default function Footer() {
   const { result, setResult } = useContext(ResultsContext);
   const imageSize = 50;
   const handleClick = () => {
-    // console.log("result", result);
     setResult(null);
   };
 
   return (
     <footer className="flex flex-col footerArea">
-      {/* Partners Section */}
-      <div className="bg-gray-100 py-12 ">
+      <div className="bg-gray-100 py-14">
         <div className="container">
           <div className="flex flex-col items-center">
-            <h1 className="text-3xl font-sans mb-4">Our Valued Partners</h1>
-            <hr className="w-1/5 border-t-2 border-gray-500 mb-8" />
-            <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
+            <div className="container mx-auto text-center">
+              <h1 className="text-[#fe7db0] mb-6 text-center text-3xl sm:text-5xl font-bold optima-ttf">
+                <span className="relative inline-block pb-4 after:content-[''] after:absolute after:left-1/2 after:transform after:-translate-x-1/2 after:top-full after:mt-2 after:w-1/2 after:h-1 after:bg-[#5ae9d4]">
+                  Our Valued Partners
+                </span>
+              </h1>
+              <p className="pt-4 pb-10 text-black-700 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed optima-ttf">
+                Over 2000 Customers
+              </p>
+            </div>
+
+            <div className="py-10 flex flex-wrap md:flex-nowrap justify-center gap-4">
               <div className="w-full md:w-auto flex justify-center my-4 md:my-0">
                 <Image
                   src="/logo variants/BIS-Platform-Logo.png"
@@ -81,36 +89,40 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Contact and Services Section */}
-      <div className="bg-gray-200 py-12">
-        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
-          <div className="text-center mb-10">
-            <h1 className="underline text-2xl font-sans mb-2 text-gray-600">
+      <div className="bg-[#897f83] py-12">
+        <div className="container mx-auto flex flex-col lg:flex-row px-0 gap-6">
+          {/* Column 1 */}
+          <div className="flex-1 text-center lg:text-right lg:pr-10">
+            <h1 className="text-2xl optima-ttf mb-4 text-black">
               Regulatory Information
             </h1>
-            <div className="flex flex-col items-center">
-              <p className="font-sans text-lg">
-                Marie Davey and Gemma Maguire t/a Fusion Finance are regulated
-                by the Central Bank of Ireland.
+            <div className="h-[2px] w-[40%] bg-[#f3f4f6] mx-auto lg:ml-auto lg:mr-0"></div>
+            <div className="mt-4 flex flex-col items-right leading-tight text-center lg:text-right">
+              <p className="optima-ttf text-lg">
+                Marie Davey and Gemma Maguire t/a <br />
+                Fusion Finance are regulated by the <br />
+                Central Bank of Ireland.
               </p>
             </div>
           </div>
 
-          {/* Contact Section */}
-          <div className="text-center">
-            <h1 className="underline text-2xl font-sans mb-4 text-gray-600">
-              Contact Us
-            </h1>
-            <div className="flex flex-col items-center">
-              <p className="font-sans uppercase">Call Us:</p>
-              <p className="font-sans mt-2">
-                Marie - <a href="tel:086 101 3481">086 101 3481</a>
+          {/* Divider */}
+          <div className="hidden lg:block h-20 w-1 bg-black mx-auto self-center mb-20"></div>
+
+          {/* Column 2 */}
+          <div className="flex-1 text-center">
+            <h1 className="text-2xl optima-ttf mb-4 text-black">Contact Us</h1>
+            <div className="h-[2px] w-[40%] bg-[#f3f4f6] mx-auto"></div>
+            <div className="mt-4 flex flex-col items-center leading-relaxed">
+              <p className="optima-ttf uppercase">Call Us:</p>
+              <p className="optima-ttf mt-2">
+                Marie - <a href="tel:0861013481">086 101 3481</a>
               </p>
-              <p className="font-sans">
-                Gemma - <a href="tel:085 827 5697">085 827 5697</a>
+              <p className="optima-ttf">
+                Gemma - <a href="tel:0858275697">085 827 5697</a>
               </p>
-              <p className="font-sans uppercase mt-4">Email Us:</p>
-              <p className="font-sans mt-2">
+              <p className="optima-ttf uppercase mt-4">Email Us:</p>
+              <p className="optima-ttf mt-0">
                 <a href="mailto:info@fusion-finance.com">
                   info@fusion-finance.com
                 </a>
@@ -118,24 +130,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Useful Info Section */}
-          <div className="text-center">
-            <h1 className="underline text-2xl font-sans mb-4 text-gray-600">
-              Useful Info
-            </h1>
-            <div className="flex flex-col items-center">
-              {/* <Link href="/terms-of-business" className="font-sans mb-2">
-                Terms of Business
-              </Link>
-              <Link href="/privacy-policy" className="font-sans mb-2">
-                Privacy Policy
-              </Link> */}
-              {/* <Link href="/commission-terms" className="font-sans mb-2">
-                Commission Terms 2020
-              </Link> */}
+          {/* Divider */}
+          <div className="hidden lg:block h-20 w-1 bg-black mx-auto self-center mb-20"></div>
+
+          {/* Column 3 */}
+          <div className="flex-1 text-center lg:text-left lg:pl-10">
+            <h1 className="text-2xl optima-ttf mb-4 text-black">Useful Info</h1>
+            <div className="h-[2px] w-[40%] bg-[#f3f4f6] mx-auto lg:mx-0 lg:mr-auto"></div>
+            <div className="mt-4 flex flex-col items-left text-center lg:text-left leading-relaxed">
               <Link
                 href="https://fusion-finance.com/pdf/Terms-of-Business-For-Fusion-Finance.pdf"
-                className="font-sans mb-2"
+                className="optima-ttf mb-0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -143,7 +148,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="https://fusion-finance.com/pdf/Fusion-Finance-Data-Protection.pdf"
-                className="font-sans mb-2"
+                className="optima-ttf mb-0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -151,7 +156,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="https://fusion-finance.com/pdf/commission-term.pdf"
-                className="font-sans mb-2"
+                className="optima-ttf mb-0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -164,7 +169,7 @@ export default function Footer() {
 
       {/* Footer Bottom Section */}
       <div className="bg-gray-300 py-8 text-center">
-        <div className="font-sans text-sm text-gray-600">
+        <div className="optima-ttf text-sm text-gray-600">
           2025 © Fusion Finance. All Rights Reserved.
         </div>
         <div className="flex justify-center items-center mt-4">

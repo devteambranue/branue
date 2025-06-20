@@ -1,12 +1,33 @@
 import Iframe from "react-iframe";
 import bannerImage from "../../../public/Fusion_pics/Fusion-Finance-about-banner.jpg";
 import loginImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg";
-import "./login.css"
+import bannerLogin from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-31.jpg";
+import "./login.css";
 
 export default function Login() {
   return (
     <>
       <main>
+        <div
+          className="w-full text-center items-center justify-center  overflow-hidden
+        "
+        >
+          <div
+            id="banner-area"
+            className="banner-area"
+            style={{
+              background: `url(${bannerLogin.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+              minHeight: "100px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          ></div>
+        </div>
+
         <div className="bg-[#1a584f]">
           <div className="container loginPage flex flex-col lg:flex-row h-auto py-8">
             <div className="loginImage Container w-full lg:w-1/2 flex justify-center items-center">

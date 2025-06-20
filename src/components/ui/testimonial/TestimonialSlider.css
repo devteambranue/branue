@@ -4,11 +4,7 @@
   max-width: 100%;
   overflow: hidden;
   margin: auto;
-  padding: 1rem;
-}
-.testimonialSection {
-  width: 100%;
-  max-width: 100%; /* Fixed width */
+  padding: 0.5rem;
 }
 .testimonial-container {
   display: flex;
@@ -17,10 +13,17 @@
   min-height: 200px;
   width: 100%;
 }
-
+.testimonial-quote::after {
+  content: "";
+  display: block;
+  width: 55%;
+  height: 2px;
+  background-color: #4b4145;
+  margin-top: 15px;
+}
 .testimonial {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   transition: opacity 0.5s ease-in-out;
   width: 100%;
 }
@@ -75,6 +78,10 @@
     font-size: 1rem;
   }
   .testimonial-container {
-    padding: 1rem;
+    padding: 0;
+    min-height: 300px;
+  }
+  .testimonial-quote {
+    width: 100% !important;
   }
 }

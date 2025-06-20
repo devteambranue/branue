@@ -11,6 +11,20 @@
     }
 } */
 
+@font-face {
+  font-family: 'Snell Roundhand';
+  src: url('/fonts/SnellRoundhand.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Snell Roundhand Bold';
+  src: url('/fonts/SnellRoundhand-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 .relative {
     position: relative;
 }
@@ -42,6 +56,15 @@ button:hover {
 .slidePadding {
     padding: 10px 15px;
 }
+
+.snell-roundhand{
+    font-family: "Snell Roundhand", sans-serif;
+}
+
+.snell-roundhand-bld{
+    font-family: "Snell Roundhand Bold", sans-serif;
+}
+
 
 @media (max-width: 1024px) {
     .prevSlidePosition {

@@ -5,7 +5,9 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import bannerImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-37.jpg";
 import contactImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-35.jpg";
-import "./contact.css"
+import "./contact.css";
+import Divider from "@/components/ui/Divider/Divider";
+import bannerContact from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-31.jpg";
 
 export default function Contact() {
   const [fullName, setFullName] = useState("");
@@ -63,42 +65,39 @@ export default function Contact() {
   return (
     <>
       <main>
-        {/* <div
-          id="banner-area"
-          className="banner-area bannerClass"
-          style={{
-            background: `url(${bannerImage.src})`,
-            // backgroundSize: "cover",
-            backgroundPosition: "center",
-            width: "100%",
-            height: "100%",
-            backgroundSize: "100%",
-            backgroundRepeat: "no-repeat",
-            padding: "19% 0"
-          }}
+        <div
+          className="w-full text-center items-center justify-center  overflow-hidden
+        "
         >
-          <div className="font-sans container mx-auto px-4">
-            <div className="row flex flex-wrap">
-              <div className="col-xs-12 w-full">
-                <div className="banner-heading w-full text-white flex flex-col justify-center items-center content-center lg:min-h-[420px]"></div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+          <div
+            id="banner-area"
+            className="banner-area"
+            style={{
+              background: `url(${bannerContact.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+              minHeight: "100px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          ></div>
+        </div>
 
-        <section className="font-sans py-12 bg-[#1a584f]">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap">
-              <div className="w-full lg:w-1/2 flex items-center justify-center">
+        <section className="font-sans py-16 bg-[#1a584f]">
+          <div className="flex flex-row mx-auto">
+            <div className="flex flex-col lg:flex-row justify-around row">
+              <div className="w-full lg:w-full flex items-center justify-center lg:pr-6 px-4 lg:px-0">
                 <img
                   src={contactImage.src}
                   alt="Contact Us"
-                  className="rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 max-h-[500px]"
+                  className="rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 h-[300px] lg:h-[400px] object-cover max-h-[500px]"
                 />
               </div>
 
-              <div className="w-full lg:w-1/2 mt-8 lg:mt-0 flex items-center">
-                <div className="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+              <div className="w-full lg:w-full mt-8 lg:mt-0 flex justify-center items-center px-4 lg:px-2">
+                <div className="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg px-6 pt-6 pb-8 mb-4">
                   <h2 className="underline text-2xl font-bold mb-4 text-center text-[#1a584f]">
                     Get In Touch
                   </h2>
@@ -204,13 +203,39 @@ export default function Contact() {
                     <div className="mt-4">
                       <button
                         type="submit"
-                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-medium text-white bg-[#1a584f] hover:bg-[#1a584f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a584f]"
+                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-bold text-black bg-[#5ae9d4] hover:bg-[#1a584f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a584f] uppercase "
                       >
                         Submit
                       </button>
                     </div>
                   </form>
                 </div>
+              </div>
+              <div className="w-full lg:w-full mt-8 lg:mt-0 flex flex-col justify-center items-start p-4 lg:p-6">
+                <h1 className="optima-ttf text-4xl text-[#fe7db0]">
+                  Email Us Or <br />
+                  Call Us
+                </h1>
+                <div className="my-6">
+                  <Divider width={200} height={0.5} color="#5ae9d4" />
+                </div>
+                <h3 className="text-white text-xl optima-ttf my-6">
+                  Mon - Fri <br />
+                  9:30 - 17:30pm BST
+                </h3>
+                <div className="flex flex-row text-white optima-ttf">
+                  <h2 className="text-2xl">086 101 3481:</h2>
+                  <p className="ml-10">Lorem ipsum dolor</p>
+                </div>
+                <div className="flex flex-row text-white optima-ttf mb-10">
+                  <h2 className="text-2xl">085 827 5697:</h2>
+                  <p className="ml-10">Lorem ipsum dolor</p>
+                </div>
+                <p className="text-white">
+                  If you have any questions, <br /> please feel free to contact
+                  us <br />
+                  at any time
+                </p>
               </div>
             </div>
           </div>

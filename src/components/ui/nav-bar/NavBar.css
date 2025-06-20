@@ -1,0 +1,41 @@
+@media screen and (max-width: 768px) {
+  .mobile.navBarMain {
+    background-color: #ffffff;
+  }
+  .menuInnerMain {
+    display: flex !important;
+    justify-content: flex-start;
+    background: #ffffff;
+    padding: 5px 15px;
+    z-index: 9999;
+    flex-wrap: wrap;
+    position: relative !important;
+  }
+  .mobile .menuInnerMain a {
+    display: block;
+    width: 100%;
+    margin: 15px 0 !important;
+    text-align: left;
+    color: #000;
+  }
+  .mobile .menuInnerMain a.active {
+    color: #5ae9d4;
+  }
+  .mobile.menuButton {
+    background: #fff;
+    width: 100%;
+    z-index: 9999;
+    position: relative;
+    padding: 15px;
+  }
+  .hidden .menuButton {
+    background: #ffffff00;
+    width: auto;
+    z-index: 9999;
+    position: relative;
+    padding: 0 15px 0 0;
+  }
+  .mobile.navBarMain button {
+    color: #000;
+  }
+}

@@ -1,12 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import "./services.css";
 import bannerImageService from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-31.jpg";
+import Divider from "@/components/ui/Divider/Divider";
+import bannerBgImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-36-1-Home-crop.jpg";
 
 export default function Services() {
   return (
     <>
-      <main className="font-sans flex min-h-screen min-w-screen flex-col items-center mt-6">
+      <main className="optima-ttf">
         {/* <div className="w-full text-center items-center justify-center">
           <div
             id="banner-area"
@@ -187,105 +191,223 @@ export default function Services() {
           </div>
         </div> */}
 
-        <div className="flex flex-col md:flex-row justify-center min-w-[100%]">
-          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
-            <div className="relative">
-              <div className="image-container">
-                <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-32.jpg"
-                  alt="Card Image 1"
-                  width={600}
-                  height={600}
-                  className="w-full object-cover"
-                />
+        <div className="w-full text-center items-center justify-center">
+          <div
+            id="banner-area"
+            className="banner-area"
+            style={{
+              background: `url(${bannerImageService.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+              backgroundRepeat: "no-repeat",
+              minHeight: "30px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className="container mx-auto px-4">
+              <div className="row flex flex-wrap">
+                <div className="col-xs-6 w-full lg:w-1/2 mx-auto">
+                  <div className="banner-heading pt-24 w-full text-white flex flex-col justify-center  min-h-[500px]">
+                    <h1 className="text-left text-white text-3xl lg:text-5xl font-bold leading-snug mb-1 brandon-grotesque-bld">
+                      <span className="inline-block pb-1 brandon-grotesque-bld">
+                        WORK WITH US
+                      </span>
+                    </h1>
+
+                    <h1 className="relative pt-[10px] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[50px] before:h-[3px] before:bg-[#5ae9d4] text-[#5ae9d4] text-left text-lg sm:text-2xl font-bold  brandon-grotesque-bld">
+                      OFFERING BESPOKE FINNANCIAL <br /> ADVICE AND SERVICES TO
+                      PEOPLE
+                    </h1>
+                  </div>
+                </div>
               </div>
-              <Link href="/services/financial-security" className="absolute inset-0 flex items-end justify-center">
-                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
-                  See More {">"} {">"}
-                </span>
-              </Link>
-            </div>
-            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-              <h1 className="customFontSize">MORTGAGE PROTECTION</h1>
-              <h1 className="customFontSize">LIFE INSURANCE</h1>
-              <h1 className="customFontSize">FAMILY PROTECTION</h1>
             </div>
           </div>
-
-          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
-            <div className="relative">
-              <div className="image-container">
-                <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg"
-                  alt="Card Image 2"
-                  width={600}
-                  height={600}
-                  className="w-full object-cover"
-                />
+        </div>
+        <div className="container">
+          <div className="flex min-h-screen min-w-screen flex-col items-center  md:p-30 md:pt-0 md:pb-20 p-2">
+            <div className="w-full container flex flex-col justify-center py-10 pb-0 text-center md:text-left px-5">
+              <h1 className="lg:text-4xl text-[#fe7db0] text-2xl text-center brandon-grotesque-bld font-medium">
+                Our Services
+              </h1>
+              <div className="flex justify-center mb-2 pt-2">
+                <Divider width={120} height={3} color="#5ae9d4" />
               </div>
-              <Link href="/services/income-protection" className="absolute inset-0 flex items-end justify-center">
-                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
-                  See More {">"} {">"}
-                </span>
-              </Link>
+              <p className="optima-ttf text-black text-center mt-3 mb-10 ">
+                Ongoing support from our specialised Trade and <br />
+                Customer Experience teams.
+              </p>
             </div>
-            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-                <h1 className="customFontSize">INCOME PROTECTION </h1>
-                <h1 className="customFontSize">SERIOUS ILLNESS</h1>
-                <h1 className="customFontSize">COVER</h1>
+
+            <div className="flex flex-col gap-5 md:flex-row md:gap-2 justify-center optima-ttf min-w-[100%] ">
+              <div className="flex-1 bg-white m-2 lg:m-5">
+                <div className="relative">
+                  <div className="image-container rounded-lg overflow-hidden">
+                    <Image
+                      src="/Fusion_pics/Fusion-Finance-Web-Ready-32.jpg"
+                      alt="Card Image 1"
+                      width={600}
+                      height={600}
+                      className="w-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 flex flex-col items-center justify-center  text-center text-[#1a584f] text-xl font-bold">
+                  <h1 className="customFontSize">MORTGAGE PROTECTION</h1>
+                  <h1 className="customFontSize">LIFE INSURANCE</h1>
+                  <h1 className="customFontSize">FAMILY PROTECTION</h1>
+                </div>
+                <div className="p-2 pb-6 flex flex-col items-center justify-center  text-center text-black">
+                  <p>
+                    Explore the advantages of Mortgage Protection. Watch our
+                    concise video to learn more.
+                  </p>
+                </div>
+                <Link
+                  href="/services/financial-security"
+                  className="inset-0 flex items-end justify-center"
+                >
+                  <span className="bg-[#5ae9d4]  text-black py-3 px-6 rounded-full font-bold">
+                    See More {">"} {">"}
+                  </span>
+                </Link>
+              </div>
+
+              <div className="flex-1 bg-white m-2 lg:m-5">
+                <div className="relative">
+                  <div className="image-container rounded-lg overflow-hidden">
+                    <Image
+                      src="/Fusion_pics/Fusion Finance Web-Ready-31(2).jpg"
+                      alt="Card Image 2"
+                      width={600}
+                      height={600}
+                      className="w-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 flex flex-col items-center justify-center optima-ttf text-center text-[#1a584f]  text-xl font-bold">
+                  <h1 className="customFontSize">INCOME PROTECTION </h1>
+                  <h1 className="customFontSize">SERIOUS ILLNESS</h1>
+                  <h1 className="customFontSize">COVER</h1>
+                </div>
+                <div className="p-2 pb-6 flex flex-col items-center justify-center  text-center text-black">
+                  <p>
+                    Learn about the Benefits of Income Protection. Watch our
+                    informative video to find out more.
+                  </p>
+                </div>
+                <Link
+                  href="/services/income-protection"
+                  className="inset-0 flex items-end justify-center"
+                >
+                  <span className="bg-[#5ae9d4] text-black py-3 px-6 rounded-full font-bold">
+                    See More {">"} {">"}
+                  </span>
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-5 md:flex-row md:gap-2 justify-center mt-10 min-w-[100%]">
+              <div className="flex-1 bg-white  m-5">
+                <div className="relative">
+                  <div className="image-container rounded-lg overflow-hidden">
+                    <Image
+                      src="/Fusion_pics/Fusion-Finance-Web-Ready-45.jpg"
+                      alt="Card Image 1"
+                      layout="fill" // Use 'fill' layout to cover the entire container
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 flex flex-col items-center justify-center  text-center text-[#1a584f] text-xl font-bold">
+                  <h1 className="customFontSize">LUMP SUM INVESTMENT</h1>
+                  <h1 className="customFontSize">
+                    AND CHILDREN&apos;S EDUCATION
+                  </h1>
+                  <h1 className="customFontSize">PLANNING</h1>
+                </div>
+                <div className="p-2 pb-6 flex flex-col items-center justify-center  text-center text-black">
+                  <p>
+                    Discover the Benefits of Lump Sum Investment. Watch our
+                    informative video to learn more.
+                  </p>
+                </div>
+                <Link
+                  href="/services/Lump-Sum-Pension"
+                  className="inset-0 flex items-end justify-center"
+                >
+                  <span className="bg-[#5ae9d4] text-black py-3 px-6 rounded-full font-bold">
+                    See More {">"} {">"}
+                  </span>
+                </Link>
+              </div>
+
+              <div className="flex-1 bg-white  m-5">
+                <div className="relative">
+                  <div className="image-container rounded-lg overflow-hidden">
+                    <Image
+                      src="/Fusion_pics/Fusion-Finance-Web-Ready-47.jpg"
+                      alt="Card Image 2"
+                      width={600}
+                      height={600}
+                      className="w-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 flex flex-col items-center justify-center  text-center text-[#1a584f] text-xl font-bold">
+                  <h1 className="customFontSize">RETIREMENT PLANNING AND</h1>
+                  <h1 className="customFontSize">PENSIONS</h1>
+                  {/* <h1 className="customFontSize">LAST MINUTE PENSIONS</h1> */}
+                </div>
+                <div className="p-2 pb-6 flex flex-col items-center justify-center  text-center text-black">
+                  <p>
+                    Explore the Benefits of Retirement Planning & Pensions.
+                    Watch our informative video to gain insights.
+                  </p>
+                </div>
+                <Link
+                  href="/services/retirement-pension"
+                  className="inset-0 flex items-end justify-center"
+                >
+                  <span className="bg-[#5ae9d4] text-black py-3 px-6 rounded-full font-bold">
+                    See More {">"} {">"}
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center min-w-[100%]">
-          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
-            <div className="relative">
-              <div className="image-container">
-                <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-45.jpg"
-                  alt="Card Image 1"
-                  layout="fill" // Use 'fill' layout to cover the entire container
-                  className="object-cover"
-                />
-              </div>
-              <Link href="/services/Lump-Sum-Pension" className="absolute inset-0 flex items-end justify-center">
-                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
-                  See More {">"} {">"}
-                </span>
-              </Link>
-            </div>
-            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-                <h1 className="customFontSize">LUMP SUM INVESTMENT</h1>
-                <h1 className="customFontSize">AND CHILDREN&apos;S EDUCATION</h1>
-                <h1 className="customFontSize">PLANNING</h1>
-            </div>
-          </div>
-
-          <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden m-5">
-            <div className="relative">
-              <div className="image-container">
-                <Image
-                  src="/Fusion_pics/Fusion-Finance-Web-Ready-47.jpg"
-                  alt="Card Image 2"
-                  width={600}
-                  height={600}
-                  className="w-full object-cover"
-                />
-              </div>
-              <Link href="/services/retirement-pension" className="absolute inset-0 flex items-end justify-center">
-                <span className="bg-[#1a584f] hover:font-medium text-white py-2 px-4 rounded text-xl">
-                  See More {">"} {">"}
-                </span>
-              </Link>
-            </div>
-            <div className="p-4 flex flex-col items-center justify-center font-sans text-center text-black text-xl">
-            <h1 className="customFontSize">RETIREMENT PLANNING AND</h1>
-            <h1 className="customFontSize">PENSIONS</h1>
-              {/* <h1 className="customFontSize">LAST MINUTE PENSIONS</h1> */}
-            </div>
+        <div className="flex flex-col justify-center items-center relative mt-20 w-full">
+          <Image
+            src="/Fusion_pics/Fusion Finance HiRes-51(2).jpg"
+            alt="Fusion51"
+            width={1896}
+            height={1244}
+            className="object-contain w-full h-auto relative"
+          />
+          <h1 className="text-white absolute optima-ttf left-10 lg:left-20 lg:top-60 top-5 text-[18px] lg:text-7xl lg;text-center leading-[20px]">
+            Life Cover or <br />
+            Serious Illness
+          </h1>
+          <h4 className="text-white lg:items-center lg:leading-normal absolute optima-ttf left-10 lg:left-20 lg:top-180 lg:text-5xl text-[14px] lg:text-center text-left mt-0 lg:mt-40">
+            Calculate your policy <br />
+            estimate now
+          </h4>
+          <div className="lg:flex lg:items-center absolute bottom-8 lg:bottom-40 lg:mb-30 lg:left-40 left-12 -ml-4 lg:mr-auto brandon-grotesque">
+            <Link
+              href="/quote"
+              onClick={() => {
+                return;
+              }}
+              className="bg-white border-2 rounded-full py-1 px-3 text-black text-[16px] lg:text-4xl lg:py-2 lg:px-12"
+            >
+              Get Quote
+            </Link>
           </div>
         </div>
-
       </main>
     </>
   );

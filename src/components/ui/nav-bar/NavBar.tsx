@@ -1,10 +1,13 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { ResultsContext } from "@/components/context/cache";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import "../../../../src/app/globals.css";
+import Divider from "../Divider/Divider";
+import "./NavBar.css";
 
 export default function NavBar() {
   const { result, setResult } = useContext(ResultsContext);
@@ -12,6 +15,7 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const isActive = (href: string) => pathname === href;
   const imageSize = 40;
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   const handleClick = () => {
     // console.log("result", result);
@@ -26,28 +30,47 @@ export default function NavBar() {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const mediaQuery: MediaQueryList = window.matchMedia("(max-width: 1023px)");
+
+    const handleResize = (e: MediaQueryListEvent): void => {
+      setIsLargeScreen(!e.matches);
+    };
+
+    setIsLargeScreen(!mediaQuery.matches);
+
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, [isLargeScreen, setIsLargeScreen]);
+
   return (
     <nav className="w-full">
       <div className="bg-gray-100 grid grid-cols-1 lg:grid-cols-3 p-4 lg:gap-3 px-4">
         <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:items-center">
-          <div className="text-center lg:text-left">
-            <div className="text-lg font-bold font-sans">086 101 3481</div>
-            <div className="font-semibold font-sans">
-              Marie Davey - Shanbally, Clogheen, Co. Tipperary E21WN30
+          <div className="text-center lg:text-left p-2">
+            <div className="text-3xl brandon-grotesque-bld">086 101 3481</div>
+            <div className="font-semibold ">
+              Marie Davey - Shanbally, Clogheen, Co. Tipperary
             </div>
           </div>
-          <div className="text-center lg:text-left">
-            <div className="text-lg font-bold font-sans">085 827 5697</div>
-            <div className="font-semibold font-sans">
-              Gemma Maguire - Rustic Villa, Pearse Rd, Co. Sligo F91DEC3
+
+          <div className="hidden lg:block h-20 w-2 bg-[#5ae9d4] mx-4"></div>
+          <div className="text-center lg:text-left p-2">
+            <div className="text-3xl brandon-grotesque-bld">085 827 5697</div>
+            <div className="font-semibold">
+              Gemma Maguire - Rustic Villa, Pearse Rd, Co. Sligo
             </div>
           </div>
         </div>
         <div className="flex justify-center items-center my-6">
           <Link
             href="/"
-            className={`${isActive("/") ? "text-[#1a584f]" : "text-black"
-              } font-sans m-4 text-2xl`}
+            className={`${
+              isActive("/") ? "text-[#1a584f]" : "text-black"
+            } font-sans m-4 text-2xl`}
             onClick={handleLinkClick}
           >
             <Image
@@ -57,78 +80,97 @@ export default function NavBar() {
               alt="logo"
             />
           </Link>
-
         </div>
-        <div className="flex justify-center lg:justify-end items-center space-x-2 lg:space-x-4">
-          <a
-            href="https://www.facebook.com/fusion4advice"
-            target="_fusionFinance"
-          >
-            <Image
-              src="/Fusion_icon_f.png"
-              width={imageSize}
-              height={imageSize}
-              alt="facebook"
-              className="m-0"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/fusion_finance/"
-            target="_fusionFinance"
-          >
-            <Image
-              src="/Fusion_icon_tiktock.png"
-              width={imageSize}
-              height={imageSize}
-              alt="instagram"
-              className="m-0"
-            />
-          </a>
-          <a
-            href="http://www.twitter.com/fusion4advice"
-            target="_fusionFinance"
-          >
-            <Image
-              src="/Fusion_icon_twitter.png"
-              width={imageSize}
-              height={imageSize}
-              alt="x"
-              className="m-0"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/fusion-finance"
-            target="_fusionFinance"
-          >
-            <Image
-              src="/Fusion_icon_in.png"
-              width={imageSize}
-              height={imageSize}
-              alt="linkedin"
-              className="m-0"
-            />
-          </a>
-          <a
-            href="https://www.youtube.com/@fusionfinance3820"
-            target="_fusionFinance"
-          >
-            <Image
-              src="/Fusion_icon_youtube.png"
-              width={imageSize}
-              height={imageSize}
-              alt="yt"
-              className="m-0"
-            />
-          </a>
+        <div>
+          <div className="flex justify-center lg:justify-end items-center space-x-2 lg:mt-10 lg:space-x-4">
+            <a
+              href="https://www.facebook.com/fusion4advice"
+              target="_fusionFinance"
+            >
+              <Image
+                src="/Fusion_icon_f.png"
+                width={imageSize}
+                height={imageSize}
+                alt="facebook"
+                className="m-0"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/fusion_finance/"
+              target="_fusionFinance"
+            >
+              <Image
+                src="/Fusion_icon_tiktock.png"
+                width={imageSize}
+                height={imageSize}
+                alt="instagram"
+                className="m-0"
+              />
+            </a>
+            <a
+              href="http://www.twitter.com/fusion4advice"
+              target="_fusionFinance"
+            >
+              <Image
+                src="/Fusion_icon_twitter.png"
+                width={imageSize}
+                height={imageSize}
+                alt="x"
+                className="m-0"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/fusion-finance"
+              target="_fusionFinance"
+            >
+              <Image
+                src="/Fusion_icon_in.png"
+                width={imageSize}
+                height={imageSize}
+                alt="linkedin"
+                className="m-0"
+              />
+            </a>
+            <a
+              href="https://www.youtube.com/@fusionfinance3820"
+              target="_fusionFinance"
+            >
+              <Image
+                src="/Fusion_icon_youtube.png"
+                width={imageSize}
+                height={imageSize}
+                alt="yt"
+                className="m-0"
+              />
+            </a>
+          </div>
+
+          <div className="hidden lg:flex lg:items-center lg:justify-end mt-5 lg:space-x-4 lg:mr-auto brandon-grotesque-bld">
+            <Link
+              href="/quote"
+              onClick={() => {
+                handleClick();
+                handleLinkClick();
+              }}
+              className="bg-[#fe7db0] hover:text-white font-bold uppercase rounded-full py-2 px-4 text-black text-sm font-sans lg:py-4 lg:px-14 lg:text-2xl"
+            >
+              Quotation
+            </Link>
+          </div>
         </div>
       </div>
 
-      <div className="border-8 border-[#5ae9d4] bg-[#5ae9d4]"></div>
+      <div className="border-4 border-[#5ae9d4] bg-[#5ae9d4]"></div>
 
-      <div className="bg-gray-100 min-h-24 flex flex-wrap items-center justify-between p-2">
+      <div
+        // className="bg-gray-100 brandon-grotesque-bld min-h-24 flex flex-wrap items-center justify-between p-2"
+        className={`${
+          isOpen ? "mobile" : "desktop"
+        } navBarMain bg-transparent brandon-grotesque-bld absolute z-[1] w-full min-h-24 flex flex-wrap items-center justify-between p-4`}
+      >
         <div className="flex items-center lg:hidden">
           <button
-            className="inline-flex items-center p-2 rounded-lg text-black"
+            className="inline-flex items-center p-2 rounded-lg text-white"
             onClick={toggleMenu}
           >
             {isOpen ? (
@@ -165,52 +207,57 @@ export default function NavBar() {
           </button>
         </div>
 
-        <div className="hidden lg:flex lg:items-center lg:justify-start lg:space-x-4 lg:mr-auto">
-          <Link
+        <div className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-4 lg:mr-auto">
+          {/* <Link
             href="/quote"
             onClick={() => {
               handleClick();
               handleLinkClick();
             }}
-            className="bg-[#1a584f] border-2 rounded-full py-2 px-4 text-white text-sm font-sans lg:py-4 lg:px-14 lg:text-2xl"
+            className="bg-[#fe7db0] uppercase rounded-full py-2 px-4 text-black text-sm font-sans lg:py-4 lg:px-14 lg:text-2xl"
           >
-            Quote
-          </Link>
+            Quotation
+          </Link> */}
         </div>
 
         <div
-          className={`${isOpen ? "block" : "hidden"
-            } w-full lg:flex lg:w-auto lg:items-center lg:justify-center`}
+          className={`${
+            isOpen ? "block mobile" : "hidden desktop"
+          } menuParent w-full lg:flex lg:w-auto lg:items-center lg:justify-center`}
         >
-          <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center">
+          <div className="menuInnerMain absolute left-1/2 transform -translate-x-1/2 lg:flex space-x-6">
             <Link
               href="/"
-              className={`${isActive("/") ? "text-[#1a584f]" : "text-black"
-                } font-sans m-4 text-2xl`}
+              className={`${
+                isActive("/") ? "text-[#5ae9d4]" : "text-white"
+              } m-4 text-xl uppercase`}
               onClick={handleLinkClick}
             >
               Home
             </Link>
             <Link
               href="/services"
-              className={`${isActive("/services") ? "text-[#1a584f]" : "text-black"
-                } font-sans m-4 text-2xl`}
+              className={`${
+                isActive("/services") ? "text-[#5ae9d4]" : "text-white"
+              } m-4 text-xl uppercase`}
               onClick={handleLinkClick}
             >
               Services
             </Link>
             <Link
               href="/about"
-              className={`${isActive("/about") ? "text-[#1a584f]" : "text-black"
-                } font-sans m-4 text-2xl`}
+              className={`${
+                isActive("/about") ? "text-[#5ae9d4]" : "text-white"
+              } m-4 text-xl uppercase`}
               onClick={handleLinkClick}
             >
               About
             </Link>
             <Link
               href="/news"
-              className={`${isActive("/news") ? "text-[#1a584f]" : "text-black"
-                } font-sans m-4 text-2xl`}
+              className={`${
+                isActive("/news") ? "text-[#5ae9d4]" : "text-white"
+              } m-4 text-xl uppercase`}
               onClick={handleLinkClick}
             >
               News
@@ -218,7 +265,11 @@ export default function NavBar() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 lg:space-x-4 lg:ml-auto">
+        <div
+          className={`${
+            isOpen ? "mobile" : "desktop"
+          } menuButton flex items-center space-x-4 lg:space-x-4 lg:ml-auto brandon-grotesque-bld`}
+        >
           <div className="lg:hidden flex items-center justify-end">
             <Link
               href="/quote"
@@ -226,21 +277,21 @@ export default function NavBar() {
                 handleClick();
                 handleLinkClick();
               }}
-              className="bg-[#1a584f] border-2 rounded-full py-2 px-4 text-white text-sm font-sans"
+              className="bg-[#1a584f] border-2 rounded-full py-2 px-4 text-white text-sm font-sans uppercase"
             >
               Quote
             </Link>
           </div>
           <Link
             href="/login"
-            className="font-sans text-black bg-[#fff] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl"
+            className="text-black bg-[#fff] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl brandon-grotesque-bld uppercase"
             onClick={handleLinkClick}
           >
-            Login
+            Log in
           </Link>
           <Link
             href="/contact"
-            className="font-sans text-black bg-[#5ae9d4] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl"
+            className="brandon-grotesque-bld text-black bg-[#5ae9d4] py-2 px-4 text-sm rounded-full lg:py-4 lg:px-12 lg:text-2xl uppercase"
             onClick={handleLinkClick}
           >
             Contact

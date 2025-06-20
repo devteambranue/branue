@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
-import "./carousel.css"
+import "./carousel.css";
 
 interface Item {
   videoUrl: string;
@@ -40,7 +40,7 @@ export default function Carousel() {
   }, [active]);
 
   return (
-    <div className="w-full text-center flex overflow-hidden">
+    <div className="text-center flex overflow-hidden z-10 shadow-xl rounded-xl w-2xl max-w-2xl">
       <div className="transition-all duration-150 delay-300 ease-in-out flex lg:h-full w-full">
         <div className="relative flex flex-col lg:h-full w-full">
           {items.map((item, index) => (
@@ -55,14 +55,17 @@ export default function Carousel() {
               leaveTo="opacity-0 scale-95"
             >
               {index !== 0 ? (
-                <div style={{ height: "auto", objectPosition: "center" }} className="w-full h-full overflow-hidden">
+                <div
+                  style={{ height: "auto", objectPosition: "center" }}
+                  className="w-full h-full overflow-hidden"
+                >
                   <img
                     src={item.videoUrl} // Display image for the first two items
                     style={{
                       height: "auto",
                       width: "100%",
                       display: "inline-block",
-                      objectFit: "contain"
+                      objectFit: "contain",
                     }}
                     alt={item.desc}
                   />
@@ -72,7 +75,7 @@ export default function Carousel() {
                   <video
                     style={{
                       height: "100%",
-                      width: "50%",
+                      width: "100%",
                       display: "inline-block",
                     }}
                     src={item.videoUrl} // Display video for the last item
