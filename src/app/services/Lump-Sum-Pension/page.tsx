@@ -1,9 +1,28 @@
 import bannerImage from "../../../../public/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg";
-import "../services.css"
+import "../services.css";
 
 export default function FutureFunds() {
   return (
     <main>
+      <div
+        className="w-full text-center items-center justify-center  overflow-hidden
+        "
+      >
+        <div
+          id="banner-area"
+          className="banner-area"
+          style={{
+            background: `url(/Fusion_pics/Fusion-Finance-Web-Ready-36-1.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            minHeight: "100px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        ></div>
+      </div>
       <div className="w-full text-center items-center justify-center">
         <div
           id="banner-area"
@@ -20,7 +39,7 @@ export default function FutureFunds() {
             width: "100%",
             backgroundRepeat: "no-repeat",
             height: "100vh",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
           }}
         >
           <div className="container mx-auto px-4">
@@ -39,7 +58,7 @@ export default function FutureFunds() {
             <div className="p-6 border rounded-md border-black shadow-xl flex flex-col lg:flex-row items-center lg:items-start lg:justify-around mb-8">
               <div className="mb-8 lg:w-3/5 lg:me-20">
                 <h2 className="underline text-3xl font-bold mb-2 font-sans">
-                  Lump Sum Investment 
+                  Lump Sum Investment
                 </h2>
                 <p className="text-gray-700 cormorant-infant text-xl text-justify">
                   Have you a lump sum that you are prepared to invest for five
@@ -95,8 +114,8 @@ export default function FutureFunds() {
               </div>
               <div className="lg:w-2/5 flex flex-col items-center lg:order-1">
                 <h1 className="cormorant-infant text-xl font-bold mb-2 text-center mb-4">
-                  Explore the Significance of Children&apos;s Education Planning.
-                  Learn more by watching our concise video.
+                  Explore the Significance of Children&apos;s Education
+                  Planning. Learn more by watching our concise video.
                 </h1>
                 <div className="customClass">
                   <iframe

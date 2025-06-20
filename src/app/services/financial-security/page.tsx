@@ -1,9 +1,27 @@
 import bannerImage from "../../../../public/Fusion_pics/Fusion-Finance-Web-Ready-32.jpg";
-import "../services.css"
-
+import "../services.css";
 export default function FinancialSecurity() {
   return (
     <main>
+      <div
+        className="w-full text-center items-center justify-center  overflow-hidden
+        "
+      >
+        <div
+          id="banner-area"
+          className="banner-area"
+          style={{
+            background: `url(/Fusion_pics/Fusion-Finance-Web-Ready-36-1.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            minHeight: "100px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        ></div>
+      </div>
       <div className="w-full text-center items-center justify-center">
         <div
           id="banner-area"
@@ -19,9 +37,8 @@ export default function FinancialSecurity() {
             width: "100%",
             backgroundRepeat: "no-repeat",
             height: "100vh",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
           }}
-
         >
           <div className="container mx-auto px-4">
             <div className="row flex flex-wrap">
@@ -98,7 +115,7 @@ export default function FinancialSecurity() {
                   for safeguarding your loved ones. Learn more by viewing our
                   brief video.
                 </h1>
-                <div className="customClass" >
+                <div className="customClass">
                   <iframe
                     width="100%"
                     height="100%"

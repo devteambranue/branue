@@ -1,9 +1,28 @@
 import bannerImage from "../../../../public/Fusion_pics/Fusion-Finance-Web-Ready-40.jpg";
-import "../services.css"
+import "../services.css";
 
 export default function IncomeProtection() {
   return (
     <main>
+      <div
+        className="w-full text-center items-center justify-center  overflow-hidden
+        "
+      >
+        <div
+          id="banner-area"
+          className="banner-area"
+          style={{
+            background: `url(/Fusion_pics/Fusion-Finance-Web-Ready-36-1.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            minHeight: "100px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        ></div>
+      </div>
       <div className="w-full text-center items-center justify-center">
         <div
           id="banner-area"
@@ -20,7 +39,7 @@ export default function IncomeProtection() {
             width: "100%",
             backgroundRepeat: "no-repeat",
             height: "100vh",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
           }}
         >
           <div className="container mx-auto px-4">

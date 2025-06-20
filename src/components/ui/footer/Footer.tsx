@@ -14,7 +14,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="flex flex-col footerArea newDesign">
+    <footer className="flex flex-col footerArea">
       <div className="bg-gray-100 py-14">
         <div className="container">
           <div className="flex flex-col items-center">
