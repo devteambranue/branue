@@ -6,7 +6,6 @@ import { FormData } from "@/components/definitions/FormData";
 import Image from "next/image";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { toast } from "react-toastify";
-import Image from "next/image";
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState<FormData>({
