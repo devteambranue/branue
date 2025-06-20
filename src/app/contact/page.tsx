@@ -225,11 +225,9 @@ export default function Contact() {
                 </h3>
                 <div className="flex flex-row text-white optima-ttf">
                   <h2 className="text-2xl">086 101 3481:</h2>
-                  <p className="ml-10">Lorem ipsum dolor</p>
                 </div>
                 <div className="flex flex-row text-white optima-ttf mb-10">
                   <h2 className="text-2xl">085 827 5697:</h2>
-                  <p className="ml-10">Lorem ipsum dolor</p>
                 </div>
                 <p className="text-white">
                   If you have any questions, <br /> please feel free to contact
