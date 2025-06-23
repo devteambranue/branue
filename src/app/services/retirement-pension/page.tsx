@@ -4,25 +4,6 @@ import "../services.css";
 export default function RetirementPension() {
   return (
     <main>
-      <div
-        className="w-full text-center items-center justify-center  overflow-hidden
-        "
-      >
-        <div
-          id="banner-area"
-          className="banner-area"
-          style={{
-            background: `url(/Fusion_pics/Fusion-Finance-Web-Ready-36-1.jpg)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-            minHeight: "100px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        ></div>
-      </div>
       <div className="w-full text-center items-center justify-center">
         <div
           id="banner-area"
