@@ -245,7 +245,7 @@ export default function Home() {
               <div className="bg-[#1a584f] p-4 text-white text-center text-base font-semibold">
                 <h1 className="customFontSize">
                   <p>LUMP SUM INVESTMENT</p>
-                  <p>AND CHILDREN'S</p>
+                  <p>AND CHILDREN&aposS</p>
                   <p>EDUCATION PLANNING</p>
                 </h1>
               </div>
