@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import Carousel from "../../components/ui/carousel/Carousel";
 import Testimonial from "../../components/ui/testimonial/TestimonialSlider";
-import missionImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg";
 import scheduleConsultationImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-37.jpg";
 import bannerBgImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg";
 import Link from "next/link";
@@ -16,6 +15,7 @@ import "./home.css";
 import Divider from "@/components/ui/Divider/Divider";
 
 export default function Home() {
+  const [testimonialImg, setTestimonialImg] = useState<string>("/Fusion_pics/Fusion Finance Web-Ready-19(2).jpg");
   return (
     <div className="min-h-screen">
       <main className="relative pt-[125px] pb-[96px]">
@@ -384,7 +384,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between items-center bg-white p-4 md:p-20">
           <div className="w-full md:w-1/2 flex justify-center md:justify-end md:pr-10 mb-6 md:mb-0">
             <Image
-              src="/Fusion_pics/Fusion Finance Web-Ready-19(2).jpg"
+              src={testimonialImg}
               alt="testimonials"
               width={1896}
               height={1244}
@@ -402,7 +402,7 @@ export default function Home() {
               <br className="hidden md:block" />
               create the best experience possible.
             </p>
-            <Testimonial />
+            <Testimonial setTestimonialImg={setTestimonialImg}/>
           </div>
         </div>
 

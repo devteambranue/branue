@@ -6,6 +6,7 @@ import "./TestimonialSlider.css";
 interface Testimonial {
   quote: string;
   author: string;
+  reference: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -13,35 +14,45 @@ const testimonials: Testimonial[] = [
     quote:
       "Gemma was absolutely brilliant to deal with in relation to my finances...",
     author: "Linda D",
+    reference: "gemma",
   },
   {
     quote:
       "Marie Davey... Marie’s expertise, her endless attention to detail... What sets Marie and Fusion Finance apart is that the client’s needs come first...",
     author: "Mary K",
+    reference: "marie",
   },
   {
     quote:
       "I have been working with Gemma at Fusion Finance for 4 years now and it was one of the best decisions I made...",
     author: "Danielle O’C",
+    reference: "gemma",
   },
   {
     quote:
       "Fusion Finance was worked with the staff of the Presentation Secondary School Clonmel over the last number of years. The staff that Maire has worked with are very happy with her service...",
     author: "Michael O’L",
+    reference: "marie",
   },
   {
     quote:
       "Gemma has been providing expert financial advice to us for 7 years now... She is extremely knowledgeable and always professional and we have absolute trust in her advice regarding our future investments...",
     author: "Carmel H",
+    reference: "gemma",
   },
   {
     quote:
       "Expert knowledge and support, superb communication skills and team work are the cornerstones of this financial group. I would highly recommend Marie and her team.",
     author: "Colette K",
+    reference: "marie",
   },
 ];
 
-const TestimonialSlider: React.FC = () => {
+type TestimonialSliderProps = {
+  setTestimonialImg: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const TestimonialSlider: React.FC<TestimonialSliderProps> = ({setTestimonialImg}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
 
@@ -51,11 +62,15 @@ const TestimonialSlider: React.FC = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
         setTransitioning(false);
+        const nextIndex = (currentIndex + 1) % testimonials.length;
+        const nextRef = testimonials[nextIndex].reference;
+        const nextImg = nextRef === "gemma" ? "/Fusion_pics/Fusion Finance Web-Ready-19(2).jpg" : "/Fusion_pics/Fusion-Finance-Web-Ready-23(2).jpg";
+        setTestimonialImg(nextImg);
       }, 500);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex, setTestimonialImg]);
 
   const goToTestimonial = (index: number) => {
     if (index !== currentIndex) {
