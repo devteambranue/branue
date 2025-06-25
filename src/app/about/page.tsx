@@ -1,14 +1,11 @@
 "use client";
 import Image from "next/image";
 import bannerImage from "../../../public/Fusion_pics/Fusion_Finance_Team_Update_Web-Ready.jpg";
-import marieDaveyImage from "../../../public/Fusion_pics/Marie-Web-Ready-7.jpg";
 import gemmaMaguireImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-1.jpg";
-import missionImage from "../../../public/Fusion_pics/Fusion-Finance-Web-Ready-39.jpg";
 import samanthaImage from "../../../public/Fusion_pics/Fusion Finance Web-Ready-29.jpg";
 import catherineImage from "../../../public/Fusion_pics/Fusion Finance Catherine Web-Ready-2.jpg";
 import dogImage from "../../../public/Fusion_pics/not-at-work (4).jpeg";
 import gemmaAtTraithlon from "../../../public/Fusion_pics/image (15).png";
-import ImageSlider from "../about/imageslider/imageSlider";
 import "../custom-font.css";
 import "./about.css";
 import { useState } from "react";
@@ -88,9 +85,9 @@ export default function About() {
               </h2>
               <Divider width={150} height={0.5} color="#5ae9d4" />
               <p className="optima-ttf text-white text-center mt-3 mb-5 ">
-                With over 50+ years of combined experiences, we don&apost just{" "}
+                With over 50+ years of combined experiences, we don't just{" "}
                 <br />
-                provide services --we build relationahips.
+                provide services--we build relationahips.
               </p>
             </div>
 
@@ -250,7 +247,7 @@ export default function About() {
           </div>
         </section>
 
-        <div className="w-full my-16 text-center optima-ttf items-center justify-center">
+        <div className="w-full mt-16 mb-10 text-center optima-ttf items-center justify-center">
           <div className="text-center flex flex-col items-center justify-center mb-12 relative">
             <h2
               className="text-3xl font-bold text-[#fe7db0] section-title-dash inline-block mb-4 relative"
@@ -280,19 +277,9 @@ export default function About() {
           </div>
         </div>
 
-        <div className="imageSection">
-          <Image
-            src="/Fusion_pics/Fusion-Finance-Web-Ready-38(2).jpg"
-            alt="Fusion-Finance-Web-Ready-38"
-            width={600}
-            height={600}
-            className="w-full object-cover"
-          />
-        </div>
-
         <section
           id="our-values"
-          className="font-sans relative section-padding bg-white py-12 bg-cover bg-center"
+          className="font-sans relative section-padding bg-white py-6 bg-cover bg-center"
         >
           <div className="absolute inset-0 bg-white opacity-70"></div>
           <div className="relative container mx-auto px-4 w-full lg:w-3/4">
@@ -300,13 +287,13 @@ export default function About() {
               <h2 className="text-3xl font-bold text-[#fe7db0] mb-4 optima-ttf">
                 Mission & Our Values
               </h2>
-              <div className="mb-4">
+              <div className="mb-12">
                 <Divider width={150} height={0.5} color="#5ae9d4" />
               </div>
               <div className="container text-center text-black space-y-4">
                 <h4 className="cormorant-infant text-xl">
                   Fusion Finance develop relationships that make a positive
-                  difference to our customers&apos; lives, providing financial
+                  difference to our customers lives, providing financial
                   options and solutions that deliver premium value to our
                   clients. We uphold the highest standards of integrity in all
                   our actions.
@@ -317,7 +304,7 @@ export default function About() {
                   With over 25 years of experience and a commitment to
                   integrity, we have served over 2000 satisfied customers. Our
                   goal is to develop lasting relationships that positively
-                  impact our clients&apos; lives.
+                  impact our clients lives.
                 </p>
 
                 <div className="flex justify-evenly items-center flex-wrap gap-1 pt-14">
@@ -437,12 +424,19 @@ export default function About() {
                     and most importantly people.
                   </p>
 
-                  {!showReadMore1 && (
+                  {!showReadMore1 ? (
                     <button
                       onClick={handleReadMoreClick1}
                       className="text-black text-xl"
                     >
                       ....Read more
+                    </button>
+                  ) : (
+                  <button
+                      onClick={handleReadMoreClick1}
+                      className="text-black text-xl"
+                    >
+                      ....Read less
                     </button>
                   )}
 
@@ -545,12 +539,19 @@ export default function About() {
                     Family and Illness Protection solutions for my clients.
                   </p>
 
-                  {!showReadMore2 && (
+                  {!showReadMore2 ? (
                     <button
                       onClick={handleReadMoreClick2}
                       className="text-black text-xl"
                     >
                       ....Read more
+                    </button>
+                  ): (
+                  <button
+                      onClick={handleReadMoreClick2}
+                      className="text-black text-xl"
+                    >
+                      ....Read less
                     </button>
                   )}
 
@@ -660,12 +661,19 @@ export default function About() {
                     itineraries and provide exceptional support to clients.
                   </p>
 
-                  {!showReadMore3 && (
+                  {!showReadMore3 ? (
                     <button
                       onClick={handleReadMoreClick3}
                       className="text-black text-xl"
                     >
                       ....Read more
+                    </button>
+                  ) : (
+                  <button
+                      onClick={handleReadMoreClick3}
+                      className="text-black text-xl"
+                    >
+                      ....Read less
                     </button>
                   )}
                   {showReadMore3 && (

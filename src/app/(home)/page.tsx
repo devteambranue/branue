@@ -59,7 +59,7 @@ export default function Home() {
             </h1>
 
             <p className="text-black-700 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-sans">
-              With over
+              With over {" "/** this is just adding whitespace */}
               <span className="text-[#1a584f] font-bold font-sans">
                 50+ years of combined experience
               </span>

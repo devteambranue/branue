@@ -217,7 +217,7 @@ export default function Services() {
                     </h1>
 
                     <h1 className="relative pt-[10px] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[50px] before:h-[3px] before:bg-[#5ae9d4] text-[#5ae9d4] text-left text-lg sm:text-2xl font-bold  brandon-grotesque-bld">
-                      OFFERING BESPOKE FINNANCIAL <br /> ADVICE AND SERVICES TO
+                      OFFERING BESPOKE FINANCIAL <br /> ADVICE AND SERVICES TO
                       PEOPLE
                     </h1>
                   </div>
