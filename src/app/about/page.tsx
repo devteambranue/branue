@@ -630,7 +630,7 @@ export default function About() {
 
                 <div className="flex-1 ml-6 mt-2 relative">
                   <div className={` mariaContent transition-all duration-300 ease-in-out ${
-                    showReadMore1 ? "max-h-full" : "max-h-[450px] h-[450px] overflow-hidden"
+                    showReadMore1 ? "max-h-full" : "max-h-[350px] h-[340px] overflow-hidden"
                   }`}>
                     <h2 className="text-4xl font-bold text-[#fe7db0]">
                       Samantha
