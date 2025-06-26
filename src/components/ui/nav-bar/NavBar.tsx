@@ -230,7 +230,7 @@ export default function NavBar() {
               href="/"
               className={`${
                 isActive("/") ? "text-[#5ae9d4]" : "text-white"
-              } m-4 text-xl uppercase`}
+              } m-4 text-xl uppercase text-shadow-lg`}
               onClick={handleLinkClick}
             >
               Home
@@ -239,7 +239,7 @@ export default function NavBar() {
               href="/services"
               className={`${
                 isActive("/services") ? "text-[#5ae9d4]" : "text-white"
-              } m-4 text-xl uppercase`}
+              } m-4 text-xl uppercase text-shadow-lg`}
               onClick={handleLinkClick}
             >
               Services
@@ -248,7 +248,7 @@ export default function NavBar() {
               href="/about"
               className={`${
                 isActive("/about") ? "text-[#5ae9d4]" : "text-white"
-              } m-4 text-xl uppercase`}
+              } m-4 text-xl uppercase text-shadow-lg`}
               onClick={handleLinkClick}
             >
               About
@@ -257,7 +257,7 @@ export default function NavBar() {
               href="/news"
               className={`${
                 isActive("/news") ? "text-[#5ae9d4]" : "text-white"
-              } m-4 text-xl uppercase`}
+              } m-4 text-xl uppercase text-shadow-lg`}
               onClick={handleLinkClick}
             >
               News
