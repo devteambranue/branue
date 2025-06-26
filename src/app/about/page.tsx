@@ -208,7 +208,7 @@ export default function About() {
                       </span>
                       <div className="feature-content pl-3">
                         <h3 className="text-xl font-semibold text-white">
-                          CFP Expertise
+                          CFP<span className="">&reg;</span> Certification Expertise
                         </h3>
                         <p className="text-white  cormorant-infant text-lg">
                           Our Certified Financial Planners have attained <br />
@@ -308,9 +308,9 @@ export default function About() {
                 </p>
 
                 <div className="flex justify-evenly items-center flex-wrap gap-1 pt-14">
-                  <div className="min-h-[300px] mt-12 lg:mt-5 border-2 border-[#fe7db0] transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl max-w-xs flex flex-col justify-center items-start p-2 rounded-2xl w-full lg:w-[280px]">
+                  <div className="min-h-[300px] max-h-[350px] mt-12 lg:mt-5 border-2 border-[#fe7db0] transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl max-w-xs flex flex-col justify-center items-start p-2 rounded-2xl w-full lg:w-[280px]">
                     <p className="text-black min-h-[300px] p-6 relative cormorant-infant text-xl bg-white inline-block rounded-2xl">
-                      <span className="bg-[#fe7db0] absolute mr-8 lg:mr-4 -top-8 right-20 inline-block p-2 rounded-full services_icon">
+                      <span className="bg-[#fe7db0] absolute mr-8 lg:mr-4 -top-10 right-20 inline-block p-2 rounded-full services_icon">
                         <Image
                           src="/info.png"
                           width={50}
@@ -319,9 +319,9 @@ export default function About() {
                         />
                       </span>
                       <br />
-                      <strong className="text-[#fe7db0] mb-4">Informed:</strong>
+                      <strong className="text-[#fe7db0]">Informed:</strong>
                       <br />
-                      Certified Financial Planner designation is currently the
+                      The CERTIFIED FINANCIAL PLANNER™ designation is currently the
                       highest overall educational qualification that can be
                       obtained in the sector and this has been achieved by our
                       consultants.
@@ -330,7 +330,7 @@ export default function About() {
 
                   <div className="min-h-[300px] mt-12 lg:mt-5 border-2 border-[#fe7db0] transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl max-w-xs flex flex-col justify-center items-start p-2 rounded-2xl w-full lg:w-[280px]">
                     <p className="text-black min-h-[330px] relative cormorant-infant text-xl bg-white inline-block p-2 rounded-2xl">
-                      <span className="bg-[#fe7db0] absolute mr-8 lg:mr-4 -top-12 right-20 inline-block p-2 rounded-full services_icon">
+                      <span className="bg-[#fe7db0] absolute mr-8 lg:mr-4 -top-10 right-20 inline-block p-2 rounded-full services_icon">
                         <Image
                           src="/focus.png"
                           width={50}
@@ -351,7 +351,7 @@ export default function About() {
 
                   <div className="min-h-[300px] mt-12 lg:mt-5 border-2 border-[#fe7db0] transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl max-w-xs flex flex-col justify-center items-start p-2 rounded-2xl w-full lg:w-[280px]">
                     <p className="text-black min-h-[330px] relative cormorant-infant text-xl bg-white inline-block p-2 rounded-2xl">
-                      <span className="bg-[#fe7db0] absolute mr-8 lg:mr-4 -top-12 right-20 inline-block p-2 rounded-full services_icon">
+                      <span className="bg-[#fe7db0] absolute mr-8 lg:mr-4 -top-10 right-20 inline-block p-2 rounded-full services_icon">
                         <Image
                           src="/open.png"
                           width={50}
@@ -389,169 +389,186 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="pb-10 pt-10 w-full lg:w-3/4 mx-4 flex flex-col lg:flex-row px-4 cormorant-infant">
-                <Image
-                  src={"/Fusion_pics/Fusion Finance Web-Ready-11.jpg"}
-                  layout="responsive"
-                  width={150}
-                  height={150}
-                  alt="partner3"
-                  className="rounded-lg marieImage object-cover"
-                />
-                <div className="mariaContent">
-                  <h2 className="text-4xl font-bold text-[#fe7db0]">
-                    Marie Davey
-                  </h2>
-                  <div className="my-4">
-                    <Divider width={150} height={0.5} color="#5ae9d4" />
-                  </div>
-                  <p className="font-semibold text-black text-xl">
-                    QFA, RPA, SIA, Digital marketing degree.
-                  </p>
-                  <p className=" font-semibold mb-4 text-black text-xl">
-                    Partner Fusion Finance
-                  </p>
-                  <p className="mb-4 text-white text-xl">
-                    My Journey within the Financial Services was very much
-                    accidental when I meet with New Ireland Assurance they
-                    convinced me that I would be a great fit as a tied agent
-                    with their company and from there my journey began, New
-                    Ireland Assurance was instrumental in guiding me through my
-                    exams in my QFA and RPA as well as giving me the tools to
-                    navigate the world of finance which can be very scary and
-                    complex and at the time very male dominated, it was from
-                    there that I got to really understand the world of Finance
-                    and most importantly people.
-                  </p>
+              {/** Start of first Marie card */}
+              <div className="py-10 w-full lg:w-3/4 mx-4  px-4 cormorant-infant justify-center">
+                <div className="rounded-lg float-left w-[60] mt-2 ml-8">
+                  <Image
+                    src={"/Fusion_pics/Fusion Finance Web-Ready-11.jpg"}
+                    layout="responsive"
+                    width={300}
+                    height={200}
+                    alt="partner3"
+                    className="rounded-lg marieImage object-cover"
+                  /> 
+                </div>
 
-                  {!showReadMore1 ? (
-                    <button
+                <div className="flex-1 ml-6 mt-2 relative">
+                  <div className={` mariaContent transition-all duration-300 ease-in-out ${
+                    showReadMore1 ? "max-h-full" : "max-h-[350px] h-[340px] overflow-hidden"
+                  }`}>
+                    <h2 className="text-4xl font-bold text-[#fe7db0]">
+                      Marie Davey
+                    </h2>
+                    <div className="my-4">
+                      <Divider width={150} height={0.5} color="#5ae9d4" />
+                    </div>
+                    <p className="font-semibold text-black text-xl">
+                      QFA, RPA, SIA, Digital marketing degree.
+                    </p>
+                    <p className=" font-semibold mb-4 text-black text-xl">
+                      Partner Fusion Finance
+                    </p>
+                    <p className="mb-4 text-white text-xl">
+                      My Journey within the Financial Services was very much
+                      accidental when I meet with New Ireland Assurance they
+                      convinced me that I would be a great fit as a tied agent
+                      with their company and from there my journey began, New
+                      Ireland Assurance was instrumental in guiding me through my
+                      exams in my QFA and RPA as well as giving me the tools to
+                      navigate the world of finance which can be very scary and
+                      complex and at the time very male dominated, it was from
+                      there that I got to really understand the world of Finance
+                      and most importantly people.
+                    </p>
+                  </div>
+
+                  {!showReadMore1 && (
+                    <div className="mt-4">
+                      <button
                       onClick={handleReadMoreClick1}
                       className="text-black text-xl"
                     >
                       ....Read more
                     </button>
-                  ) : (
-                  <button
-                      onClick={handleReadMoreClick1}
-                      className="text-black text-xl"
-                    >
-                      ....Read less
-                    </button>
-                  )}
-
-                  {showReadMore1 && (
-                    <div>
-                      <p className="mb-4 text-white text-xl">
-                        I understand the most important relationship I can have
-                        is with me and my client and I have had the most amazing
-                        journey getting to help and guide my Fusion Family
-                        through the harsh bumpy and complex financial road.
-                        <br />
-                        <br />
-                        The complex relationship between health and happiness
-                        really does have a lot to do with our general health and
-                        wellbeing and sometimes it is that relationship with
-                        money that makes the difference to our mental wellbeing.
-                      </p>
-                      <p className="mb-4 text-white text-xl">
-                        I decided to leave New Ireland in 2010 and joined a firm
-                        in Dublin that worked for the public sector, and it was
-                        there that I got introduced to the Public sector and
-                        built up a great relationship within that sector, in May
-                        2012 I decided to take a huge leap of faith with my
-                        colleague Gemma Mcguire and Fusion Finance became a
-                        reality.
-                        <br />
-                        <br />
-                        We have a combined customer baes of over 2000 clients
-                        and this is growing year on year we are blessed to have
-                        Samatha and Catherine working tirelessly to ensure our
-                        clients are always priority, we have worked very hard to
-                        keep on top of all the complex changes that continue to
-                        be part of the financial landscape. We were nominated
-                        last year by Brookers Ireland as one of the Top 3
-                        brokers in Ireland when it comes to prioritising
-                        protection around our clients.
-                      </p>
-                      <p className="mb-4 text-white text-xl">
-                        I am on the Journey to completing my CFP which is the
-                        highest designation in the financial service and
-                        recognised around the world, it&apos;s something I never
-                        thought I would do but I believe with an amazing team
-                        behind you anything is possible. My dreams for the next
-                        10 years are for my clients to have a real genuine
-                        connection with me if they phone me, they are not
-                        waiting or put on hold they get us if not straight away
-                        within the same day, we have seen the devastation of
-                        separation, illness and death and want for our clients
-                        to know that we are there if they need us.
-                      </p>
-                      <p className="font-bold text-white text-xl">
-                        My goal for the next 10 years is to give back to my
-                        community, I am very involved in Soccer and in animals
-                        and I want to develop my passion in fostering animals,
-                        besides my two boys my biggest passion is the welfare of
-                        animals, I recently rescued a lurcher called Archie and
-                        he has been one of the biggest changes in my life, his
-                        soul was meant to meet mine. I will have also completed
-                        my master&apos;s in finance and most importantly see my
-                        boys grow into young men. There is no currency more
-                        valuable than time, we can always make money but can
-                        never make up for lost time.
-                      </p>
                     </div>
+                    
                   )}
+                    {showReadMore1 && (
+                      <div>
+                        <p className="mb-4 text-white text-xl">
+                          I understand the most important relationship I can have
+                          is with me and my client and I have had the most amazing
+                          journey getting to help and guide my Fusion Family
+                          through the harsh bumpy and complex financial road.
+                          <br />
+                          <br />
+                          The complex relationship between health and happiness
+                          really does have a lot to do with our general health and
+                          wellbeing and sometimes it is that relationship with
+                          money that makes the difference to our mental wellbeing.
+                        </p>
+                        <p className="mb-4 text-white text-xl">
+                          I decided to leave New Ireland in 2010 and joined a firm
+                          in Dublin that worked for the public sector, and it was
+                          there that I got introduced to the Public sector and
+                          built up a great relationship within that sector, in May
+                          2012 I decided to take a huge leap of faith with my
+                          colleague Gemma Mcguire and Fusion Finance became a
+                          reality.
+                          <br />
+                          <br />
+                          We have a combined customer baes of over 2000 clients
+                          and this is growing year on year we are blessed to have
+                          Samatha and Catherine working tirelessly to ensure our
+                          clients are always priority, we have worked very hard to
+                          keep on top of all the complex changes that continue to
+                          be part of the financial landscape. We were nominated
+                          last year by Brookers Ireland as one of the Top 3
+                          brokers in Ireland when it comes to prioritising
+                          protection around our clients.
+                        </p>
+                        <p className="mb-4 text-white text-xl">
+                          I am on the Journey to completing my CFP which is the
+                          highest designation in the financial service and
+                          recognised around the world, it&apos;s something I never
+                          thought I would do but I believe with an amazing team
+                          behind you anything is possible. My dreams for the next
+                          10 years are for my clients to have a real genuine
+                          connection with me if they phone me, they are not
+                          waiting or put on hold they get us if not straight away
+                          within the same day, we have seen the devastation of
+                          separation, illness and death and want for our clients
+                          to know that we are there if they need us.
+                        </p>
+                        <p className="font-bold text-white text-xl">
+                          My goal for the next 10 years is to give back to my
+                          community, I am very involved in Soccer and in animals
+                          and I want to develop my passion in fostering animals,
+                          besides my two boys my biggest passion is the welfare of
+                          animals, I recently rescued a lurcher called Archie and
+                          he has been one of the biggest changes in my life, his
+                          soul was meant to meet mine. I will have also completed
+                          my master&apos;s in finance and most importantly see my
+                          boys grow into young men. There is no currency more
+                          valuable than time, we can always make money but can
+                          never make up for lost time.
+                        </p>
+                      </div>
+                    )}
+                    {showReadMore1 && (
+                      <div className="mt-4">
+                        <button
+                        onClick={handleReadMoreClick1}
+                        className="text-black text-xl"
+                      >
+                        ....Read less
+                      </button>
+                      </div>
+                    )}
+                  <div className="clear-both"></div>
                 </div>
               </div>
+              {/** End of first Marie card */}
 
               <div className="mb-5 w-full lg:w-1/2 overflow-hidden divider_wrapper">
                 <Divider width={700} height={1} color="#5ae9d4" />
               </div>
 
-              <div className="pb-10 pt-10 w-full lg:w-3/4 mx-4 flex flex-col lg:flex-row px-4 cormorant-infant">
-                <Image
-                  src={gemmaMaguireImage.src}
-                  layout="responsive"
-                  width={150}
-                  height={150}
-                  alt="partner3"
-                  className="rounded-lg marieImage object-cover"
-                />
-                <div className="mariaContent">
-                  <h2 className="text-4xl font-bold text-[#fe7db0]">
-                    Gemma Maguire
-                  </h2>
-                  <div className="my-4">
-                    <Divider width={150} height={0.5} color="#5ae9d4" />
-                  </div>
-                  <p className="font-semibold text-black text-xl">
-                    CFP, RPA, QFA, SIA
-                  </p>
-                  <p className=" font-semibold mb-4 text-black text-xl">
-                    ertified Financial Planner
-                    <br /> <span>Partner Fusion Finance</span>
-                  </p>
-                  <p className="mb-4 text-white text-xl">
-                    Since joining the financial services industry in 1999, I
-                    have gained extensive experience in all areas of Financial
-                    Planning Pension and Wealth Planning along with providing
-                    Family and Illness Protection solutions for my clients.
-                  </p>
+              {/** Start of first Gemma card */}
+              <div className="py-10 w-full lg:w-3/4 mx-4  px-4 cormorant-infant justify-center">
+                <div className="rounded-lg float-left w-[60] mt-2 ml-8">
+                  <Image
+                    src={gemmaMaguireImage.src}
+                    layout="responsive"
+                    width={300}
+                    height={200}
+                    alt="partner3"
+                    className="rounded-lg marieImage object-cover"
+                  />                
+                </div>
 
-                  {!showReadMore2 ? (
+                <div className="flex-1 ml-6 mt-2 relative">
+                  <div className={` mariaContent transition-all duration-300 ease-in-out ${
+                    showReadMore1 ? "max-h-full" : "max-h-[350px] h-[340px] overflow-hidden"
+                  }`}>
+                    <h2 className="text-4xl font-bold text-[#fe7db0]">
+                      Gemma Maguire
+                    </h2>
+                    <div className="my-4">
+                      <Divider width={150} height={0.5} color="#5ae9d4" />
+                    </div>
+                    <p className="font-semibold text-black text-xl">
+                      CFP, RPA, QFA, SIA
+                    </p>
+                    <p className=" font-semibold mb-4 text-black text-xl">
+                      ertified Financial Planner
+                      <br /> <span>Partner Fusion Finance</span>
+                    </p>
+                    <p className="mb-4 text-white text-xl">
+                      Since joining the financial services industry in 1999, I
+                      have gained extensive experience in all areas of Financial
+                      Planning Pension and Wealth Planning along with providing
+                      Family and Illness Protection solutions for my clients.
+                    </p>                    
+                  </div>
+
+
+                  {!showReadMore2 && (
                     <button
                       onClick={handleReadMoreClick2}
                       className="text-black text-xl"
                     >
                       ....Read more
-                    </button>
-                  ): (
-                  <button
-                      onClick={handleReadMoreClick2}
-                      className="text-black text-xl"
-                    >
-                      ....Read less
                     </button>
                   )}
 
@@ -581,131 +598,162 @@ export default function About() {
                       </p>
                     </div>
                   )}
-                </div>
-              </div>
-
-              <div className="mb-5 w-full lg:w-1/2 overflow-hidden divider_wrapper">
-                <Divider width={700} height={1} color="#5ae9d4" />
-              </div>
-
-              <div className="pb-10 pt-10 w-full lg:w-3/4 mx-4 flex flex-col lg:flex-row px-4 cormorant-infant">
-                <Image
-                  src={samanthaImage.src}
-                  layout="responsive"
-                  width={150}
-                  height={150}
-                  alt="partner4"
-                  className="rounded-lg marieImage object-cover"
-                />
-                <div className="mariaContent">
-                  <h2 className="text-4xl font-bold text-[#fe7db0]">
-                    Samantha
-                  </h2>
-                  <div className="my-4">
-                    <Divider width={150} height={0.5} color="#5ae9d4" />
-                  </div>
-                  {/* <p className="font-semibold text-black text-xl">
-                    CFP, RPA, QFA, SIA
-                  </p> */}
-                  <p className=" font-semibold mb-4 text-black text-xl">
-                    Sales Support
-                  </p>
-                  <p className="mb-4 text-white text-xl">
-                    Samantha joined Fusion Finance early in 2017. She is a
-                    fantastic asset to the business in her efficiency and follow
-                    through of all customer requests. As sales support, Samantha
-                    handles the administration of all business to ensure an
-                    excellent customer experience. Over the last 3 years
-                    Samantha has undertaken to complete 6 financial exams to
-                    enable her to become a Qualified Financial Advisor. This has
-                    given Samantha a great understanding of all aspects of
-                    financial advice and is so beneficial in her office and
-                    customer dealings.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mb-5 w-full lg:w-1/2 overflow-hidden divider_wrapper">
-                <Divider width={700} height={1} color="#5ae9d4" />
-              </div>
-
-              <div className="pb-10 pt-10 w-full lg:w-3/4 mx-4 flex flex-col lg:flex-row px-4 cormorant-infant">
-                <Image
-                  src={catherineImage.src}
-                  layout="responsive"
-                  width={150}
-                  height={150}
-                  alt="partner3"
-                  className="rounded-lg marieImage object-cover"
-                />
-                <div className="mariaContent">
-                  <h2 className="text-4xl font-bold text-[#fe7db0]">
-                    Catherine&apos;s
-                  </h2>
-                  <div className="my-4">
-                    <Divider width={150} height={0.5} color="#5ae9d4" />
-                  </div>
-                  {/* <p className="font-semibold text-black text-xl">
-                    CFP, RPA, QFA, SIA
-                  </p> */}
-                  <p className=" font-semibold mb-4 text-black text-xl">
-                    Sales Support
-                  </p>
-                  <p className="mb-4 text-white text-xl">
-                    Catherine Mulcahy has a diverse background in travel and
-                    tourism, as well as experience as a personal assistant in a
-                    medical practice. She brings a unique skill set to her Sales
-                    Manager Fusion Finance role. Catherines&apos; experience in
-                    the travel industry has honed her organisational and
-                    customer service skills, allowing her to manage complex
-                    itineraries and provide exceptional support to clients.
-                  </p>
-
-                  {!showReadMore3 ? (
+                  {showReadMore2 && (
                     <button
-                      onClick={handleReadMoreClick3}
-                      className="text-black text-xl"
-                    >
-                      ....Read more
-                    </button>
-                  ) : (
-                  <button
-                      onClick={handleReadMoreClick3}
+                      onClick={handleReadMoreClick2}
                       className="text-black text-xl"
                     >
                       ....Read less
                     </button>
                   )}
-                  {showReadMore3 && (
-                    <div className="readMore">
-                      <p className="mb-4 text-white text-xl">
-                        In the medical field, she developed a keen attention to
-                        detail and the ability to handle sensitive information
-                        with discretion. She is excited to join the Fusion
-                        Finance team, where she aims to leverage her expertise
-                        to contribute to a seamless and efficient workflow,
-                        ensuring that our clients receive the highest level of
-                        service.
-                      </p>
-                      <p className="mb-4 text-white text-xl">
-                        Catherine is a wife to Peter and a mother to two young
-                        children, an adventurous boy and a teddy-obsessed girl.
-                        Working with Fusion Finance has taught her that there is
-                        nothing more important than financial security for her
-                        family, particularly with her children&apos;s future in
-                        mind. If only the world was flawless as seen through the
-                        eyes of children but unfortunately in today&apos;s world
-                        the future is very much uncertain. We need to be
-                        proactive in securing a safe future for those we love.
-                      </p>
-                      <p className="mb-4 text-white text-xl">
-                        “Your Smile is your Logo; your Personality is your
-                        business Card”
-                      </p>
-                    </div>
-                  )}
                 </div>
+                <div className="clear-both"></div>
               </div>
+              {/** End of first Gemma card */}
+
+              <div className="mb-5 w-full lg:w-1/2 overflow-hidden divider_wrapper">
+                <Divider width={700} height={1} color="#5ae9d4" />
+              </div>
+
+              {/** Start of Samantha card */}
+              <div className="py-10 w-full lg:w-3/4 mx-4  px-4 cormorant-infant justify-center">
+                <div className="rounded-lg float-left w-[60] mt-2 ml-8">
+                  <Image
+                    src={samanthaImage.src}
+                    layout="responsive"
+                    width={150}
+                    height={150}
+                    alt="partner4"
+                    className="rounded-lg marieImage object-cover"
+                  />                  
+                </div>
+
+                <div className="flex-1 ml-6 mt-2 relative">
+                  <div className={` mariaContent transition-all duration-300 ease-in-out ${
+                    showReadMore1 ? "max-h-full" : "max-h-[350px] h-[340px] overflow-hidden"
+                  }`}>
+                    <h2 className="text-4xl font-bold text-[#fe7db0]">
+                      Samantha
+                    </h2>
+                    <div className="my-4">
+                      <Divider width={150} height={0.5} color="#5ae9d4" />
+                    </div>
+                    {/* <p className="font-semibold text-black text-xl">
+                      CFP, RPA, QFA, SIA
+                    </p> */}
+                    <p className=" font-semibold mb-4 text-black text-xl">
+                      Sales Support
+                    </p>
+                    <p className="mb-4 text-white text-xl">
+                      Samantha joined Fusion Finance early in 2017. She is a
+                      fantastic asset to the business in her efficiency and follow
+                      through of all customer requests. As sales support, Samantha
+                      handles the administration of all business to ensure an
+                      excellent customer experience. Over the last 3 years
+                      Samantha has undertaken to complete 6 financial exams to
+                      enable her to become a Qualified Financial Advisor. This has
+                      given Samantha a great understanding of all aspects of
+                      financial advice and is so beneficial in her office and
+                      customer dealings.
+                    </p>
+                  </div>                  
+                </div>
+                
+              </div>
+              {/** End of Samantha card */}
+
+              <div className="mb-5 w-full lg:w-1/2 overflow-hidden divider_wrapper">
+                <Divider width={700} height={1} color="#5ae9d4" />
+              </div>
+
+              {/** Start of Catherine card */}
+              <div className="py-10 w-full lg:w-3/4 mx-4  px-4 cormorant-infant justify-center">
+                <div className="rounded-lg float-left w-[60] mt-2 ml-8">
+                  <Image
+                    src={catherineImage.src}
+                    layout="responsive"
+                    width={150}
+                    height={150}
+                    alt="partner3"
+                    className="rounded-lg marieImage object-cover"
+                  />                  
+                </div>
+
+                <div className="flex-1 ml-6 mt-2 relative">
+                  <div className={` mariaContent transition-all duration-300 ease-in-out ${
+                    showReadMore1 ? "max-h-full" : "max-h-[350px] h-[340px] overflow-hidden"
+                  }`}>
+                    <h2 className="text-4xl font-bold text-[#fe7db0]">
+                      Catherine&apos;s
+                    </h2>
+                    <div className="my-4">
+                      <Divider width={150} height={0.5} color="#5ae9d4" />
+                    </div>
+                    {/* <p className="font-semibold text-black text-xl">
+                      CFP, RPA, QFA, SIA
+                    </p> */}
+                    <p className=" font-semibold mb-4 text-black text-xl">
+                      Sales Support
+                    </p>
+                    <p className="mb-4 text-white text-xl">
+                      Catherine Mulcahy has a diverse background in travel and
+                      tourism, as well as experience as a personal assistant in a
+                      medical practice. She brings a unique skill set to her Sales
+                      Manager Fusion Finance role. Catherines&apos; experience in
+                      the travel industry has honed her organisational and
+                      customer service skills, allowing her to manage complex
+                      itineraries and provide exceptional support to clients.
+                    </p>
+                    </div>
+
+                    {!showReadMore3 && (
+                      <button
+                        onClick={handleReadMoreClick3}
+                        className="text-black text-xl"
+                      >
+                        ....Read more
+                      </button>
+                    )}
+                    {showReadMore3 && (
+                      <div className="readMore">
+                        <p className="mb-4 text-white text-xl">
+                          In the medical field, she developed a keen attention to
+                          detail and the ability to handle sensitive information
+                          with discretion. She is excited to join the Fusion
+                          Finance team, where she aims to leverage her expertise
+                          to contribute to a seamless and efficient workflow,
+                          ensuring that our clients receive the highest level of
+                          service.
+                        </p>
+                        <p className="mb-4 text-white text-xl">
+                          Catherine is a wife to Peter and a mother to two young
+                          children, an adventurous boy and a teddy-obsessed girl.
+                          Working with Fusion Finance has taught her that there is
+                          nothing more important than financial security for her
+                          family, particularly with her children&apos;s future in
+                          mind. If only the world was flawless as seen through the
+                          eyes of children but unfortunately in today&apos;s world
+                          the future is very much uncertain. We need to be
+                          proactive in securing a safe future for those we love.
+                        </p>
+                        <p className="mb-4 text-white text-xl">
+                          “Your Smile is your Logo; your Personality is your
+                          business Card”
+                        </p>
+                  </div>
+                    )}
+                      {showReadMore3 && (
+                        <button
+                            onClick={handleReadMoreClick3}
+                            className="text-black text-xl"
+                          >
+                            ....Read less
+                          </button>
+                        )}              
+              </div>
+                  <div className="clear-both"></div>
+              </div>
+              {/** End of Catherine card */}
             </div>
           </section>
         </div>
