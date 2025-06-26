@@ -38,6 +38,7 @@
   object-fit: cover;
   object-position: top;
   border: 3px solid white;
+  border-radius: 25px;
 }
 
 .image-wrapper {

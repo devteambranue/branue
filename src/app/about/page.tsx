@@ -269,7 +269,7 @@ export default function About() {
                 display: "inline-block",
               }}
               src="/Fusion_pics/About-Fusion-Finance.mp4"
-              className="responsiveVideo"
+              className="responsiveVideo rounded-lg"
               autoPlay
               muted
               controls
