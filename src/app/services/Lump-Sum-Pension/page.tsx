@@ -1,4 +1,4 @@
-import bannerImage from "../../../../public/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg";
+import Image from "next/image";
 import "../services.css";
 
 export default function FutureFunds() {
