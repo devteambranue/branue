@@ -1,3 +1,4 @@
+import Image from "next/image";
 import bannerImage from "../../../../public/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg";
 import "../services.css";
 
