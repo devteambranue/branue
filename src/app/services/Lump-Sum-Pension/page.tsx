@@ -6,16 +6,17 @@ export default function FutureFunds() {
   return (
     <main>
       <div className="w-full text-center items-center justify-center">
-                <div className="w-full text-center items-center justify-center">
-                  <Image src={"/Fusion_pics/Fusion-Finance-Web-Ready-38(4).jpg"}
-                          alt="fusionImg38(2)"
-                          layout="responsive"
-                          width={1896}
-                          height={1244}
-                          className="object-contain w-full h-auto relative"
-                  />
-                </div>
-            </div>
+        <div className="w-full text-center items-center justify-center">
+          <Image
+            src={"/Fusion_pics/Fusion-Finance-Web-Ready-38.jpg"}
+            alt="fusionImg38(2)"
+            layout="responsive"
+            width={1896}
+            height={1244}
+            className="object-contain w-full h-auto relative"
+          />
+        </div>
+      </div>
 
       <div className="min-h-screen bg-gray-100">
         <div className="container mx-auto py-12 px-4">
