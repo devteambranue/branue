@@ -5,33 +5,16 @@ export default function FutureFunds() {
   return (
     <main>
       <div className="w-full text-center items-center justify-center">
-        <div
-          id="banner-area"
-          className="banner-area bannerClass"
-          style={{
-            backgroundImage: `url(${bannerImage.src})`,
-            // backgroundSize: "cover",
-            // backgroundSize: "cover",
-            // backgroundPosition: "center",
-            // height: "100%",
-            // backgroundSize: "100%",
-            // padding: "19% 0"
-            backgroundSize: "100%",
-            width: "100%",
-            backgroundRepeat: "no-repeat",
-            height: "100vh",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="container mx-auto px-4">
-            <div className="row flex flex-wrap">
-              <div className="col-xs-12 w-full">
-                <div className="banner-heading w-full text-white flex flex-col justify-center items-center content-center lg:min-h-[420px]"></div>
-              </div>
+                <div className="w-full text-center items-center justify-center">
+                  <Image src={"/Fusion_pics/Fusion-Finance-Web-Ready-38(4).jpg"}
+                          alt="fusionImg38(2)"
+                          layout="responsive"
+                          width={1896}
+                          height={1244}
+                          className="object-contain w-full h-auto relative"
+                  />
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
       <div className="min-h-screen bg-gray-100">
         <div className="container mx-auto py-12 px-4">
