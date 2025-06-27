@@ -85,7 +85,7 @@ export default function About() {
               </h2>
               <Divider width={150} height={0.5} color="#5ae9d4" />
               <p className="optima-ttf text-white text-center mt-3 mb-5 ">
-                With over 50+ years of combined experiences, we don't just{" "}
+                With over 50+ years of combined experiences, we don&apos;t just{" "}
                 <br />
                 provide services--we build relationahips.
               </p>
@@ -208,7 +208,8 @@ export default function About() {
                       </span>
                       <div className="feature-content pl-3">
                         <h3 className="text-xl font-semibold text-white">
-                          CFP<span className="">&reg;</span> Certification Expertise
+                          CFP<span className="">&reg;</span> Certification
+                          Expertise
                         </h3>
                         <p className="text-white  cormorant-infant text-lg">
                           Our Certified Financial Planners have attained <br />
@@ -293,10 +294,9 @@ export default function About() {
               <div className="container text-center text-black space-y-4">
                 <h4 className="cormorant-infant text-xl">
                   Fusion Finance develop relationships that make a positive
-                  difference to our customers lives, providing financial
-                  options and solutions that deliver premium value to our
-                  clients. We uphold the highest standards of integrity in all
-                  our actions.
+                  difference to our customers lives, providing financial options
+                  and solutions that deliver premium value to our clients. We
+                  uphold the highest standards of integrity in all our actions.
                 </h4>
                 <p className="cormorant-infant text-xl">
                   Fusion Finance is dedicated to providing exceptional customer
@@ -321,8 +321,8 @@ export default function About() {
                       <br />
                       <strong className="text-[#fe7db0]">Informed:</strong>
                       <br />
-                      The CERTIFIED FINANCIAL PLANNER™ designation is currently the
-                      highest overall educational qualification that can be
+                      The CERTIFIED FINANCIAL PLANNER™ designation is currently
+                      the highest overall educational qualification that can be
                       obtained in the sector and this has been achieved by our
                       consultants.
                     </p>
@@ -399,13 +399,17 @@ export default function About() {
                     height={200}
                     alt="partner3"
                     className="rounded-lg marieImage object-cover"
-                  /> 
+                  />
                 </div>
 
                 <div className="flex-1 ml-6 mt-2 relative">
-                  <div className={` mariaContent transition-all duration-300 ease-in-out ${
-                    showReadMore1 ? "max-h-full" : "max-h-[350px] h-[340px] overflow-hidden"
-                  }`}>
+                  <div
+                    className={` mariaContent transition-all duration-300 ease-in-out ${
+                      showReadMore1
+                        ? "max-h-full"
+                        : "max-h-[350px] h-[340px] overflow-hidden"
+                    }`}
+                  >
                     <h2 className="text-4xl font-bold text-[#fe7db0]">
                       Marie Davey
                     </h2>
@@ -423,98 +427,97 @@ export default function About() {
                       accidental when I meet with New Ireland Assurance they
                       convinced me that I would be a great fit as a tied agent
                       with their company and from there my journey began, New
-                      Ireland Assurance was instrumental in guiding me through my
-                      exams in my QFA and RPA as well as giving me the tools to
-                      navigate the world of finance which can be very scary and
-                      complex and at the time very male dominated, it was from
-                      there that I got to really understand the world of Finance
-                      and most importantly people.
+                      Ireland Assurance was instrumental in guiding me through
+                      my exams in my QFA and RPA as well as giving me the tools
+                      to navigate the world of finance which can be very scary
+                      and complex and at the time very male dominated, it was
+                      from there that I got to really understand the world of
+                      Finance and most importantly people.
                     </p>
                   </div>
 
                   {!showReadMore1 && (
                     <div className="mt-4">
                       <button
-                      onClick={handleReadMoreClick1}
-                      className="text-black text-xl"
-                    >
-                      ....Read more
-                    </button>
+                        onClick={handleReadMoreClick1}
+                        className="text-black text-xl"
+                      >
+                        ....Read more
+                      </button>
                     </div>
-                    
                   )}
-                    {showReadMore1 && (
-                      <div>
-                        <p className="mb-4 text-white text-xl">
-                          I understand the most important relationship I can have
-                          is with me and my client and I have had the most amazing
-                          journey getting to help and guide my Fusion Family
-                          through the harsh bumpy and complex financial road.
-                          <br />
-                          <br />
-                          The complex relationship between health and happiness
-                          really does have a lot to do with our general health and
-                          wellbeing and sometimes it is that relationship with
-                          money that makes the difference to our mental wellbeing.
-                        </p>
-                        <p className="mb-4 text-white text-xl">
-                          I decided to leave New Ireland in 2010 and joined a firm
-                          in Dublin that worked for the public sector, and it was
-                          there that I got introduced to the Public sector and
-                          built up a great relationship within that sector, in May
-                          2012 I decided to take a huge leap of faith with my
-                          colleague Gemma Mcguire and Fusion Finance became a
-                          reality.
-                          <br />
-                          <br />
-                          We have a combined customer baes of over 2000 clients
-                          and this is growing year on year we are blessed to have
-                          Samatha and Catherine working tirelessly to ensure our
-                          clients are always priority, we have worked very hard to
-                          keep on top of all the complex changes that continue to
-                          be part of the financial landscape. We were nominated
-                          last year by Brookers Ireland as one of the Top 3
-                          brokers in Ireland when it comes to prioritising
-                          protection around our clients.
-                        </p>
-                        <p className="mb-4 text-white text-xl">
-                          I am on the Journey to completing my CFP which is the
-                          highest designation in the financial service and
-                          recognised around the world, it&apos;s something I never
-                          thought I would do but I believe with an amazing team
-                          behind you anything is possible. My dreams for the next
-                          10 years are for my clients to have a real genuine
-                          connection with me if they phone me, they are not
-                          waiting or put on hold they get us if not straight away
-                          within the same day, we have seen the devastation of
-                          separation, illness and death and want for our clients
-                          to know that we are there if they need us.
-                        </p>
-                        <p className="font-bold text-white text-xl">
-                          My goal for the next 10 years is to give back to my
-                          community, I am very involved in Soccer and in animals
-                          and I want to develop my passion in fostering animals,
-                          besides my two boys my biggest passion is the welfare of
-                          animals, I recently rescued a lurcher called Archie and
-                          he has been one of the biggest changes in my life, his
-                          soul was meant to meet mine. I will have also completed
-                          my master&apos;s in finance and most importantly see my
-                          boys grow into young men. There is no currency more
-                          valuable than time, we can always make money but can
-                          never make up for lost time.
-                        </p>
-                      </div>
-                    )}
-                    {showReadMore1 && (
-                      <div className="mt-4">
-                        <button
+                  {showReadMore1 && (
+                    <div>
+                      <p className="mb-4 text-white text-xl">
+                        I understand the most important relationship I can have
+                        is with me and my client and I have had the most amazing
+                        journey getting to help and guide my Fusion Family
+                        through the harsh bumpy and complex financial road.
+                        <br />
+                        <br />
+                        The complex relationship between health and happiness
+                        really does have a lot to do with our general health and
+                        wellbeing and sometimes it is that relationship with
+                        money that makes the difference to our mental wellbeing.
+                      </p>
+                      <p className="mb-4 text-white text-xl">
+                        I decided to leave New Ireland in 2010 and joined a firm
+                        in Dublin that worked for the public sector, and it was
+                        there that I got introduced to the Public sector and
+                        built up a great relationship within that sector, in May
+                        2012 I decided to take a huge leap of faith with my
+                        colleague Gemma Mcguire and Fusion Finance became a
+                        reality.
+                        <br />
+                        <br />
+                        We have a combined customer baes of over 2000 clients
+                        and this is growing year on year we are blessed to have
+                        Samatha and Catherine working tirelessly to ensure our
+                        clients are always priority, we have worked very hard to
+                        keep on top of all the complex changes that continue to
+                        be part of the financial landscape. We were nominated
+                        last year by Brookers Ireland as one of the Top 3
+                        brokers in Ireland when it comes to prioritising
+                        protection around our clients.
+                      </p>
+                      <p className="mb-4 text-white text-xl">
+                        I am on the Journey to completing my CFP which is the
+                        highest designation in the financial service and
+                        recognised around the world, it&apos;s something I never
+                        thought I would do but I believe with an amazing team
+                        behind you anything is possible. My dreams for the next
+                        10 years are for my clients to have a real genuine
+                        connection with me if they phone me, they are not
+                        waiting or put on hold they get us if not straight away
+                        within the same day, we have seen the devastation of
+                        separation, illness and death and want for our clients
+                        to know that we are there if they need us.
+                      </p>
+                      <p className="font-bold text-white text-xl">
+                        My goal for the next 10 years is to give back to my
+                        community, I am very involved in Soccer and in animals
+                        and I want to develop my passion in fostering animals,
+                        besides my two boys my biggest passion is the welfare of
+                        animals, I recently rescued a lurcher called Archie and
+                        he has been one of the biggest changes in my life, his
+                        soul was meant to meet mine. I will have also completed
+                        my master&apos;s in finance and most importantly see my
+                        boys grow into young men. There is no currency more
+                        valuable than time, we can always make money but can
+                        never make up for lost time.
+                      </p>
+                    </div>
+                  )}
+                  {showReadMore1 && (
+                    <div className="mt-4">
+                      <button
                         onClick={handleReadMoreClick1}
                         className="text-black text-xl"
                       >
                         ....Read less
                       </button>
-                      </div>
-                    )}
+                    </div>
+                  )}
                   <div className="clear-both"></div>
                 </div>
               </div>
@@ -534,13 +537,17 @@ export default function About() {
                     height={200}
                     alt="partner3"
                     className="rounded-lg marieImage object-cover"
-                  />                
+                  />
                 </div>
 
                 <div className="flex-1 ml-6 mt-2 relative">
-                  <div className={` mariaContent transition-all duration-300 ease-in-out ${
-                    showReadMore1 ? "max-h-full" : "max-h-[350px] h-[340px] overflow-hidden"
-                  }`}>
+                  <div
+                    className={` mariaContent transition-all duration-300 ease-in-out ${
+                      showReadMore1
+                        ? "max-h-full"
+                        : "max-h-[350px] h-[340px] overflow-hidden"
+                    }`}
+                  >
                     <h2 className="text-4xl font-bold text-[#fe7db0]">
                       Gemma Maguire
                     </h2>
@@ -559,9 +566,8 @@ export default function About() {
                       have gained extensive experience in all areas of Financial
                       Planning Pension and Wealth Planning along with providing
                       Family and Illness Protection solutions for my clients.
-                    </p>                    
+                    </p>
                   </div>
-
 
                   {!showReadMore2 && (
                     <button
@@ -625,13 +631,17 @@ export default function About() {
                     height={150}
                     alt="partner4"
                     className="rounded-lg marieImage object-cover"
-                  />                  
+                  />
                 </div>
 
                 <div className="flex-1 ml-6 mt-2 relative">
-                  <div className={` mariaContent transition-all duration-300 ease-in-out ${
-                    showReadMore1 ? "max-h-full" : "max-h-[350px] h-[340px] overflow-hidden"
-                  }`}>
+                  <div
+                    className={` mariaContent transition-all duration-300 ease-in-out ${
+                      showReadMore1
+                        ? "max-h-full"
+                        : "max-h-[350px] h-[340px] overflow-hidden"
+                    }`}
+                  >
                     <h2 className="text-4xl font-bold text-[#fe7db0]">
                       Samantha
                     </h2>
@@ -646,19 +656,18 @@ export default function About() {
                     </p>
                     <p className="mb-4 text-white text-xl">
                       Samantha joined Fusion Finance early in 2017. She is a
-                      fantastic asset to the business in her efficiency and follow
-                      through of all customer requests. As sales support, Samantha
-                      handles the administration of all business to ensure an
-                      excellent customer experience. Over the last 3 years
-                      Samantha has undertaken to complete 6 financial exams to
-                      enable her to become a Qualified Financial Advisor. This has
-                      given Samantha a great understanding of all aspects of
-                      financial advice and is so beneficial in her office and
-                      customer dealings.
+                      fantastic asset to the business in her efficiency and
+                      follow through of all customer requests. As sales support,
+                      Samantha handles the administration of all business to
+                      ensure an excellent customer experience. Over the last 3
+                      years Samantha has undertaken to complete 6 financial
+                      exams to enable her to become a Qualified Financial
+                      Advisor. This has given Samantha a great understanding of
+                      all aspects of financial advice and is so beneficial in
+                      her office and customer dealings.
                     </p>
-                  </div>                  
+                  </div>
                 </div>
-                
               </div>
               {/** End of Samantha card */}
 
@@ -676,13 +685,17 @@ export default function About() {
                     height={150}
                     alt="partner3"
                     className="rounded-lg marieImage object-cover"
-                  />                  
+                  />
                 </div>
 
                 <div className="flex-1 ml-6 mt-2 relative">
-                  <div className={` mariaContent transition-all duration-300 ease-in-out ${
-                    showReadMore1 ? "max-h-full" : "max-h-[350px] h-[340px] overflow-hidden"
-                  }`}>
+                  <div
+                    className={` mariaContent transition-all duration-300 ease-in-out ${
+                      showReadMore1
+                        ? "max-h-full"
+                        : "max-h-[350px] h-[340px] overflow-hidden"
+                    }`}
+                  >
                     <h2 className="text-4xl font-bold text-[#fe7db0]">
                       Catherine&apos;s
                     </h2>
@@ -697,61 +710,62 @@ export default function About() {
                     </p>
                     <p className="mb-4 text-white text-xl">
                       Catherine Mulcahy has a diverse background in travel and
-                      tourism, as well as experience as a personal assistant in a
-                      medical practice. She brings a unique skill set to her Sales
-                      Manager Fusion Finance role. Catherines&apos; experience in
-                      the travel industry has honed her organisational and
-                      customer service skills, allowing her to manage complex
-                      itineraries and provide exceptional support to clients.
+                      tourism, as well as experience as a personal assistant in
+                      a medical practice. She brings a unique skill set to her
+                      Sales Manager Fusion Finance role. Catherines&apos;
+                      experience in the travel industry has honed her
+                      organisational and customer service skills, allowing her
+                      to manage complex itineraries and provide exceptional
+                      support to clients.
                     </p>
-                    </div>
-
-                    {!showReadMore3 && (
-                      <button
-                        onClick={handleReadMoreClick3}
-                        className="text-black text-xl"
-                      >
-                        ....Read more
-                      </button>
-                    )}
-                    {showReadMore3 && (
-                      <div className="readMore">
-                        <p className="mb-4 text-white text-xl">
-                          In the medical field, she developed a keen attention to
-                          detail and the ability to handle sensitive information
-                          with discretion. She is excited to join the Fusion
-                          Finance team, where she aims to leverage her expertise
-                          to contribute to a seamless and efficient workflow,
-                          ensuring that our clients receive the highest level of
-                          service.
-                        </p>
-                        <p className="mb-4 text-white text-xl">
-                          Catherine is a wife to Peter and a mother to two young
-                          children, an adventurous boy and a teddy-obsessed girl.
-                          Working with Fusion Finance has taught her that there is
-                          nothing more important than financial security for her
-                          family, particularly with her children&apos;s future in
-                          mind. If only the world was flawless as seen through the
-                          eyes of children but unfortunately in today&apos;s world
-                          the future is very much uncertain. We need to be
-                          proactive in securing a safe future for those we love.
-                        </p>
-                        <p className="mb-4 text-white text-xl">
-                          “Your Smile is your Logo; your Personality is your
-                          business Card”
-                        </p>
                   </div>
-                    )}
-                      {showReadMore3 && (
-                        <button
-                            onClick={handleReadMoreClick3}
-                            className="text-black text-xl"
-                          >
-                            ....Read less
-                          </button>
-                        )}              
-              </div>
-                  <div className="clear-both"></div>
+
+                  {!showReadMore3 && (
+                    <button
+                      onClick={handleReadMoreClick3}
+                      className="text-black text-xl"
+                    >
+                      ....Read more
+                    </button>
+                  )}
+                  {showReadMore3 && (
+                    <div className="readMore">
+                      <p className="mb-4 text-white text-xl">
+                        In the medical field, she developed a keen attention to
+                        detail and the ability to handle sensitive information
+                        with discretion. She is excited to join the Fusion
+                        Finance team, where she aims to leverage her expertise
+                        to contribute to a seamless and efficient workflow,
+                        ensuring that our clients receive the highest level of
+                        service.
+                      </p>
+                      <p className="mb-4 text-white text-xl">
+                        Catherine is a wife to Peter and a mother to two young
+                        children, an adventurous boy and a teddy-obsessed girl.
+                        Working with Fusion Finance has taught her that there is
+                        nothing more important than financial security for her
+                        family, particularly with her children&apos;s future in
+                        mind. If only the world was flawless as seen through the
+                        eyes of children but unfortunately in today&apos;s world
+                        the future is very much uncertain. We need to be
+                        proactive in securing a safe future for those we love.
+                      </p>
+                      <p className="mb-4 text-white text-xl">
+                        “Your Smile is your Logo; your Personality is your
+                        business Card”
+                      </p>
+                    </div>
+                  )}
+                  {showReadMore3 && (
+                    <button
+                      onClick={handleReadMoreClick3}
+                      className="text-black text-xl"
+                    >
+                      ....Read less
+                    </button>
+                  )}
+                </div>
+                <div className="clear-both"></div>
               </div>
               {/** End of Catherine card */}
             </div>

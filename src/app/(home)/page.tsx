@@ -15,7 +15,9 @@ import "./home.css";
 import Divider from "@/components/ui/Divider/Divider";
 
 export default function Home() {
-  const [testimonialImg, setTestimonialImg] = useState<string>("/Fusion_pics/Fusion Finance Web-Ready-19(2).jpg");
+  const [testimonialImg, setTestimonialImg] = useState<string>(
+    "/Fusion_pics/Fusion Finance Web-Ready-19(2).jpg"
+  );
   return (
     <div className="min-h-screen">
       <main className="relative pt-[125px] pb-[96px]">
@@ -59,7 +61,7 @@ export default function Home() {
             </h1>
 
             <p className="text-black-700 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-sans">
-              With over {" "/** this is just adding whitespace */}
+              With over {" " /** this is just adding whitespace */}
               <span className="text-[#1a584f] font-bold font-sans">
                 50+ years of combined experience
               </span>
@@ -402,7 +404,7 @@ export default function Home() {
               <br className="hidden md:block" />
               create the best experience possible.
             </p>
-            <Testimonial setTestimonialImg={setTestimonialImg}/>
+            <Testimonial setTestimonialImg={setTestimonialImg} />
           </div>
         </div>
 
@@ -416,7 +418,7 @@ export default function Home() {
             alt="Fusion51"
             width={1896}
             height={1244}
-            className="object-contain w-full h-auto relative"
+            className="object-contain relative w-[full] h-auto"
           />
           <h1 className="text-white absolute optima-ttf left-10 lg:left-20 lg:top-60 top-5 text-2xl lg:text-7xl lg;text-center">
             Life Cover or <br />
