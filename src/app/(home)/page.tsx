@@ -413,7 +413,7 @@ export default function Home() {
           <Divider width={1400} height={1} color="#4B4145" />
         </div>
 
-        <div className="flex flex-col justify-center items-center relative mt-20 w-full">
+        <div className="flex flex-col justify-center items-center relative mt-0 w-full">
           <Image
             src="/Fusion_pics/Fusion Finance HiRes-51(2).jpg"
             alt="Fusion51"

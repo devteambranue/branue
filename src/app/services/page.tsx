@@ -380,7 +380,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center relative mt-20 w-full">
+        <div className="flex flex-col justify-center items-center relative mt-10 w-full">
           <Image
             src="/Fusion_pics/Fusion Finance HiRes-51(2).jpg"
             alt="Fusion51"
