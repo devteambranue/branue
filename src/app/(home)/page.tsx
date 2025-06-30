@@ -270,8 +270,34 @@ export default function Home() {
               </div>
             </div>
 
+            <div className="bg-white w-full md:w-[300px]">
+              <div className="bg-[#1a584f] p-4 text-white text-center text-base font-semibold">
+                <h1 className="customFontSize">
+                  <p>RETIREMENT PLANNING</p>
+                  <p>AND</p>
+                  <p>PENSIONS</p>
+                </h1>
+              </div>
+              <div className="relative h-[400px] overflow-hidden">
+                <Image
+                  src="/Fusion_pics/Fusion-Finance-Web-Ready-43-1.jpg"
+                  alt="Lump Sum Investment"
+                  fill
+                  className="object-cover"
+                />
+                <Link
+                  href="/services/retirement-pension"
+                  className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+                >
+                  <span className="bg-[#5ae9d4] font-bold text-black py-1 px-3 rounded-full hover:font-medium">
+                    See More &gt;&gt;
+                  </span>
+                </Link>
+              </div>
+            </div>
+
             {/* Card 4 (Different Title BG Color) */}
-            <div className="bg-white w-full md:w-[400px]">
+            {/* <div className="bg-white w-full md:w-[400px]">
               <div className="bg-[#5ae9d4] p-4 flex flex-col md:flex-row md:items-center md:justify-between text-black text-base font-semibold text-center md:text-left">
                 <h1 className="customFontSize mr-4">
                   <p className="whitespace-nowrap">
@@ -305,7 +331,7 @@ export default function Home() {
                   </span>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
