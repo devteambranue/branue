@@ -61,7 +61,7 @@ export default function Home() {
             </h1>
 
             <p className="text-black-700 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-sans">
-              With over {" " /** this is just adding whitespace */}
+              With over{" "}
               <span className="text-[#1a584f] font-bold font-sans">
                 50+ years of combined experience
               </span>
@@ -73,7 +73,7 @@ export default function Home() {
           <div className="mt-24 flex flex-wrap justify-center items-center gap-20 sm:gap-20 md:gap-16 lg:gap-14 relative z-10">
             {/* First Box */}
             <div className="relative group max-w-xs sm:max-w-sm p-6 pb-10 bg-white border-2 border-[#082c27] rounded-2xl transition-transform duration-700 scale-100">
-              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-[#1a584f] flex justify-center items-center rounded-full transition-transform group-hover:scale-125 group-hover:rotate-[360deg]">
+              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-[#1a584f] flex justify-center items-center rounded-full">
                 <Image
                   src="/customer-service.png"
                   width={50}
@@ -85,6 +85,7 @@ export default function Home() {
                 Exceptional <br />
                 Customer Service
               </h2>
+              <br className="hidden sm:block" />
               <p className="cormorant-infant text-2xl font-bold font-sans text-center">
                 Financial services for everyone.
               </p>
@@ -92,7 +93,7 @@ export default function Home() {
 
             {/* Center Box with conic gradiant Circle */}
             <div className="relative group max-w-xs sm:max-w-sm p-6 pb-10 bg-white border-2 border-[#082c27] rounded-2xl transition-transform ">
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-20 h-20 md:w-24 md:h-24 lg:w-24 lg:h-24  bg-[#1a584f] flex justify-center items-center rounded-full transition-transform group-hover:scale-125 group-hover:rotate-[360deg]">
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-20 h-20 md:w-24 md:h-24 lg:w-24 lg:h-24  bg-[#1a584f] flex justify-center items-center rounded-full">
                 <Image
                   src="/experiencee.png"
                   width={50}
@@ -115,7 +116,7 @@ export default function Home() {
 
             {/* Third Box */}
             <div className="relative group max-w-xs sm:max-w-sm p-6 pb-10 bg-white border-2 border-[#082c27] rounded-2xl transition-transform duration-700 scale-100">
-              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-[#1a584f] flex justify-center items-center rounded-full transition-transform group-hover:scale-125 group-hover:rotate-[360deg]">
+              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-[#1a584f] flex justify-center items-center rounded-full">
                 <Image
                   src="/customerr.png"
                   width={50}
@@ -414,21 +415,21 @@ export default function Home() {
 
         <div className="flex flex-col justify-center items-center relative mt-20 w-full">
           <Image
-            src="/Fusion_pics/Fusion Finance HiRes-51(2).jpg"
+            src="/Fusion_pics/life-cover-bg.jpg"
             alt="Fusion51"
             width={1896}
             height={1244}
             className="object-contain relative w-[full] h-auto"
           />
-          <h1 className="text-white absolute optima-ttf left-10 lg:left-20 lg:top-60 top-5 text-2xl lg:text-7xl lg;text-center">
+          <h1 className="text-white absolute optima-ttf left-10 lg:left-20 lg:top-20 top-1 text-xl lg:text-7xl lg:text-center">
             Life Cover or <br />
             Serious Illness
           </h1>
-          <h4 className="text-white lg:items-center lg:leading-normal absolute optima-ttf left-10 lg:left-20 lg:top-180 lg:text-5xl text-xl lg:text-center text-left mt-0 lg:mt-40">
+          <h4 className="text-white lg:items-center absolute optima-ttf left-10 lg:left-20 lg:top-180 lg:text-5xl text-xl lg:text-center text-left mt-0 lg:mt-20">
             Calculate your policy <br />
             estimate now
           </h4>
-          <div className="lg:flex lg:items-center absolute bottom-10 lg:bottom-40 lg:mb-30 lg:left-40 left-12 -ml-4 lg:mr-auto brandon-grotesque">
+          <div className="lg:flex lg:items-center absolute bottom-4 lg:bottom-20 lg:mb-30 lg:left-40 left-12 -ml-4 lg:mr-auto brandon-grotesque">
             <Link
               href="/quote"
               onClick={() => {
