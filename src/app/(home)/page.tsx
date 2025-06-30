@@ -415,21 +415,29 @@ export default function Home() {
 
         <div className="flex flex-col justify-center items-center relative mt-20 w-full">
           <Image
+            src="/Fusion_pics/Fusion Finance HiRes-51(2).jpg"
+            alt="Fusion51"
+            width={1896}
+            height={1244}
+            className="block lg:hidden object-contain relative w-full h-auto"
+          />
+          <Image
             src="/Fusion_pics/life-cover-bg.jpg"
             alt="Fusion51"
             width={1896}
             height={1244}
-            className="object-contain relative w-[full] h-auto"
+            className="hidden lg:block object-contain relative w-full h-auto"
           />
-          <h1 className="text-white absolute optima-ttf left-10 lg:left-20 lg:top-20 top-1 text-xl lg:text-7xl lg:text-center">
+
+          <h1 className="text-white absolute optima-ttf left-10 lg:left-20 lg:top-20 top-5 text-xl lg:text-7xl lg:text-center leading-normal">
             Life Cover or <br />
             Serious Illness
           </h1>
-          <h4 className="text-white lg:items-center absolute optima-ttf left-10 lg:left-20 lg:top-180 lg:text-5xl text-xl lg:text-center text-left mt-0 lg:mt-20">
+          <h4 className="text-white lg:items-center absolute optima-ttf left-10 lg:left-20 lg:top-180 lg:text-5xl leading-normal text-xl lg:text-center text-left mt-3 lg:mt-20">
             Calculate your policy <br />
             estimate now
           </h4>
-          <div className="lg:flex lg:items-center absolute bottom-4 lg:bottom-20 lg:mb-30 lg:left-40 left-12 -ml-4 lg:mr-auto brandon-grotesque">
+          <div className="lg:flex lg:items-center absolute bottom-6 lg:bottom-20 lg:mb-30 lg:left-40 left-12 -ml-4 lg:mr-auto brandon-grotesque">
             <Link
               href="/quote"
               onClick={() => {
