@@ -699,7 +699,7 @@ export default function About() {
                     }`}
                   >
                     <h2 className="text-4xl font-bold text-[#fe7db0]">
-                      Catherine&apos;s
+                      Catherine
                     </h2>
                     <div className="my-4">
                       <Divider width={150} height={0.5} color="#5ae9d4" />
