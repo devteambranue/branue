@@ -212,8 +212,9 @@ export default function About() {
                           Expertise
                         </h3>
                         <p className="text-white  cormorant-infant text-lg">
-                          Our Certified Financial Planners have attained <br />
-                          the highest industry standard
+                          Our CERTIFIED FINANCIAL PLANNER™ <br />
+                          professionals have attained the highest industry
+                          standard
                         </p>
                       </div>
                     </div>
@@ -481,17 +482,18 @@ export default function About() {
                         protection around our clients.
                       </p>
                       <p className="mb-4 text-white text-xl">
-                        I am on the Journey to completing my CFP which is the
-                        highest designation in the financial service and
-                        recognised around the world, it&apos;s something I never
-                        thought I would do but I believe with an amazing team
-                        behind you anything is possible. My dreams for the next
-                        10 years are for my clients to have a real genuine
-                        connection with me if they phone me, they are not
-                        waiting or put on hold they get us if not straight away
-                        within the same day, we have seen the devastation of
-                        separation, illness and death and want for our clients
-                        to know that we are there if they need us.
+                        I am on the Journey to attaining the CFP® designation
+                        which is the highest designation in the financial
+                        service and recognised around the world, it&apos;s
+                        something I never thought I would do but I believe with
+                        an amazing team behind you anything is possible. My
+                        dreams for the next 10 years are for my clients to have
+                        a real genuine connection with me if they phone me, they
+                        are not waiting or put on hold they get us if not
+                        straight away within the same day, we have seen the
+                        devastation of separation, illness and death and want
+                        for our clients to know that we are there if they need
+                        us.
                       </p>
                       <p className="font-bold text-white text-xl">
                         My goal for the next 10 years is to give back to my
@@ -555,10 +557,10 @@ export default function About() {
                       <Divider width={150} height={0.5} color="#5ae9d4" />
                     </div>
                     <p className="font-semibold text-black text-xl">
-                      CFP, RPA, QFA, SIA
+                      CFP®, RPA, QFA, SIA
                     </p>
                     <p className=" font-semibold mb-4 text-black text-xl">
-                      ertified Financial Planner
+                      CERTIFIED FINANCIAL PLANNER™
                       <br /> <span>Partner Fusion Finance</span>
                     </p>
                     <p className="mb-4 text-white text-xl">
