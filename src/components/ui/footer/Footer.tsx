@@ -130,7 +130,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Divider */}
+          {/* Divider  */}
           <div className="hidden lg:block h-20 w-1 bg-black mx-auto self-center mb-20"></div>
 
           {/* Column 3 */}
