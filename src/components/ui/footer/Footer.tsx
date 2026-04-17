@@ -147,6 +147,14 @@ export default function Footer() {
                 Terms of Business
               </Link>
               <Link
+                href="https://www.bis-platform.com/ba/cp116_pdf.php?docref=cp6591"
+                className="optima-ttf mb-0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                BIS Login
+              </Link>
+              <Link
                 href="https://fusion-finance.com/pdf/Fusion-Finance-Data-Protection.pdf"
                 className="optima-ttf mb-0"
                 target="_blank"
